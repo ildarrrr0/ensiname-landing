@@ -66,7 +66,7 @@ h1,h2,h3{overflow-wrap:break-word}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
-h1,h2,h3{line-height:1.16;color:var(--primary);font-weight:800;font-family:var(--font-head)}
+h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--font-head)}
 
 /* ---------- КНОПКИ (крупные тап-цели, mobile-first) ---------- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-head);
@@ -78,6 +78,9 @@ h1,h2,h3{line-height:1.16;color:var(--primary);font-weight:800;font-family:var(-
 .btn-primary:hover{background:var(--primary-2);border-color:var(--primary-2)}
 .btn-outline{background:transparent;border-color:var(--primary);color:var(--primary)}
 .btn-outline:hover{background:var(--primary);color:#fff}
+/* единая жёлтая обводка для кнопок «Оплатить» */
+.btn-oy{background:transparent;border-color:var(--yellow);color:var(--text)}
+.btn-oy:hover{background:var(--yellow);color:var(--cta-fg);border-color:var(--yellow)}
 
 /* ============================================================ ХЕДЕР */
 .util-bar{display:none;background:var(--green-3);color:#d7e6dc;font-size:14px}
@@ -102,44 +105,37 @@ body.vB .util-bar{display:block}
 body.vB .header-inner{flex-wrap:wrap}
 body.vB .nav{margin:0 auto}
 
-/* ============================================================ СЕКЦИИ + ПОЛОСЫ */
+/* ============================================================ СЕКЦИИ + ТРИКОЛОР-РАЗДЕЛИТЕЛЬ */
 section{padding:48px 0;position:relative}
 .section-head{max-width:720px;margin:0 0 28px}
 .section-head.center{margin-left:auto;margin-right:auto;text-align:center}
-.eyebrow{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.10em;text-transform:uppercase;color:var(--eyefg,var(--red));margin-bottom:10px;font-family:var(--font-head)}
-.section-head h2{color:var(--headfg,var(--primary));font-size:27px;margin-bottom:10px}
-.section-head p{color:var(--leadfg,var(--text-muted));font-size:16px}
+/* маленький кикер (декоративная надпись-акцент) */
+.eyebrow{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.10em;text-transform:uppercase;color:var(--red);margin-bottom:10px;font-family:var(--font-head)}
+/* заголовки и текст разделов — чёрные (цвет только в акцентах/декоре) */
+.section-head h2{color:var(--text);font-size:27px;margin-bottom:10px}
+.section-head p{color:var(--text-muted);font-size:16px}
 
-/* цветные «краски» полос — переопределяют переменные внутри секции */
-.pg{background:var(--green);--headfg:#fff;--eyefg:#ffe79a;--leadfg:#e3f2e7;--surface:#fff;--border:#cfe6d6}
-.pr{background:var(--red); --headfg:#fff;--eyefg:#ffe79a;--leadfg:#ffe3e0;--surface:#fff;--border:#f0cbc8}
-.py{background:var(--yellow);--headfg:#26210d;--eyefg:#7a5f00;--leadfg:#5c4f18;--surface:#fff;--border:#ecd98a}
-.pblue{background:var(--c-blue);--surface:#fff;--border:#bcd5e8}
-.pbeige{background:var(--c-beige);--surface:#fffaf0;--border:#e0cfb2}
-/* тонкая контрастная линия сверху цветной полосы — аккуратный стык */
-.pg,.pr,.py{border-top:3px solid rgba(0,0,0,.10)}
+/* тонкая фирменная триколор-полоса — ТОЛЬКО как разделитель между секциями */
+section::before,.site-footer::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;
+  background:linear-gradient(90deg,var(--red) 0 33.33%,var(--yellow) 33.33% 66.66%,var(--green) 66.66% 100%)}
+.hero::before{display:none}
+.site-footer{position:relative}
 
-/* ---- РАСКЛАДКА ПОЛОС ПО ВАРИАНТАМ ---- */
-/* ЗЕЛЁНЫЙ */
-body.vA #about,  body.vA #pricing,
-body.vB #courses,body.vB #pricing{background:var(--green);--headfg:#fff;--eyefg:#ffe79a;--leadfg:#e3f2e7;--surface:#fff;--border:#cfe6d6;border-top:3px solid rgba(0,0,0,.10)}
-/* КРАСНЫЙ */
-body.vA #schedule,
-body.vB #schedule,body.vB #reviews{background:var(--red);--headfg:#fff;--eyefg:#ffe79a;--leadfg:#ffe3e0;--surface:#fff;--border:#f0cbc8;border-top:3px solid rgba(0,0,0,.10)}
-/* ЖЁЛТЫЙ */
-body.vA #courses,body.vA #club,
-body.vB #teachers,body.vB #club{background:var(--yellow);--headfg:#26210d;--eyefg:#7a5f00;--leadfg:#5c4f18;--surface:#fff;--border:#ecd98a;border-top:3px solid rgba(0,0,0,.10)}
+/* спокойные нейтральные фоны секций (без сплошной яркой заливки) */
+#about,#pricing,#faq{background:#f4f6f7}       /* светло-серый */
+#schedule,#club{background:#e9f1f8}            /* пастельный голубой */
+#teachers,#contacts{background:#f5efe4}        /* бежевый «кофе с молоком» */
+/* остальные секции (hero, courses, reviews, articles) — белые по умолчанию */
 
 /* ============================================================ HERO (белая полоса) */
 .hero{padding:44px 0 40px;background:linear-gradient(180deg,#ffffff,#f4f8f4)}
 .hero h1{font-size:32px;line-height:1.12;margin-bottom:16px;color:var(--text)}
-.hero h1 .g{color:var(--green)}
-.hero h1 .r{color:var(--red)}
+.hero h1 .g,.hero h1 .r{color:inherit}
 .hero .lead{font-size:17px;color:var(--text-muted);margin-bottom:24px}
 .hero-actions{display:flex;flex-direction:column;gap:12px}
 .hero-actions .btn{width:100%}
 .hero-stats{display:flex;gap:24px;margin-top:28px;flex-wrap:wrap}
-.hero-stats .num{font-size:26px;font-weight:800;color:var(--green);font-family:var(--font-head)}
+.hero-stats .num{font-size:26px;font-weight:800;color:var(--text);font-family:var(--font-head)}
 .hero-stats .lbl{font-size:13px;color:var(--text-muted)}
 .hero-visual{margin-top:28px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
 .hero-visual h3{font-size:17px;margin-bottom:12px}
@@ -159,15 +155,15 @@ body.vB .hero-stats{justify-content:center}
 .card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px)}
 .feature{padding:22px 20px}
 .feature .ic{width:46px;height:46px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;background:var(--primary-soft);color:var(--green);font-size:20px;font-weight:800;margin-bottom:14px;font-family:var(--font-head)}
-.feature h3{font-size:18px;margin-bottom:8px;color:var(--green)}
+.feature h3{font-size:18px;margin-bottom:8px;color:var(--text)}
 .feature p{color:var(--text-muted);font-size:15px}
 
 .course{padding:24px 22px;display:flex;flex-direction:column}
 .course .tag{align-self:flex-start;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--red);margin-bottom:12px;font-family:var(--font-head)}
-.course h3{font-size:18px;margin-bottom:10px;color:var(--green)}
+.course h3{font-size:18px;margin-bottom:10px;color:var(--text)}
 .course p{color:var(--text-muted);font-size:15px;margin-bottom:16px;flex:1}
 .course-foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:14px;gap:10px;flex-wrap:wrap}
-.course .price{font-weight:800;color:var(--green);font-size:15px;font-family:var(--font-head)}
+.course .price{font-weight:800;color:var(--text);font-size:15px;font-family:var(--font-head)}
 .course .price small{font-weight:400;color:var(--text-muted);font-size:13px}
 .course a.more{font-size:14px;font-weight:700;color:var(--red)}
 
@@ -175,7 +171,7 @@ body.vB .hero-stats{justify-content:center}
 .schedule{display:flex;flex-direction:column;gap:12px}
 .sch-row{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);
   padding:18px 20px;display:grid;grid-template-columns:1fr;gap:8px}
-.sch-lang{font-weight:800;font-family:var(--font-head);color:var(--green);font-size:16px}
+.sch-lang{font-weight:800;font-family:var(--font-head);color:var(--text);font-size:16px}
 .sch-lang span{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--red);padding:2px 8px;border-radius:20px;margin-left:6px;vertical-align:middle}
 .sch-when{color:var(--text);font-weight:700}
 .sch-fmt{color:var(--text-muted);font-size:14px}
@@ -186,25 +182,26 @@ body.vB .hero-stats{justify-content:center}
 .teacher{overflow:hidden}
 .teacher .photo{aspect-ratio:4/5;background:repeating-linear-gradient(45deg,#e6ebe6 0 14px,#dde3dd 14px 28px);display:flex;align-items:center;justify-content:center;color:#8a968a;font-size:13px;font-weight:600}
 .teacher .t-body{padding:16px 18px}
-.teacher h3{font-size:18px;margin-bottom:4px;color:var(--green)}
-.teacher .exp{font-size:13px;color:var(--red);font-weight:700;margin-bottom:10px;font-family:var(--font-head)}
+.teacher h3{font-size:18px;margin-bottom:4px;color:var(--text)}
+.teacher .exp{font-size:13px;color:var(--text-muted);font-weight:700;margin-bottom:10px;font-family:var(--font-head)}
 .teacher p{font-size:14px;color:var(--text-muted)}
 .teacher .langs{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap}
-.teacher .langs span{font-size:12px;background:var(--primary-soft);border:1px solid var(--border);padding:3px 9px;border-radius:20px;color:var(--green);font-weight:700}
+.teacher .langs span{font-size:12px;background:var(--primary-soft);border:1px solid var(--border);padding:3px 9px;border-radius:20px;color:var(--text);font-weight:700}
 .center-cta{margin-top:26px;text-align:center}
 
 /* ---- CTA-полоса (тест на уровень) — фирменная зелёная карточка ---- */
-.cta-band{background:linear-gradient(135deg,var(--green),var(--green-2));color:#fff;border-radius:var(--radius);padding:30px 26px;text-align:center}
+/* единственный тёмный акцентный CTA-блок */
+.cta-band{background:linear-gradient(135deg,#181a1c,#26292c);color:#fff;border-radius:var(--radius);padding:34px 28px;text-align:center;border-top:4px solid var(--yellow)}
 .cta-band h2{color:#fff;font-size:24px;margin-bottom:8px}
-.cta-band p{color:rgba(255,255,255,.92);font-size:16px;margin:0 auto 20px;max-width:600px}
+.cta-band p{color:rgba(255,255,255,.85);font-size:16px;margin:0 auto 20px;max-width:600px}
 
 /* ---- СТОИМОСТЬ ---- */
 .price-card{padding:26px 22px;display:flex;flex-direction:column}
 .price-card.featured{border:2px solid var(--yellow);position:relative}
 .price-card.featured .badge{position:absolute;top:-13px;left:22px;background:var(--yellow);color:var(--cta-fg);font-size:12px;font-weight:800;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.04em;font-family:var(--font-head)}
-.price-card h3{font-size:18px;margin-bottom:6px;color:var(--green)}
+.price-card h3{font-size:18px;margin-bottom:6px;color:var(--text)}
 .price-card .sub{font-size:14px;color:var(--text-muted);margin-bottom:18px}
-.price-card .amount{font-size:31px;font-weight:800;color:var(--green);line-height:1;font-family:var(--font-head)}
+.price-card .amount{font-size:31px;font-weight:800;color:var(--text);line-height:1;font-family:var(--font-head)}
 .price-card .amount small{font-size:15px;font-weight:500;color:var(--text-muted)}
 .price-card ul{list-style:none;margin:18px 0;flex:1}
 .price-card li{padding:8px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--text);display:flex;gap:10px}
@@ -237,14 +234,14 @@ body.vB .hero-stats{justify-content:center}
 .article .thumb{aspect-ratio:16/9;background:repeating-linear-gradient(45deg,#e6ebe6 0 14px,#dde3dd 14px 28px);display:flex;align-items:center;justify-content:center;color:#8a968a;font-size:12px;font-weight:600}
 .article .a-body{padding:18px 20px;display:flex;flex-direction:column;flex:1}
 .article .date{font-size:12px;color:var(--red);font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px;font-family:var(--font-head)}
-.article h3{font-size:17px;margin-bottom:10px;color:var(--green)}
+.article h3{font-size:17px;margin-bottom:10px;color:var(--text)}
 .article p{font-size:14px;color:var(--text-muted);flex:1}
-.article .read{margin-top:14px;font-size:14px;font-weight:700;color:var(--green)}
+.article .read{margin-top:14px;font-size:14px;font-weight:700;color:var(--text)}
 
 /* ---- FAQ ---- */
 .faq{max-width:800px;margin:0 auto}
 .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:10px;overflow:hidden}
-.faq-q{width:100%;text-align:left;background:none;border:0;padding:18px 20px;font-family:var(--font-head);font-size:16px;font-weight:700;color:var(--green);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq-q{width:100%;text-align:left;background:none;border:0;padding:18px 20px;font-family:var(--font-head);font-size:16px;font-weight:700;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px}
 .faq-q .sign{font-size:22px;color:var(--red);transition:.2s;flex-shrink:0}
 .faq-item.open .faq-q .sign{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;color:var(--text-muted);font-size:15px}
@@ -271,23 +268,23 @@ body.vB .hero-stats{justify-content:center}
 .cp-input button{border:0;background:var(--cta-bg);color:var(--cta-fg);width:40px;border-radius:50%;font-size:18px;cursor:pointer;flex-shrink:0}
 
 /* ============================================================ ФУТЕР */
-.site-footer{background:var(--green-3);color:#bcd0c2;padding:44px 0 0}
-.footer-top{display:grid;grid-template-columns:1fr;gap:28px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.12)}
+.site-footer{background:#ffffff;color:var(--text);padding:44px 0 0}
+.footer-top{display:grid;grid-template-columns:1fr;gap:28px;padding-bottom:30px;border-bottom:1px solid var(--border)}
 .footer-brand .brand-logo{height:42px;margin-bottom:14px}
-.footer-brand .brand-logo .sub{fill:#e6e9ec}
-.footer-brand p{font-size:14px;color:#a9c2b1;max-width:340px}
+.footer-brand .brand-logo .sub{fill:#2b2b2b}
+.footer-brand p{font-size:14px;color:var(--text-muted);max-width:340px}
 .social{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
-.social a{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:#fff;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);padding:10px 16px;border-radius:var(--radius-sm)}
-.social a.tg:hover{background:#2aa2e0;border-color:#2aa2e0}
-.social a.yt:hover{background:#e0201b;border-color:#e0201b}
+.social a{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--text);background:#fff;border:1px solid var(--border);padding:10px 16px;border-radius:var(--radius-sm);transition:.15s}
+.social a.tg:hover{background:#2aa2e0;border-color:#2aa2e0;color:#fff}
+.social a.yt:hover{background:#e0201b;border-color:#e0201b;color:#fff}
 .social a svg{width:20px;height:20px;fill:currentColor}
-.footer-col h4{color:#fff;font-size:15px;margin-bottom:12px;font-family:var(--font-head)}
-.footer-col a{display:block;font-size:14px;color:#a9c2b1;padding:5px 0}
-.footer-col a:hover{color:#fff}
+.footer-col h4{color:var(--text);font-size:15px;margin-bottom:12px;font-family:var(--font-head)}
+.footer-col a{display:block;font-size:14px;color:var(--text-muted);padding:5px 0}
+.footer-col a:hover{color:var(--text)}
 .footer-bottom{padding:18px 0;display:flex;flex-direction:column;gap:10px}
 .footer-bottom .legal{display:flex;gap:16px;flex-wrap:wrap}
-.footer-bottom .legal a{font-size:12px;color:rgba(255,255,255,.5)}
-.footer-bottom .copy{font-size:12px;color:rgba(255,255,255,.5)}
+.footer-bottom .legal a{font-size:12px;color:var(--text-muted)}
+.footer-bottom .copy{font-size:12px;color:var(--text-muted)}
 
 /* ============================================================ ЧАТ-ВИДЖЕТ */
 .chat-fab{position:fixed;right:16px;bottom:16px;z-index:90;width:60px;height:60px;border-radius:50%;background:var(--green);color:#fff;border:0;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.28);display:flex;align-items:center;justify-content:center}
@@ -508,9 +505,9 @@ html.js .reveal.in{opacity:1;transform:none}
       <p>Оплата помесячно, за курс целиком или за полгода + месяц обучения в подарок.</p>
     </div>
     <div class="cards cards-3">
-      <div class="card price-card reveal"><h3>Группа / мини-группа</h3><div class="sub">4–6 человек · мини 2–3 человека</div><div class="amount">6 000 ₽<small> / мес</small></div><ul><li>Мини-группа — 8 000 ₽ / мес</li><li>Курс 3 месяца — 13 500 ₽</li><li>Или 5 500 ₽ / мес в рассрочку</li><li>Один уровень, живая практика</li></ul><a href="#" class="btn btn-outline">Оплатить</a></div>
-      <div class="card price-card featured reveal"><span class="badge">Популярно</span><h3>Индивидуально</h3><div class="sub">Очно (Новослободская) или онлайн</div><div class="amount">1 600 ₽<small> / ак. час</small></div><ul><li>Онлайн по Skype — 12 000 ₽ / 10 занятий</li><li>Персональная программа</li><li>Гибкое расписание</li><li>Занятие 60–120 минут</li></ul><a href="#" class="btn btn-cta">Оплатить</a></div>
-      <div class="card price-card reveal"><h3>Онлайн-группа / интенсив</h3><div class="sub">Дистанционно из любой точки</div><div class="amount">900 ₽<small> / 90 мин</small></div><ul><li>Абонемент 36 занятий — 32 400 ₽</li><li>Суперинтенсив — 16 000 ₽</li><li>Материал курса за один месяц</li><li>Подготовка к экзаменам</li></ul><a href="#" class="btn btn-outline">Оплатить</a></div>
+      <div class="card price-card reveal"><h3>Группа / мини-группа</h3><div class="sub">4–6 человек · мини 2–3 человека</div><div class="amount">6 000 ₽<small> / мес</small></div><ul><li>Мини-группа — 8 000 ₽ / мес</li><li>Курс 3 месяца — 13 500 ₽</li><li>Или 5 500 ₽ / мес в рассрочку</li><li>Один уровень, живая практика</li></ul><a href="#" class="btn btn-oy">Оплатить</a></div>
+      <div class="card price-card featured reveal"><span class="badge">Популярно</span><h3>Индивидуально</h3><div class="sub">Очно (Новослободская) или онлайн</div><div class="amount">1 600 ₽<small> / ак. час</small></div><ul><li>Онлайн по Skype — 12 000 ₽ / 10 занятий</li><li>Персональная программа</li><li>Гибкое расписание</li><li>Занятие 60–120 минут</li></ul><a href="#" class="btn btn-oy">Оплатить</a></div>
+      <div class="card price-card reveal"><h3>Онлайн-группа / интенсив</h3><div class="sub">Дистанционно из любой точки</div><div class="amount">900 ₽<small> / 90 мин</small></div><ul><li>Абонемент 36 занятий — 32 400 ₽</li><li>Суперинтенсив — 16 000 ₽</li><li>Материал курса за один месяц</li><li>Подготовка к экзаменам</li></ul><a href="#" class="btn btn-oy">Оплатить</a></div>
     </div>
     <p class="pay-note">Оплата картой онлайн через <b>ЮKassa (Яндекс.Касса)</b> — подключается на этапе интеграции. Кнопки «Оплатить» пока ведут на заглушку.</p>
   </div>
