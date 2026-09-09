@@ -319,8 +319,12 @@ h3{font-size:20px}
   <div class="wrap header-inner">
     <a href="#" class="logo" aria-label="Ensina-me — языковой центр">
       <svg class="brand-logo" viewBox="0 0 540 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ensina-me">
-        <polygon points="34,20 342,20 330,150 34,150 60,85" fill="#1f9430" stroke="#0c5d1c" stroke-width="4" stroke-linejoin="round"/>
-        <polygon points="342,20 506,20 480,85 506,150 330,150" fill="#d0181f" stroke="#8f0c11" stroke-width="4" stroke-linejoin="round"/>
+        <defs>
+          <linearGradient id="grnH" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2ba03a"/><stop offset="1" stop-color="#0f7a25"/></linearGradient>
+          <linearGradient id="redH" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e11d22"/><stop offset="1" stop-color="#b30f14"/></linearGradient>
+        </defs>
+        <polygon points="34,20 342,20 330,150 34,150 60,85" fill="url(#grnH)" stroke="#0c5d1c" stroke-width="4" stroke-linejoin="round"/>
+        <polygon points="342,20 506,20 480,85 506,150 330,150" fill="url(#redH)" stroke="#8f0c11" stroke-width="4" stroke-linejoin="round"/>
         <polygon points="40,26 500,26 498,40 42,40" fill="#ffffff" opacity="0.14"/>
         <g font-family="'Arial Black','Montserrat',sans-serif" font-weight="900" fill="#ffd21e" stroke="#caa400" stroke-width="1">
           <text x="185" y="112" font-size="82" text-anchor="middle" letter-spacing="-2">ensina</text>
@@ -363,7 +367,7 @@ h3{font-size:20px}
       <ul>
         <li><b>01</b> Пройдите короткий тест на уровень</li>
         <li><b>02</b> Подбираем преподавателя и формат</li>
-        <li><b>03</b> Бесплатное пробное занятие — знакомство</li>
+        <li><b>03</b> Пробное занятие — знакомство с преподавателем</li>
         <li><b>04</b> Составляем программу под вашу цель</li>
       </ul>
     </div>
@@ -426,7 +430,7 @@ h3{font-size:20px}
     <div class="section-head">
       <span class="eyebrow">Наша команда</span>
       <h2>Выберите преподавателя, с которым будете на одной волне</h2>
-      <p>Носители языка и опытные русскоговорящие преподаватели. Познакомьтесь на бесплатном пробном занятии.</p>
+      <p>Носители языка и опытные русскоговорящие преподаватели. Познакомьтесь на пробном занятии.</p>
     </div>
     <div class="cards cards-4">
       <div class="card teacher"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Дан</h3><div class="exp">вырос в Португалии</div><p>Европейский португальский, снятие языкового барьера, разговорная практика с первых занятий.</p><div class="langs"><span>PT-PT</span></div></div></div>
@@ -558,7 +562,7 @@ h3{font-size:20px}
       <div>
         <span class="eyebrow">Запись через ассистента</span>
         <h2>Запишитесь за минуту — спросите ИИ-ассистента</h2>
-        <p class="lead">Наш ассистент поможет подобрать курс, преподавателя и формат и запишет на бесплатное пробное занятие. Задайте вопрос в чате — он открыт круглосуточно.</p>
+        <p class="lead">Наш ассистент поможет подобрать курс, преподавателя и формат и запишет на пробное занятие. Задайте вопрос в чате — он открыт круглосуточно.</p>
         <a href="#" onclick="openChat();return false" class="btn btn-primary">Открыть чат с ассистентом</a>
         <div class="contact-rows">
           <div class="row"><div class="k">Адрес</div><div class="v">Москва, ул. Новослободская, 11 (м. Новослободская)</div></div>
@@ -588,8 +592,12 @@ h3{font-size:20px}
     <div class="footer-top">
       <div class="footer-brand">
         <svg class="brand-logo" viewBox="0 0 540 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ensina-me">
-          <polygon points="34,20 342,20 330,150 34,150 60,85" fill="#1f9430" stroke="#0c5d1c" stroke-width="4" stroke-linejoin="round"/>
-          <polygon points="342,20 506,20 480,85 506,150 330,150" fill="#d0181f" stroke="#8f0c11" stroke-width="4" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="grnF" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2ba03a"/><stop offset="1" stop-color="#0f7a25"/></linearGradient>
+            <linearGradient id="redF" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e11d22"/><stop offset="1" stop-color="#b30f14"/></linearGradient>
+          </defs>
+          <polygon points="34,20 342,20 330,150 34,150 60,85" fill="url(#grnF)" stroke="#0c5d1c" stroke-width="4" stroke-linejoin="round"/>
+          <polygon points="342,20 506,20 480,85 506,150 330,150" fill="url(#redF)" stroke="#8f0c11" stroke-width="4" stroke-linejoin="round"/>
           <polygon points="40,26 500,26 498,40 42,40" fill="#ffffff" opacity="0.14"/>
           <g font-family="'Arial Black','Montserrat',sans-serif" font-weight="900" fill="#ffd21e" stroke="#caa400" stroke-width="1">
             <text x="185" y="112" font-size="82" text-anchor="middle" letter-spacing="-2">ensina</text>
