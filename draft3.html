@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Ensina-me — языковой центр в Москве: португальский (европейский и бразильский) и испанский с носителями языка. Очно на Новослободской и онлайн.">
 <title>Ensina-me — португальский и испанский с носителями</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    ЧЕРНОВИК 3 — нейтральный светлый: зелёный/красный точечно
@@ -55,10 +58,12 @@
   --footer-bg:   #1a1d21;
   --footer-text: #a7afb6;
   --footer-head: #ffffff;
+  --logo-sub:    #2b2b2b;
 
   --radius: 4px;
   --maxw:   1180px;
-  --font:   'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --font:      'PT Sans', 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --font-head: 'Montserrat', 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
 }
 /*THEME_END*/
 
@@ -72,14 +77,14 @@ section{padding:74px 0}
 .section-head{max-width:740px;margin:0 0 40px}
 .section-head.center{margin-left:auto;margin-right:auto;text-align:center}
 .eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-h1,h2,h3{line-height:1.18;color:var(--primary);font-weight:700}
+h1,h2,h3{line-height:1.18;color:var(--primary);font-weight:700;font-family:var(--font-head)}
 h2{font-size:32px;margin-bottom:14px}
 h3{font-size:20px}
 .section-head p{color:var(--text-muted);font-size:17px}
 .section-alt{background:var(--bg-alt)}
 
 /* ---------- Кнопки ---------- */
-.btn{display:inline-block;font-family:inherit;font-size:16px;font-weight:600;padding:14px 28px;border:2px solid transparent;border-radius:var(--radius);cursor:pointer;transition:.15s ease;text-align:center}
+.btn{display:inline-block;font-family:var(--font-head);font-size:16px;font-weight:600;padding:14px 28px;border:2px solid transparent;border-radius:var(--radius);cursor:pointer;transition:.15s ease;text-align:center}
 .btn-accent{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
 .btn-accent:hover{background:var(--accent-2);border-color:var(--accent-2)}
 .btn-primary{background:var(--primary);color:var(--on-primary);border-color:var(--primary)}
@@ -90,7 +95,8 @@ h3{font-size:20px}
 /* ============================================================ ХЕДЕР */
 .site-header{position:sticky;top:0;z-index:50;background:var(--header-bg);border-bottom:1px solid var(--border)}
 .header-inner{display:flex;align-items:center;gap:30px;height:74px}
-.logo img{height:46px;width:auto}
+.brand-logo{height:46px;width:auto;display:block}
+.brand-logo .sub{fill:var(--logo-sub)}
 .nav{display:flex;gap:22px;margin-left:auto}
 .nav a{font-size:15px;font-weight:500;color:var(--nav-text);padding:6px 0;position:relative}
 .nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--accent);transition:width .18s}
@@ -239,7 +245,8 @@ h3{font-size:20px}
 /* ============================================================ ФУТЕР */
 .site-footer{background:var(--footer-bg);color:var(--footer-text);padding:56px 0 0}
 .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.12)}
-.footer-brand img{height:44px;margin-bottom:16px}
+.footer-brand .brand-logo{height:44px;margin-bottom:16px}
+.footer-brand .brand-logo .sub{fill:#e6e9ec}
 .footer-brand p{font-size:14px;color:var(--footer-text);max-width:330px}
 .social{display:flex;gap:12px;margin-top:20px}
 .social a{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#fff;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);padding:10px 16px;border-radius:var(--radius);transition:.15s}
@@ -305,7 +312,18 @@ h3{font-size:20px}
 <!-- ============================= ХЕДЕР ============================= -->
 <header class="site-header">
   <div class="wrap header-inner">
-    <a href="#" class="logo"><img src="assets/logo.svg" alt="Ensina-me — языковой центр"></a>
+    <a href="#" class="logo" aria-label="Ensina-me — языковой центр">
+      <svg class="brand-logo" viewBox="0 0 540 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ensina-me">
+        <polygon points="34,20 342,20 330,150 34,150 60,85" fill="#1f9430" stroke="#0c5d1c" stroke-width="4" stroke-linejoin="round"/>
+        <polygon points="342,20 506,20 480,85 506,150 330,150" fill="#d0181f" stroke="#8f0c11" stroke-width="4" stroke-linejoin="round"/>
+        <polygon points="40,26 500,26 498,40 42,40" fill="#ffffff" opacity="0.14"/>
+        <g font-family="'Arial Black','Montserrat',sans-serif" font-weight="900" fill="#ffd21e" stroke="#caa400" stroke-width="1">
+          <text x="185" y="112" font-size="82" text-anchor="middle" letter-spacing="-2">ensina</text>
+          <text x="416" y="112" font-size="82" text-anchor="middle" letter-spacing="-2">me</text>
+        </g>
+        <text class="sub" x="270" y="192" text-anchor="middle" font-family="'Montserrat',sans-serif" font-size="26" letter-spacing="14">языковой центр</text>
+      </svg>
+    </a>
     <nav class="nav" id="nav">
       <a href="#courses">Курсы</a>
       <a href="#teachers">Преподаватели</a>
@@ -564,7 +582,16 @@ h3{font-size:20px}
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="assets/logo-dark.svg" alt="Ensina-me">
+        <svg class="brand-logo" viewBox="0 0 540 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ensina-me">
+          <polygon points="34,20 342,20 330,150 34,150 60,85" fill="#1f9430" stroke="#0c5d1c" stroke-width="4" stroke-linejoin="round"/>
+          <polygon points="342,20 506,20 480,85 506,150 330,150" fill="#d0181f" stroke="#8f0c11" stroke-width="4" stroke-linejoin="round"/>
+          <polygon points="40,26 500,26 498,40 42,40" fill="#ffffff" opacity="0.14"/>
+          <g font-family="'Arial Black','Montserrat',sans-serif" font-weight="900" fill="#ffd21e" stroke="#caa400" stroke-width="1">
+            <text x="185" y="112" font-size="82" text-anchor="middle" letter-spacing="-2">ensina</text>
+            <text x="416" y="112" font-size="82" text-anchor="middle" letter-spacing="-2">me</text>
+          </g>
+          <text class="sub" x="270" y="192" text-anchor="middle" font-family="'Montserrat',sans-serif" font-size="26" letter-spacing="14">языковой центр</text>
+        </svg>
         <p>Языковой центр Ensina-me. Португальский (европейский и бразильский) и испанский с носителями языка. Очно на Новослободской и онлайн.</p>
         <div class="social">
           <a class="tg" href="#" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>Telegram-канал</a>
