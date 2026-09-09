@@ -10,361 +10,356 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   ЧЕРНОВИК 1 — «Зелёный основной, красный/золото — акцент»
-   Палитра вынесена в :root между маркерами THEME — черновики 2 и 3
-   отличаются ТОЛЬКО этим блоком (и файлом логотипа).
+   ENSINA-ME — редизайн-эволюция (Вариант A = body.vA)
+   Бренд-палитра: белый / зелёный / красный / жёлтый.
+   Последовательность цветных полос: белый → зелёный → красный → жёлтый.
+   Кнопки CTA — яркий жёлтый из логотипа. Логотип без изменений.
+   Вариант B (body.vB) отличается только меню/компоновкой/раскладкой полос.
+   Вёрстка mobile-first.
    ============================================================ */
-/*THEME_START*/
 :root{
-  /* зелёный — основной акцент (кнопки, заголовки-акценты, ссылки) */
-  --primary:      #15693a;   /* глубокий зелёный */
-  --primary-2:    #0e4a29;   /* тёмный зелёный */
-  --primary-soft: #e7f0ea;   /* светлая зелёная подложка */
-  --accent:       #c1902f;   /* приглушённое золото — акцент */
-  --accent-2:     #a97a1f;
-  --red:          #a52a1f;
-  --red-2:        #8a1f16;
+  /* --- ОСНОВНАЯ ПАЛИТРА БРЕНДА --- */
+  --green:    #1a8a38;   /* зелёный флага/логотипа */
+  --green-2:  #14722e;
+  --green-3:  #0e3d22;   /* тёмный зелёный (футер) */
+  --red:      #cc2027;   /* красный флага/логотипа */
+  --red-2:    #a81a20;
+  --yellow:   #ffd21e;   /* яркий жёлтый из логотипа — кнопки */
+  --yellow-2: #f4c400;
 
-  /* цвета флага Португалии — для триколор-разделителя */
-  --flag-red:     #d0181f;
-  --flag-yellow:  #f2c521;
-  --flag-green:   #1f9430;
+  --primary:   var(--green);
+  --primary-2: var(--green-2);
+  --primary-soft:#e7f3ea;
 
-  /* фоновые тона секций */
-  --c-light:      #f4f6f7;   /* светлые секции */
-  --c-blue:       #cde4f5;   /* пастельный голубой */
-  --c-beige:      #ece0cc;   /* «кофе с молоком» */
-  --c-dark:       #121212;   /* чёрный акцентный блок */
+  /* кнопка CTA — яркий приятный жёлтый */
+  --cta-bg:    #ffd21e;
+  --cta-bg-h:  #f4c400;
+  --cta-fg:    #241f04;
 
-  /* поверхности / текст (по умолчанию — светлая тема) */
-  --bg:           #f4f6f7;
-  --surface:      #ffffff;
-  --text:         #1b2620;
-  --text-muted:   #5a6b62;
-  --border:       #d5ddd6;
+  /* второстепенные фоны отдельных блоков (не основная палитра) */
+  --c-blue:   #dceaf4;
+  --c-beige:  #efe6d5;
 
-  --shadow:       0 1px 3px rgba(15,50,30,.08), 0 4px 14px rgba(15,50,30,.06);
-  --shadow-hover: 0 4px 10px rgba(15,50,30,.12), 0 12px 30px rgba(15,50,30,.10);
+  /* поверхности / текст */
+  --bg:        #ffffff;
+  --surface:   #ffffff;
+  --text:      #1f241d;
+  --text-muted:#5c665c;
+  --border:    #e2e7e1;
 
-  --on-primary:   #ffffff;
-  --on-accent:    #241a05;
+  --shadow:       0 1px 2px rgba(20,50,30,.06), 0 6px 18px rgba(20,50,30,.07);
+  --shadow-hover: 0 4px 10px rgba(20,50,30,.10), 0 14px 32px rgba(20,50,30,.10);
 
-  --header-bg:    #ffffff;
-  --nav-text:     #1b2620;
+  --header-bg: #ffffff;
 
-  /* hero — светлый фон, тёмный текст, зелёный акцент */
-  --hero-bg:          linear-gradient(180deg,#ffffff 0%,#eef2f0 100%);
-  --hero-text:        #1b2620;
-  --hero-lead:        #5a6b62;
-  --hero-accent:      #15693a;
-  --hero-card-bg:     #ffffff;
-  --hero-card-border: #d5ddd6;
-  --hero-card-text:   #1b2620;
-  --hero-card-num:    #15693a;
-  --hero-ghost-bd:      #15693a;
-  --hero-ghost-tx:      #15693a;
-  --hero-ghost-hbg:     var(--primary);
-  --hero-ghost-htx:     #ffffff;
-
-  --photo-grad:  repeating-linear-gradient(45deg,#dfe6e0 0 14px,#d6ded7 14px 28px);
-  --footer-bg:   #0e3d22;
-  --footer-text: #bcd0c2;
-  --footer-head: #ffffff;
-  --logo-sub:    #2b2b2b;
-
-  --radius: 4px;
-  --maxw:   1180px;
-  --font:      'PT Sans', 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
-  --font-head: 'Montserrat', 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --maxw:   1160px;
+  --font:      'PT Sans','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --font-head: 'Montserrat','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
 }
-/*THEME_END*/
 
-*{box-sizing:border-box;margin:0;padding:0}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{overflow-wrap:break-word}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-section{padding:74px 0}
-.section-head{max-width:740px;margin:0 0 40px}
-.section-head.center{margin-left:auto;margin-right:auto;text-align:center}
-.eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-h1,h2,h3{line-height:1.18;color:var(--primary);font-weight:700;font-family:var(--font-head)}
-h2{font-size:32px;margin-bottom:14px}
-h3{font-size:20px}
-.section-head p{color:var(--text-muted);font-size:17px}
-/* ============================================================
-   ФОНЫ СЕКЦИЙ + ТРИКОЛОР-РАЗДЕЛИТЕЛЬ
-   Композиция задаётся классом на <body>: s1 / s2 / s3.
-   Меняя её, получаем разную раскладку цветов при той же вёрстке.
-   ============================================================ */
-section{position:relative;background:var(--c-light)}
-.hero{background:var(--hero-bg)}
-/* тонкая брендовая триколор-полоса между секциями */
-section::before,.site-footer::before{
-  content:"";position:absolute;top:0;left:0;right:0;height:6px;
-  background:repeating-linear-gradient(90deg,
-    var(--flag-red) 0 44px, var(--flag-yellow) 44px 88px, var(--flag-green) 88px 132px);
-}
-.hero::before{display:none}
-.site-footer{position:relative}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+h1,h2,h3{line-height:1.16;color:var(--primary);font-weight:800;font-family:var(--font-head)}
 
-/* --- палитры-«краски» (переопределяют переменные внутри секции) --- */
-.paint-blue{background:var(--c-blue);--surface:#ffffff;--border:#b3d3ea;--primary-soft:#e2eef8}
-.paint-beige{background:var(--c-beige);--surface:#fffaf0;--border:#e0cfb2;--primary-soft:#efe6d5}
-.paint-dark{background:var(--c-dark);--text:#f4f4f5;--text-muted:#b9bdc2;--surface:#1c1c1e;--border:#333638;--primary:#f2c521;--primary-soft:rgba(242,197,33,.14)}
-.paint-dark .cta-band{background:#1c1c1e;border:1px solid #333638}
-.paint-dark .cta-band h2{color:#f2c521}
-.paint-dark .promo.club{background:linear-gradient(135deg,#15693a,#0e4a29)}
-
-/* ============ СХЕМА 1 ============ */
-body.s1 #about,   body.s1 #faq{background:var(--c-blue);--surface:#ffffff;--border:#b3d3ea;--primary-soft:#e2eef8}
-body.s1 #club,    body.s1 #contacts{background:var(--c-beige);--surface:#fffaf0;--border:#e0cfb2;--primary-soft:#efe6d5}
-body.s1 #level-test{background:var(--c-dark);--text:#f4f4f5;--text-muted:#b9bdc2;--surface:#1c1c1e;--border:#333638;--primary:#f2c521;--primary-soft:rgba(242,197,33,.14)}
-body.s1 #level-test .cta-band{background:#1c1c1e;border:1px solid #333638}
-body.s1 #level-test .cta-band h2{color:#f2c521}
-
-/* ============ СХЕМА 2 ============ */
-body.s2 #courses, body.s2 #pricing{background:var(--c-blue);--surface:#ffffff;--border:#b3d3ea;--primary-soft:#e2eef8}
-body.s2 #reviews, body.s2 #faq{background:var(--c-beige);--surface:#fffaf0;--border:#e0cfb2;--primary-soft:#efe6d5}
-body.s2 #club{background:var(--c-dark);--text:#f4f4f5;--text-muted:#b9bdc2;--surface:#1c1c1e;--border:#333638;--primary:#f2c521;--primary-soft:rgba(242,197,33,.14)}
-body.s2 #club .promo.club{background:linear-gradient(135deg,#15693a,#0e4a29)}
-
-/* ============ СХЕМА 3 ============ */
-body.s3 #teachers, body.s3 #reviews{background:var(--c-blue);--surface:#ffffff;--border:#b3d3ea;--primary-soft:#e2eef8}
-body.s3 #about,    body.s3 #articles, body.s3 #contacts{background:var(--c-beige);--surface:#fffaf0;--border:#e0cfb2;--primary-soft:#efe6d5}
-body.s3 #level-test{background:var(--c-dark);--text:#f4f4f5;--text-muted:#b9bdc2;--surface:#1c1c1e;--border:#333638;--primary:#f2c521;--primary-soft:rgba(242,197,33,.14)}
-body.s3 #level-test .cta-band{background:#1c1c1e;border:1px solid #333638}
-body.s3 #level-test .cta-band h2{color:#f2c521}
-
-/* ---------- Кнопки ---------- */
-.btn{display:inline-block;font-family:var(--font-head);font-size:16px;font-weight:600;padding:14px 28px;border:2px solid transparent;border-radius:var(--radius);cursor:pointer;transition:.15s ease;text-align:center}
-.btn-accent{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
-.btn-accent:hover{background:var(--accent-2);border-color:var(--accent-2)}
-.btn-primary{background:var(--primary);color:var(--on-primary);border-color:var(--primary)}
+/* ---------- КНОПКИ (крупные тап-цели, mobile-first) ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-head);
+  font-size:16px;font-weight:700;padding:14px 24px;border:2px solid transparent;border-radius:var(--radius-sm);
+  cursor:pointer;transition:.15s ease;text-align:center;min-height:50px}
+.btn-cta{background:var(--cta-bg);color:var(--cta-fg);border-color:var(--cta-bg)}
+.btn-cta:hover{background:var(--cta-bg-h);border-color:var(--cta-bg-h)}
+.btn-primary{background:var(--primary);color:#fff;border-color:var(--primary)}
 .btn-primary:hover{background:var(--primary-2);border-color:var(--primary-2)}
 .btn-outline{background:transparent;border-color:var(--primary);color:var(--primary)}
-.btn-outline:hover{background:var(--primary);color:var(--on-primary)}
+.btn-outline:hover{background:var(--primary);color:#fff}
 
 /* ============================================================ ХЕДЕР */
-.site-header{position:sticky;top:0;z-index:50;background:var(--header-bg);border-bottom:1px solid var(--border)}
-.header-inner{display:flex;align-items:center;gap:30px;height:74px}
-.brand-logo{height:46px;width:auto;display:block}
-.brand-logo .sub{fill:var(--logo-sub)}
-.nav{display:flex;gap:22px;margin-left:auto}
-.nav a{font-size:15px;font-weight:500;color:var(--nav-text);padding:6px 0;position:relative}
-.nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--accent);transition:width .18s}
-.nav a:hover::after{width:100%}
-.header-cta .btn{padding:10px 20px}
-.burger{display:none;margin-left:auto;background:none;border:0;cursor:pointer;padding:8px}
-.burger span{display:block;width:24px;height:2px;background:var(--primary);margin:5px 0}
+.util-bar{display:none;background:var(--green-3);color:#d7e6dc;font-size:14px}
+.util-bar .wrap{display:flex;align-items:center;gap:20px;height:40px}
+.util-bar a{color:#eaf3ec;font-weight:600}
+.util-bar .u-sp{margin-left:auto}
+body.vB .util-bar{display:block}
 
-/* ============================================================ HERO */
-.hero{background:var(--hero-bg);color:var(--hero-text);padding:86px 0}
-.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
-.hero h1{color:var(--hero-text);font-size:44px;line-height:1.12;margin-bottom:20px}
-.hero h1 em{font-style:normal;color:var(--hero-accent)}
-.hero .lead{font-size:18px;color:var(--hero-lead);max-width:560px;margin-bottom:30px}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.hero-actions .ghost{background:transparent;border-color:var(--hero-ghost-bd);color:var(--hero-ghost-tx)}
-.hero-actions .ghost:hover{background:var(--hero-ghost-hbg);color:var(--hero-ghost-htx)}
-.hero-stats{display:flex;gap:38px;margin-top:42px;flex-wrap:wrap}
-.hero-stats .num{font-size:30px;font-weight:800;color:var(--hero-card-num)}
-.hero-stats .lbl{font-size:14px;color:var(--hero-lead)}
-.hero-visual{background:var(--hero-card-bg);border:1px solid var(--hero-card-border);border-radius:var(--radius);padding:32px}
-.hero-visual h3{color:var(--hero-text);font-size:18px;margin-bottom:16px}
+.site-header{position:sticky;top:0;z-index:60;background:var(--header-bg);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;gap:18px;height:66px}
+.brand-logo{height:42px;width:auto;display:block}
+.brand-logo .sub{fill:var(--logo-sub,#2b2b2b)}
+.nav{display:flex;gap:22px;margin-left:auto}
+.nav a{font-size:15px;font-weight:700;color:var(--text);font-family:var(--font-head);padding:6px 0;position:relative;white-space:nowrap}
+.nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:3px;background:var(--yellow);transition:width .18s}
+.nav a:hover::after{width:100%}
+.header-cta{margin-left:6px}
+.header-cta .btn{padding:10px 18px;min-height:0}
+.burger{display:none;margin-left:auto;background:none;border:0;cursor:pointer;padding:10px;border-radius:8px}
+.burger span{display:block;width:26px;height:3px;border-radius:2px;background:var(--green);margin:5px 0;transition:.2s}
+/* Вариант B: центрированное меню */
+body.vB .header-inner{flex-wrap:wrap}
+body.vB .nav{margin:0 auto}
+
+/* ============================================================ СЕКЦИИ + ПОЛОСЫ */
+section{padding:48px 0;position:relative}
+.section-head{max-width:720px;margin:0 0 28px}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.eyebrow{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.10em;text-transform:uppercase;color:var(--eyefg,var(--red));margin-bottom:10px;font-family:var(--font-head)}
+.section-head h2{color:var(--headfg,var(--primary));font-size:27px;margin-bottom:10px}
+.section-head p{color:var(--leadfg,var(--text-muted));font-size:16px}
+
+/* цветные «краски» полос — переопределяют переменные внутри секции */
+.pg{background:var(--green);--headfg:#fff;--eyefg:#ffe79a;--leadfg:#e3f2e7;--surface:#fff;--border:#cfe6d6}
+.pr{background:var(--red); --headfg:#fff;--eyefg:#ffe79a;--leadfg:#ffe3e0;--surface:#fff;--border:#f0cbc8}
+.py{background:var(--yellow);--headfg:#26210d;--eyefg:#7a5f00;--leadfg:#5c4f18;--surface:#fff;--border:#ecd98a}
+.pblue{background:var(--c-blue);--surface:#fff;--border:#bcd5e8}
+.pbeige{background:var(--c-beige);--surface:#fffaf0;--border:#e0cfb2}
+/* тонкая контрастная линия сверху цветной полосы — аккуратный стык */
+.pg,.pr,.py{border-top:3px solid rgba(0,0,0,.10)}
+
+/* ---- РАСКЛАДКА ПОЛОС ПО ВАРИАНТАМ ---- */
+/* ЗЕЛЁНЫЙ */
+body.vA #about,  body.vA #pricing,
+body.vB #courses,body.vB #pricing{background:var(--green);--headfg:#fff;--eyefg:#ffe79a;--leadfg:#e3f2e7;--surface:#fff;--border:#cfe6d6;border-top:3px solid rgba(0,0,0,.10)}
+/* КРАСНЫЙ */
+body.vA #schedule,
+body.vB #schedule,body.vB #reviews{background:var(--red);--headfg:#fff;--eyefg:#ffe79a;--leadfg:#ffe3e0;--surface:#fff;--border:#f0cbc8;border-top:3px solid rgba(0,0,0,.10)}
+/* ЖЁЛТЫЙ */
+body.vA #courses,body.vA #club,
+body.vB #teachers,body.vB #club{background:var(--yellow);--headfg:#26210d;--eyefg:#7a5f00;--leadfg:#5c4f18;--surface:#fff;--border:#ecd98a;border-top:3px solid rgba(0,0,0,.10)}
+
+/* ============================================================ HERO (белая полоса) */
+.hero{padding:44px 0 40px;background:linear-gradient(180deg,#ffffff,#f4f8f4)}
+.hero h1{font-size:32px;line-height:1.12;margin-bottom:16px;color:var(--text)}
+.hero h1 .g{color:var(--green)}
+.hero h1 .r{color:var(--red)}
+.hero .lead{font-size:17px;color:var(--text-muted);margin-bottom:24px}
+.hero-actions{display:flex;flex-direction:column;gap:12px}
+.hero-actions .btn{width:100%}
+.hero-stats{display:flex;gap:24px;margin-top:28px;flex-wrap:wrap}
+.hero-stats .num{font-size:26px;font-weight:800;color:var(--green);font-family:var(--font-head)}
+.hero-stats .lbl{font-size:13px;color:var(--text-muted)}
+.hero-visual{margin-top:28px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.hero-visual h3{font-size:17px;margin-bottom:12px}
 .hero-visual ul{list-style:none}
-.hero-visual li{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--hero-card-border);font-size:15px;color:var(--hero-card-text)}
+.hero-visual li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);font-size:15px;color:var(--text)}
 .hero-visual li:last-child{border-bottom:0}
-.hero-visual li b{color:var(--hero-card-num)}
+.hero-visual li b{color:var(--red);font-family:var(--font-head)}
+body.vB .hero{text-align:center}
+body.vB .hero .lead{margin-left:auto;margin-right:auto;max-width:620px}
+body.vB .hero-actions{flex-direction:row;justify-content:center;flex-wrap:wrap}
+body.vB .hero-actions .btn{width:auto}
+body.vB .hero-stats{justify-content:center}
 
 /* ============================================================ КАРТОЧКИ / СЕТКИ */
-.cards{display:grid;gap:22px}
-.cards-4{grid-template-columns:repeat(4,1fr)}
-.cards-3{grid-template-columns:repeat(3,1fr)}
-.cards-2{grid-template-columns:repeat(2,1fr)}
+.cards{display:grid;gap:16px}
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);transition:.18s}
 .card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px)}
-
-.feature{padding:28px 24px}
-.feature .ic{width:48px;height:48px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;background:var(--primary-soft);color:var(--primary);font-size:22px;font-weight:800;margin-bottom:16px}
-.feature h3{margin-bottom:8px}
+.feature{padding:22px 20px}
+.feature .ic{width:46px;height:46px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;background:var(--primary-soft);color:var(--green);font-size:20px;font-weight:800;margin-bottom:14px;font-family:var(--font-head)}
+.feature h3{font-size:18px;margin-bottom:8px;color:var(--green)}
 .feature p{color:var(--text-muted);font-size:15px}
 
-/* курсы */
-.course{padding:30px 26px;display:flex;flex-direction:column}
-.course .tag{align-self:flex-start;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:14px}
-.course h3{margin-bottom:10px}
-.course p{color:var(--text-muted);font-size:15px;margin-bottom:18px;flex:1}
-.course-foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:16px}
-.course .price{font-weight:700;color:var(--primary);font-size:15px}
+.course{padding:24px 22px;display:flex;flex-direction:column}
+.course .tag{align-self:flex-start;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--red);margin-bottom:12px;font-family:var(--font-head)}
+.course h3{font-size:18px;margin-bottom:10px;color:var(--green)}
+.course p{color:var(--text-muted);font-size:15px;margin-bottom:16px;flex:1}
+.course-foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:14px;gap:10px;flex-wrap:wrap}
+.course .price{font-weight:800;color:var(--green);font-size:15px;font-family:var(--font-head)}
 .course .price small{font-weight:400;color:var(--text-muted);font-size:13px}
-.course a.more{font-size:14px;font-weight:600;color:var(--accent)}
-.course a.more:hover{text-decoration:underline}
+.course a.more{font-size:14px;font-weight:700;color:var(--red)}
 
-/* преподаватели */
+/* ---- РАСПИСАНИЕ ---- */
+.schedule{display:flex;flex-direction:column;gap:12px}
+.sch-row{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:18px 20px;display:grid;grid-template-columns:1fr;gap:8px}
+.sch-lang{font-weight:800;font-family:var(--font-head);color:var(--green);font-size:16px}
+.sch-lang span{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--red);padding:2px 8px;border-radius:20px;margin-left:6px;vertical-align:middle}
+.sch-when{color:var(--text);font-weight:700}
+.sch-fmt{color:var(--text-muted);font-size:14px}
+.sch-row .btn{min-height:44px;padding:10px 18px}
+.sch-note{margin-top:14px;font-size:14px;color:var(--leadfg,var(--text-muted))}
+
+/* ---- ПРЕПОДАВАТЕЛИ ---- */
 .teacher{overflow:hidden}
-.teacher .photo{aspect-ratio:4/5;background:var(--photo-grad);display:flex;align-items:center;justify-content:center;color:#8896a4;font-size:13px;font-weight:600}
-.teacher .t-body{padding:18px 20px}
-.teacher h3{font-size:18px;margin-bottom:4px}
-.teacher .exp{font-size:13px;color:var(--accent);font-weight:700;margin-bottom:10px}
+.teacher .photo{aspect-ratio:4/5;background:repeating-linear-gradient(45deg,#e6ebe6 0 14px,#dde3dd 14px 28px);display:flex;align-items:center;justify-content:center;color:#8a968a;font-size:13px;font-weight:600}
+.teacher .t-body{padding:16px 18px}
+.teacher h3{font-size:18px;margin-bottom:4px;color:var(--green)}
+.teacher .exp{font-size:13px;color:var(--red);font-weight:700;margin-bottom:10px;font-family:var(--font-head)}
 .teacher p{font-size:14px;color:var(--text-muted)}
-.teacher .langs{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
-.teacher .langs span{font-size:12px;background:var(--bg-alt);border:1px solid var(--border);padding:3px 9px;border-radius:var(--radius);color:var(--text-muted)}
-.center-cta{margin-top:34px;text-align:center}
+.teacher .langs{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap}
+.teacher .langs span{font-size:12px;background:var(--primary-soft);border:1px solid var(--border);padding:3px 9px;border-radius:20px;color:var(--green);font-weight:700}
+.center-cta{margin-top:26px;text-align:center}
 
-/* CTA-полоса */
-.cta-band{background:var(--primary);color:#fff;border-radius:var(--radius);padding:44px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
-.cta-band h2{color:#fff;margin-bottom:6px}
-.cta-band p{color:rgba(255,255,255,.9);font-size:17px;max-width:600px}
+/* ---- CTA-полоса (тест на уровень) — фирменная зелёная карточка ---- */
+.cta-band{background:linear-gradient(135deg,var(--green),var(--green-2));color:#fff;border-radius:var(--radius);padding:30px 26px;text-align:center}
+.cta-band h2{color:#fff;font-size:24px;margin-bottom:8px}
+.cta-band p{color:rgba(255,255,255,.92);font-size:16px;margin:0 auto 20px;max-width:600px}
 
-/* стоимость */
-.price-card{padding:32px 28px;display:flex;flex-direction:column}
-.price-card.featured{border:2px solid var(--accent);position:relative}
-.price-card.featured .badge{position:absolute;top:-13px;left:28px;background:var(--accent);color:var(--on-accent);font-size:12px;font-weight:700;padding:4px 12px;border-radius:var(--radius);text-transform:uppercase;letter-spacing:.05em}
-.price-card h3{font-size:19px;margin-bottom:6px}
-.price-card .sub{font-size:14px;color:var(--text-muted);margin-bottom:20px}
-.price-card .amount{font-size:34px;font-weight:800;color:var(--primary);line-height:1}
+/* ---- СТОИМОСТЬ ---- */
+.price-card{padding:26px 22px;display:flex;flex-direction:column}
+.price-card.featured{border:2px solid var(--yellow);position:relative}
+.price-card.featured .badge{position:absolute;top:-13px;left:22px;background:var(--yellow);color:var(--cta-fg);font-size:12px;font-weight:800;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.04em;font-family:var(--font-head)}
+.price-card h3{font-size:18px;margin-bottom:6px;color:var(--green)}
+.price-card .sub{font-size:14px;color:var(--text-muted);margin-bottom:18px}
+.price-card .amount{font-size:31px;font-weight:800;color:var(--green);line-height:1;font-family:var(--font-head)}
 .price-card .amount small{font-size:15px;font-weight:500;color:var(--text-muted)}
-.price-card ul{list-style:none;margin:22px 0;flex:1}
-.price-card li{padding:9px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--text);display:flex;gap:10px}
-.price-card li::before{content:"✓";color:var(--primary);font-weight:800}
+.price-card ul{list-style:none;margin:18px 0;flex:1}
+.price-card li{padding:8px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--text);display:flex;gap:10px}
+.price-card li::before{content:"✓";color:var(--green);font-weight:800}
 .price-card li:last-child{border-bottom:0}
-.pay-note{margin-top:26px;text-align:center;font-size:14px;color:var(--text-muted)}
-.pay-note b{color:var(--text)}
+.pay-note{margin-top:22px;text-align:center;font-size:14px;color:var(--leadfg,var(--text-muted))}
+.pay-note b{color:var(--headfg,var(--text))}
 
-/* отзывы */
-.review{padding:26px 24px}
-.review .stars{color:var(--accent);letter-spacing:2px;margin-bottom:14px}
-.review .quote{font-size:15px;color:var(--text);margin-bottom:20px}
+/* ---- ОТЗЫВЫ ---- */
+.review{padding:22px 20px}
+.review .stars{color:var(--yellow);letter-spacing:2px;margin-bottom:12px;-webkit-text-stroke:.4px #e0b100}
+.review .quote{font-size:15px;color:var(--text);margin-bottom:16px}
 .review .who{display:flex;align-items:center;gap:12px}
-.review .ava{width:44px;height:44px;border-radius:50%;background:var(--primary-soft);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--primary)}
+.review .ava{width:42px;height:42px;border-radius:50%;background:var(--primary-soft);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--green);font-family:var(--font-head)}
 .review .who b{display:block;font-size:15px;color:var(--text)}
 .review .who span{font-size:13px;color:var(--text-muted)}
 
-/* клуб + сертификат */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.promo{border-radius:var(--radius);padding:38px 34px;color:#fff;overflow:hidden}
-.promo.club{background:linear-gradient(135deg,var(--primary),var(--primary-2))}
+/* ---- КЛУБ + СЕРТИФИКАТ ---- */
+.split{display:grid;grid-template-columns:1fr;gap:16px}
+.promo{border-radius:var(--radius);padding:30px 26px;color:#fff;overflow:hidden}
+.promo.club{background:linear-gradient(135deg,var(--green),var(--green-2))}
 .promo.gift{background:linear-gradient(135deg,var(--red),var(--red-2))}
-.promo h3{color:#fff;font-size:24px;margin-bottom:10px}
-.promo p{color:rgba(255,255,255,.9);margin-bottom:22px;font-size:16px}
-.promo .btn{background:#fff;color:#17201a;border-color:#fff;padding:11px 22px}
-.promo .btn:hover{background:rgba(255,255,255,.88)}
+.promo h3{color:#fff;font-size:22px;margin-bottom:10px}
+.promo p{color:rgba(255,255,255,.92);margin-bottom:20px;font-size:15px}
+.promo .btn{background:#fff;color:#1f241d;border-color:#fff}
+.promo .btn:hover{background:rgba(255,255,255,.9)}
 
-/* статьи */
+/* ---- СТАТЬИ ---- */
 .article{overflow:hidden;display:flex;flex-direction:column}
-.article .thumb{aspect-ratio:16/9;background:var(--photo-grad);display:flex;align-items:center;justify-content:center;color:#8896a4;font-size:12px;font-weight:600}
-.article .a-body{padding:20px 22px;display:flex;flex-direction:column;flex:1}
-.article .date{font-size:12px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
-.article h3{font-size:17px;margin-bottom:10px}
+.article .thumb{aspect-ratio:16/9;background:repeating-linear-gradient(45deg,#e6ebe6 0 14px,#dde3dd 14px 28px);display:flex;align-items:center;justify-content:center;color:#8a968a;font-size:12px;font-weight:600}
+.article .a-body{padding:18px 20px;display:flex;flex-direction:column;flex:1}
+.article .date{font-size:12px;color:var(--red);font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px;font-family:var(--font-head)}
+.article h3{font-size:17px;margin-bottom:10px;color:var(--green)}
 .article p{font-size:14px;color:var(--text-muted);flex:1}
-.article .read{margin-top:14px;font-size:14px;font-weight:600;color:var(--primary)}
+.article .read{margin-top:14px;font-size:14px;font-weight:700;color:var(--green)}
 
-/* FAQ */
-.faq{max-width:820px;margin:0 auto}
-.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
-.faq-q{width:100%;text-align:left;background:none;border:0;padding:20px 24px;font-family:inherit;font-size:17px;font-weight:600;color:var(--primary);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
-.faq-q .sign{font-size:22px;color:var(--accent);transition:.2s;flex-shrink:0}
+/* ---- FAQ ---- */
+.faq{max-width:800px;margin:0 auto}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:10px;overflow:hidden}
+.faq-q{width:100%;text-align:left;background:none;border:0;padding:18px 20px;font-family:var(--font-head);font-size:16px;font-weight:700;color:var(--green);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq-q .sign{font-size:22px;color:var(--red);transition:.2s;flex-shrink:0}
 .faq-item.open .faq-q .sign{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;color:var(--text-muted);font-size:15px}
-.faq-a p{padding:0 24px 20px}
+.faq-a p{padding:0 20px 18px}
 
-/* ============================================================ AI-АССИСТЕНТ (вместо формы) */
-.assistant{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
-.assistant .eyebrow{color:var(--accent)}
-.assistant h2{margin-bottom:14px}
-.assistant p.lead{color:var(--text-muted);font-size:17px;margin-bottom:26px}
-.assistant .btn{margin-bottom:28px}
-.contact-rows .row{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--border)}
-.contact-rows .k{font-size:13px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;min-width:110px}
-.contact-rows .v{font-weight:600;color:var(--text)}
-/* превью чата */
-.chat-preview{background:var(--surface);border:1px solid var(--border);border-radius:10px;box-shadow:var(--shadow);overflow:hidden}
-.chat-preview .cp-head{background:var(--primary);color:#fff;padding:16px 20px;display:flex;align-items:center;gap:12px}
-.chat-preview .cp-head .dot{width:10px;height:10px;border-radius:50%;background:#5fe08a;box-shadow:0 0 0 3px rgba(95,224,138,.25)}
-.chat-preview .cp-head b{font-size:15px}
-.chat-preview .cp-head span{font-size:12px;opacity:.8;display:block}
-.chat-preview .cp-body{padding:22px 20px;display:flex;flex-direction:column;gap:12px;background:var(--bg)}
-.bubble{max-width:82%;padding:12px 15px;border-radius:12px;font-size:14px;line-height:1.45}
-.bubble.bot{align-self:flex-start;background:var(--surface);border:1px solid var(--border);color:var(--text);border-bottom-left-radius:3px}
-.bubble.user{align-self:flex-end;background:var(--primary);color:#fff;border-bottom-right-radius:3px}
-.chat-chips{display:flex;gap:8px;flex-wrap:wrap;padding:0 20px 16px;background:var(--bg)}
-.chat-chips span{font-size:13px;border:1px solid var(--primary);color:var(--primary);border-radius:16px;padding:5px 12px;cursor:pointer}
-.chat-chips span:hover{background:var(--primary);color:#fff}
-.cp-input{display:flex;gap:8px;padding:14px 16px;border-top:1px solid var(--border);background:var(--surface)}
-.cp-input input{flex:1;border:1px solid var(--border);border-radius:20px;padding:10px 16px;font-family:inherit;font-size:14px;background:var(--bg);color:var(--text)}
-.cp-input button{border:0;background:var(--accent);color:var(--on-accent);width:40px;border-radius:50%;font-size:18px;cursor:pointer;flex-shrink:0}
+/* ---- AI-АССИСТЕНТ + КОНТАКТЫ ---- */
+.assistant{display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
+.assistant .btn{margin-bottom:22px}
+.contact-rows .row{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}
+.contact-rows .k{font-size:13px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em;min-width:90px}
+.contact-rows .v{font-weight:700;color:var(--text)}
+.chat-preview{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.cp-head{background:var(--green);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:10px}
+.cp-head .dot{width:10px;height:10px;border-radius:50%;background:#7ff0a3;box-shadow:0 0 0 3px rgba(127,240,163,.25)}
+.cp-head b{font-size:15px}.cp-head span{font-size:12px;opacity:.85;display:block}
+.cp-body{padding:18px;display:flex;flex-direction:column;gap:10px;background:#f4f8f4}
+.bubble{max-width:85%;padding:11px 14px;border-radius:12px;font-size:14px;line-height:1.45}
+.bubble.bot{align-self:flex-start;background:#fff;border:1px solid var(--border);color:var(--text);border-bottom-left-radius:3px}
+.bubble.user{align-self:flex-end;background:var(--green);color:#fff;border-bottom-right-radius:3px}
+.chat-chips{display:flex;gap:8px;flex-wrap:wrap;padding:0 18px 14px;background:#f4f8f4}
+.chat-chips span{font-size:13px;border:1px solid var(--green);color:var(--green);border-radius:16px;padding:5px 12px;cursor:pointer}
+.cp-input{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--border);background:#fff}
+.cp-input input{flex:1;border:1px solid var(--border);border-radius:20px;padding:10px 14px;font-family:inherit;font-size:14px}
+.cp-input button{border:0;background:var(--cta-bg);color:var(--cta-fg);width:40px;border-radius:50%;font-size:18px;cursor:pointer;flex-shrink:0}
 
 /* ============================================================ ФУТЕР */
-.site-footer{background:var(--footer-bg);color:var(--footer-text);padding:56px 0 0}
-.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.12)}
-.footer-brand .brand-logo{height:44px;margin-bottom:16px}
+.site-footer{background:var(--green-3);color:#bcd0c2;padding:44px 0 0}
+.footer-top{display:grid;grid-template-columns:1fr;gap:28px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.12)}
+.footer-brand .brand-logo{height:42px;margin-bottom:14px}
 .footer-brand .brand-logo .sub{fill:#e6e9ec}
-.footer-brand p{font-size:14px;color:var(--footer-text);max-width:330px}
-.social{display:flex;gap:12px;margin-top:20px}
-.social a{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#fff;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);padding:10px 16px;border-radius:var(--radius);transition:.15s}
+.footer-brand p{font-size:14px;color:#a9c2b1;max-width:340px}
+.social{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.social a{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:#fff;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);padding:10px 16px;border-radius:var(--radius-sm)}
 .social a.tg:hover{background:#2aa2e0;border-color:#2aa2e0}
 .social a.yt:hover{background:#e0201b;border-color:#e0201b}
 .social a svg{width:20px;height:20px;fill:currentColor}
-.footer-col h4{color:var(--footer-head);font-size:15px;margin-bottom:14px}
-.footer-col a{display:block;font-size:14px;color:var(--footer-text);padding:5px 0}
+.footer-col h4{color:#fff;font-size:15px;margin-bottom:12px;font-family:var(--font-head)}
+.footer-col a{display:block;font-size:14px;color:#a9c2b1;padding:5px 0}
 .footer-col a:hover{color:#fff}
-.footer-bottom{padding:20px 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.footer-bottom .legal{display:flex;gap:20px;flex-wrap:wrap}
-.footer-bottom .legal a{font-size:12px;color:rgba(255,255,255,.45)}
-.footer-bottom .legal a:hover{color:var(--footer-text)}
-.footer-bottom .copy{font-size:12px;color:rgba(255,255,255,.45)}
+.footer-bottom{padding:18px 0;display:flex;flex-direction:column;gap:10px}
+.footer-bottom .legal{display:flex;gap:16px;flex-wrap:wrap}
+.footer-bottom .legal a{font-size:12px;color:rgba(255,255,255,.5)}
+.footer-bottom .copy{font-size:12px;color:rgba(255,255,255,.5)}
 
-/* ============================================================ ПЛАВАЮЩИЙ ЧАТ-ВИДЖЕТ */
-.chat-fab{position:fixed;right:24px;bottom:24px;z-index:90;width:62px;height:62px;border-radius:50%;background:var(--primary);color:#fff;border:0;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.28);display:flex;align-items:center;justify-content:center;transition:.15s}
+/* ============================================================ ЧАТ-ВИДЖЕТ */
+.chat-fab{position:fixed;right:16px;bottom:16px;z-index:90;width:60px;height:60px;border-radius:50%;background:var(--green);color:#fff;border:0;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.28);display:flex;align-items:center;justify-content:center}
 .chat-fab:hover{transform:scale(1.06)}
 .chat-fab svg{width:28px;height:28px;fill:#fff}
-.chat-fab .badge{position:absolute;top:-2px;right:-2px;background:var(--accent);color:var(--on-accent);font-size:11px;font-weight:800;border-radius:12px;padding:2px 7px}
-.chat-window{position:fixed;right:24px;bottom:98px;z-index:91;width:360px;max-width:calc(100vw - 32px);background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:0 18px 50px rgba(0,0,0,.32);overflow:hidden;display:none;flex-direction:column}
+.chat-fab .badge{position:absolute;top:-2px;right:-2px;background:var(--yellow);color:var(--cta-fg);font-size:11px;font-weight:800;border-radius:12px;padding:2px 7px;font-family:var(--font-head)}
+.chat-window{position:fixed;right:16px;bottom:86px;z-index:91;width:360px;max-width:calc(100vw - 24px);background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 18px 50px rgba(0,0,0,.32);overflow:hidden;display:none;flex-direction:column}
 .chat-window.open{display:flex;animation:cw .18s ease}
 @keyframes cw{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.cw-head{background:var(--primary);color:#fff;padding:16px 18px;display:flex;align-items:center;gap:12px}
-.cw-head .dot{width:10px;height:10px;border-radius:50%;background:#5fe08a;box-shadow:0 0 0 3px rgba(95,224,138,.25)}
-.cw-head b{font-size:15px}
-.cw-head span{font-size:12px;opacity:.85;display:block}
+.cw-head{background:var(--green);color:#fff;padding:15px 16px;display:flex;align-items:center;gap:10px}
+.cw-head .dot{width:10px;height:10px;border-radius:50%;background:#7ff0a3;box-shadow:0 0 0 3px rgba(127,240,163,.25)}
+.cw-head b{font-size:15px}.cw-head span{font-size:12px;opacity:.85;display:block}
 .cw-head .x{margin-left:auto;background:none;border:0;color:#fff;font-size:22px;cursor:pointer;line-height:1}
-.cw-body{padding:18px;display:flex;flex-direction:column;gap:12px;background:var(--bg);max-height:340px;overflow-y:auto}
-.cw-chips{display:flex;gap:8px;flex-wrap:wrap;padding:0 18px 14px;background:var(--bg)}
-.cw-chips span{font-size:13px;border:1px solid var(--primary);color:var(--primary);border-radius:16px;padding:5px 12px;cursor:pointer}
-.cw-chips span:hover{background:var(--primary);color:#fff}
-.cw-input{display:flex;gap:8px;padding:14px;border-top:1px solid var(--border);background:var(--surface)}
-.cw-input input{flex:1;border:1px solid var(--border);border-radius:20px;padding:10px 16px;font-family:inherit;font-size:14px;background:var(--bg);color:var(--text)}
-.cw-input button{border:0;background:var(--accent);color:var(--on-accent);width:40px;border-radius:50%;font-size:18px;cursor:pointer;flex-shrink:0}
-.cw-note{font-size:11px;color:var(--text-muted);text-align:center;padding:0 0 10px;background:var(--surface)}
+.cw-body{padding:16px;display:flex;flex-direction:column;gap:10px;background:#f4f8f4;max-height:320px;overflow-y:auto}
+.cw-chips{display:flex;gap:8px;flex-wrap:wrap;padding:0 16px 12px;background:#f4f8f4}
+.cw-chips span{font-size:13px;border:1px solid var(--green);color:var(--green);border-radius:16px;padding:5px 12px;cursor:pointer}
+.cw-input{display:flex;gap:8px;padding:12px;border-top:1px solid var(--border);background:#fff}
+.cw-input input{flex:1;border:1px solid var(--border);border-radius:20px;padding:10px 14px;font-family:inherit;font-size:14px}
+.cw-input button{border:0;background:var(--cta-bg);color:var(--cta-fg);width:40px;border-radius:50%;font-size:18px;cursor:pointer;flex-shrink:0}
+.cw-note{font-size:11px;color:var(--text-muted);text-align:center;padding:0 0 10px;background:#fff}
 
-/* ============================================================ АДАПТИВ */
-@media(max-width:960px){
-  .hero .wrap{grid-template-columns:1fr}
-  .hero h1{font-size:38px}
-  .cards-4{grid-template-columns:repeat(2,1fr)}
+/* ============================================================ ПОЯВЛЕНИЕ ПРИ СКРОЛЛЕ */
+html.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+html.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html.js .reveal{opacity:1;transform:none;transition:none}}
+
+/* ============================================================ ПЛАНШЕТ / ДЕСКТОП (mobile-first → вверх) */
+@media(min-width:600px){
+  .cards-2{grid-template-columns:repeat(2,1fr)}
   .cards-3{grid-template-columns:repeat(2,1fr)}
-  .assistant{grid-template-columns:1fr}
-  .footer-top{grid-template-columns:1fr 1fr}
+  .cards-4{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr 1fr}
+  .sch-row{grid-template-columns:1.4fr 1fr .9fr auto;align-items:center}
+  .hero-actions{flex-direction:row}
+  .hero-actions .btn{width:auto}
 }
-@media(max-width:720px){
+@media(min-width:900px){
+  .wrap{padding:0 24px}
+  section{padding:70px 0}
+  .hero{padding:70px 0 64px}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+  .hero-visual{margin-top:0}
+  body.vB .hero .wrap{display:block}
+  .hero h1{font-size:44px}
+  .section-head h2{font-size:32px}
+  .cards-3{grid-template-columns:repeat(3,1fr)}
+  .cards-4{grid-template-columns:repeat(4,1fr)}
+  .assistant{grid-template-columns:1fr 1fr;gap:44px}
+  .cta-band{padding:44px 48px}
+  .footer-top{grid-template-columns:1.4fr 1fr 1fr}
+  .footer-bottom{flex-direction:row;justify-content:space-between}
+}
+@media(max-width:899px){
   .nav,.header-cta{display:none}
-  .nav.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;background:var(--surface);border-bottom:1px solid var(--border);padding:16px 24px;gap:4px;margin:0}
-  .nav.open a{padding:12px 0;border-bottom:1px solid var(--border)}
+  .nav.open{display:flex;position:absolute;top:66px;left:0;right:0;flex-direction:column;background:#fff;border-bottom:1px solid var(--border);padding:12px 18px;gap:2px;box-shadow:var(--shadow)}
+  .nav.open a{padding:14px 4px;border-bottom:1px solid var(--border);font-size:16px}
   .burger{display:block}
-  section{padding:52px 0}
-  h2{font-size:26px}
-  .cards-4,.cards-3,.cards-2,.split{grid-template-columns:1fr}
-  .cta-band{padding:32px 26px}
-  .footer-top{grid-template-columns:1fr}
-  .hero h1{font-size:31px}
+  body.vB .nav.open{margin:0}
 }
 </style>
 </head>
-<body class="s1">
+<body class="vA">
 
 <!-- ============================= ХЕДЕР ============================= -->
 <header class="site-header">
+  <!-- верхняя утилитарная полоса (видна в Варианте B) -->
+  <div class="util-bar"><div class="wrap">
+    <span>📍 Новослободская, 11</span>
+    <a href="tel:+74950665278">+7 (495) 066-52-78</a>
+    <span class="u-sp"></span>
+    <a href="#" onclick="openChat();return false">Записаться →</a>
+  </div></div>
   <div class="wrap header-inner">
     <a href="#" class="logo" aria-label="Ensina-me — языковой центр">
       <svg class="brand-logo" viewBox="0 0 540 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ensina-me">
@@ -383,27 +378,27 @@ body.s3 #level-test .cta-band h2{color:#f2c521}
       </svg>
     </a>
     <nav class="nav" id="nav">
-      <a href="#courses">Курсы</a>
+      <a href="#schedule">Расписание</a>
       <a href="#teachers">Преподаватели</a>
+      <a href="#courses">Курсы</a>
       <a href="#pricing">Стоимость</a>
       <a href="#reviews">Отзывы</a>
-      <a href="#articles">Статьи</a>
       <a href="#contacts">Контакты</a>
     </nav>
-    <div class="header-cta"><a href="#" onclick="openChat();return false" class="btn btn-accent">Записаться</a></div>
+    <div class="header-cta"><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться на курс</a></div>
     <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<!-- ============================= HERO ============================= -->
+<!-- ============================= HERO (белый) ============================= -->
 <section class="hero">
   <div class="wrap">
     <div>
-      <h1>Португальский и испанский <em>с носителями языка</em></h1>
+      <h1>Португальский и испанский <span class="g">с носителями</span> <span class="r">языка</span></h1>
       <p class="lead">Ensina-me — единственный в Москве языковой центр, который профессионально занимается только португальским (европейский и бразильский варианты) и испанским. Очно на Новослободской и онлайн.</p>
       <div class="hero-actions">
-        <a href="#level-test" class="btn btn-accent">Пройти тест на уровень</a>
-        <a href="#" onclick="openChat();return false" class="btn ghost">Спросить ассистента</a>
+        <a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться на курс</a>
+        <a href="#level-test" class="btn btn-outline">Пройти тест на уровень</a>
       </div>
       <div class="hero-stats">
         <div><div class="num">17+</div><div class="lbl">преподавателей-носителей</div></div>
@@ -411,7 +406,7 @@ body.s3 #level-test .cta-band h2{color:#f2c521}
         <div><div class="num">Очно + онлайн</div><div class="lbl">Новослободская и Skype</div></div>
       </div>
     </div>
-    <div class="hero-visual">
+    <div class="hero-visual reveal">
       <h3>Как начать заниматься</h3>
       <ul>
         <li><b>01</b> Пройдите короткий тест на уровень</li>
@@ -426,49 +421,51 @@ body.s3 #level-test .cta-band h2{color:#f2c521}
 <!-- ============================= ПОЧЕМУ МЫ ============================= -->
 <section id="about">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow">Чем мы отличаемся</span>
       <h2>Почему учат португальский именно в Ensina-me</h2>
-      <p>Мы не «ещё одна школа со списком из 30 языков». Мы занимаемся только португальским и испанским — и делаем это профессионально.</p>
+      <p>Мы занимаемся только португальским и испанским — и делаем это профессионально.</p>
     </div>
     <div class="cards cards-4">
-      <div class="card feature"><div class="ic">1</div><h3>Только PT и ES</h3><p>Единственный в Москве центр, который специализируется исключительно на португальском и испанском языках.</p></div>
-      <div class="card feature"><div class="ic">2</div><h3>Носители языка</h3><p>В штате более 17 преподавателей — носители европейского и бразильского португальского, свободно говорящие по-русски.</p></div>
-      <div class="card feature"><div class="ic">3</div><h3>Два варианта португальского</h3><p>Учим и европейскому (Португалия), и бразильскому варианту — вы выбираете тот, который нужен именно вам.</p></div>
-      <div class="card feature"><div class="ic">4</div><h3>Свои материалы</h3><p>Собственная учебная библиотека и статус официального дилера издательств Lidel, Porto Editora и EPU.</p></div>
+      <div class="card feature reveal"><div class="ic">1</div><h3>Только PT и ES</h3><p>Единственный в Москве центр, который специализируется исключительно на португальском и испанском языках.</p></div>
+      <div class="card feature reveal"><div class="ic">2</div><h3>Носители языка</h3><p>Более 17 преподавателей — носители европейского и бразильского португальского, свободно говорящие по-русски.</p></div>
+      <div class="card feature reveal"><div class="ic">3</div><h3>Два варианта</h3><p>Учим и европейскому (Португалия), и бразильскому варианту — вы выбираете нужный именно вам.</p></div>
+      <div class="card feature reveal"><div class="ic">4</div><h3>Свои материалы</h3><p>Собственная учебная библиотека и статус официального дилера издательств Lidel, Porto Editora и EPU.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============================= КУРСЫ / ФОРМАТЫ ============================= -->
+<!-- ============================= РАСПИСАНИЕ ============================= -->
+<section id="schedule">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Расписание</span>
+      <h2>Ближайшие наборы в группы</h2>
+      <p>Выберите удобное время — или спросите ассистента о свободных местах и индивидуальном графике.</p>
+    </div>
+    <div class="schedule">
+      <div class="sch-row reveal"><div class="sch-lang">Португальский · A1 <span>европейский</span></div><div class="sch-when">Пн, Чт · 19:00</div><div class="sch-fmt">очно + онлайн</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
+      <div class="sch-row reveal"><div class="sch-lang">Португальский · A1 <span>бразильский</span></div><div class="sch-when">Сб · 12:00</div><div class="sch-fmt">онлайн</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
+      <div class="sch-row reveal"><div class="sch-lang">Испанский · A1</div><div class="sch-when">Вт, Пт · 19:00</div><div class="sch-fmt">очно + онлайн</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
+      <div class="sch-row reveal"><div class="sch-lang">Разговорный клуб</div><div class="sch-when">Сб · 18:00</div><div class="sch-fmt">с носителем языка</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
+    </div>
+    <p class="sch-note">Даты и время — примерные; актуальное расписание и свободные места уточним в чате.</p>
+  </div>
+</section>
+
+<!-- ============================= КУРСЫ ============================= -->
 <section id="courses">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow">Форматы обучения</span>
       <h2>Курсы под вашу цель</h2>
       <p>Португальский (европейский и бразильский) и испанский — очно и онлайн, в группе или индивидуально.</p>
     </div>
     <div class="cards cards-4">
-      <div class="card course">
-        <span class="tag">Группы</span><h3>Наборы в группы</h3>
-        <p>Группы 4–6 человек и мини-группы 2–3 человека одного уровня. Регулярная практика и живое общение.</p>
-        <div class="course-foot"><span class="price">от 6 000 ₽<small> / мес</small></span><a href="#" onclick="openChat();return false" class="more">Записаться →</a></div>
-      </div>
-      <div class="card course">
-        <span class="tag">1-на-1</span><h3>Индивидуальные (очно + онлайн)</h3>
-        <p>Персональная программа и темп. Очно на Новослободской или онлайн по Skype — 60–120 минут.</p>
-        <div class="course-foot"><span class="price">от 1 600 ₽<small> / акад. час</small></span><a href="#" onclick="openChat();return false" class="more">Записаться →</a></div>
-      </div>
-      <div class="card course">
-        <span class="tag">Экзамены</span><h3>Подготовка к экзаменам</h3>
-        <p>CAPLE (CIPLE, DEPLE, DIPLE, DAPLE, DUPLE), CELPE-Bras для бразильского и DELE для испанского.</p>
-        <div class="course-foot"><span class="price">по программе</span><a href="#" onclick="openChat();return false" class="more">Подробнее →</a></div>
-      </div>
-      <div class="card course">
-        <span class="tag">Бизнес</span><h3>Корпоративное обучение</h3>
-        <p>Бизнес-португальский, деловая переписка и телефонные переговоры для сотрудников и команд.</p>
-        <div class="course-foot"><span class="price">по запросу</span><a href="#" onclick="openChat();return false" class="more">Обсудить →</a></div>
-      </div>
+      <div class="card course reveal"><span class="tag">Группы</span><h3>Наборы в группы</h3><p>Группы 4–6 человек и мини-группы 2–3 человека одного уровня. Регулярная практика и живое общение.</p><div class="course-foot"><span class="price">от 6 000 ₽<small> / мес</small></span><a href="#" onclick="openChat();return false" class="more">Записаться →</a></div></div>
+      <div class="card course reveal"><span class="tag">1-на-1</span><h3>Индивидуальные</h3><p>Персональная программа и темп. Очно на Новослободской или онлайн по Skype — 60–120 минут.</p><div class="course-foot"><span class="price">от 1 600 ₽<small> / ак. час</small></span><a href="#" onclick="openChat();return false" class="more">Записаться →</a></div></div>
+      <div class="card course reveal"><span class="tag">Экзамены</span><h3>Подготовка к экзаменам</h3><p>CAPLE (CIPLE, DEPLE, DIPLE, DAPLE, DUPLE), CELPE-Bras для бразильского и DELE для испанского.</p><div class="course-foot"><span class="price">по программе</span><a href="#" onclick="openChat();return false" class="more">Подробнее →</a></div></div>
+      <div class="card course reveal"><span class="tag">Бизнес</span><h3>Корпоративное обучение</h3><p>Бизнес-португальский, деловая переписка и телефонные переговоры для сотрудников и команд.</p><div class="course-foot"><span class="price">по запросу</span><a href="#" onclick="openChat();return false" class="more">Обсудить →</a></div></div>
     </div>
   </div>
 </section>
@@ -476,16 +473,16 @@ body.s3 #level-test .cta-band h2{color:#f2c521}
 <!-- ============================= ПРЕПОДАВАТЕЛИ ============================= -->
 <section id="teachers">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow">Наша команда</span>
       <h2>Выберите преподавателя, с которым будете на одной волне</h2>
       <p>Носители языка и опытные русскоговорящие преподаватели. Познакомьтесь на пробном занятии.</p>
     </div>
     <div class="cards cards-4">
-      <div class="card teacher"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Дан</h3><div class="exp">вырос в Португалии</div><p>Европейский португальский, снятие языкового барьера, разговорная практика с первых занятий.</p><div class="langs"><span>PT-PT</span></div></div></div>
-      <div class="card teacher"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Никсару</h3><div class="exp">носитель · очень харизматичный</div><p>Испанский язык: разные методики, живые занятия. Ученики отмечают, что «всегда весело и легко».</p><div class="langs"><span>ES</span></div></div></div>
-      <div class="card teacher"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Анабела</h3><div class="exp">носитель языка</div><p>Португальский для тех, кто уже владеет испанским, и с нуля. Европейский вариант.</p><div class="langs"><span>PT-PT</span></div></div></div>
-      <div class="card teacher"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Эрик</h3><div class="exp">носитель языка</div><p>Испанский: «очень информативно, понятно и интересно» — из отзывов учеников.</p><div class="langs"><span>ES</span></div></div></div>
+      <div class="card teacher reveal"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Дан</h3><div class="exp">вырос в Португалии</div><p>Европейский португальский, снятие языкового барьера, разговорная практика с первых занятий.</p><div class="langs"><span>PT-PT</span></div></div></div>
+      <div class="card teacher reveal"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Никсару</h3><div class="exp">носитель · харизматичный</div><p>Испанский язык: разные методики, живые занятия. Ученики отмечают, что «всегда весело и легко».</p><div class="langs"><span>ES</span></div></div></div>
+      <div class="card teacher reveal"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Анабела</h3><div class="exp">носитель языка</div><p>Португальский для тех, кто уже владеет испанским, и с нуля. Европейский вариант.</p><div class="langs"><span>PT-PT</span></div></div></div>
+      <div class="card teacher reveal"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Эрик</h3><div class="exp">носитель языка</div><p>Испанский: «очень информативно, понятно и интересно» — из отзывов учеников.</p><div class="langs"><span>ES</span></div></div></div>
     </div>
     <div class="center-cta"><a href="#" onclick="openChat();return false" class="btn btn-outline">Подобрать преподавателя — в штате 17+ носителей</a></div>
   </div>
@@ -494,44 +491,26 @@ body.s3 #level-test .cta-band h2{color:#f2c521}
 <!-- ============================= ТЕСТ НА УРОВЕНЬ ============================= -->
 <section id="level-test">
   <div class="wrap">
-    <div class="cta-band">
-      <div>
-        <h2>Не знаете свой уровень?</h2>
-        <p>Пройдите короткий тест на определение уровня португальского — это займёт несколько минут. По результату подберём программу, формат и преподавателя.</p>
-      </div>
-      <a href="#" class="btn btn-accent" style="white-space:nowrap">Пройти тест на уровень</a>
+    <div class="cta-band reveal">
+      <h2>Не знаете свой уровень?</h2>
+      <p>Пройдите короткий тест на определение уровня португальского — по результату подберём программу, формат и преподавателя.</p>
+      <a href="#" class="btn btn-cta">Пройти тест на уровень</a>
     </div>
   </div>
 </section>
 
-<!-- ============================= СТОИМОСТЬ + ОПЛАТА ============================= -->
+<!-- ============================= СТОИМОСТЬ ============================= -->
 <section id="pricing">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow">Стоимость и оплата</span>
       <h2>Прозрачные цены</h2>
       <p>Оплата помесячно, за курс целиком или за полгода + месяц обучения в подарок.</p>
     </div>
     <div class="cards cards-3">
-      <div class="card price-card">
-        <h3>Группа / мини-группа</h3><div class="sub">4–6 человек · мини 2–3 человека</div>
-        <div class="amount">6 000 ₽<small> / мес</small></div>
-        <ul><li>Мини-группа — 8 000 ₽ / мес</li><li>Курс 3 месяца — 13 500 ₽</li><li>Или 5 500 ₽ / мес в рассрочку</li><li>Один уровень, живая практика</li></ul>
-        <a href="#" class="btn btn-outline">Оплатить</a>
-      </div>
-      <div class="card price-card featured">
-        <span class="badge">Популярно</span>
-        <h3>Индивидуально</h3><div class="sub">Очно (Новослободская) или онлайн</div>
-        <div class="amount">1 600 ₽<small> / акад. час</small></div>
-        <ul><li>Онлайн по Skype — 12 000 ₽ / 10 занятий</li><li>Персональная программа</li><li>Гибкое расписание</li><li>Занятие 60–120 минут</li></ul>
-        <a href="#" class="btn btn-accent">Оплатить</a>
-      </div>
-      <div class="card price-card">
-        <h3>Онлайн-группа / интенсив</h3><div class="sub">Дистанционно из любой точки</div>
-        <div class="amount">900 ₽<small> / 90 мин</small></div>
-        <ul><li>Абонемент 36 занятий — 32 400 ₽</li><li>Суперинтенсив — 16 000 ₽</li><li>Материал курса за один месяц</li><li>Подготовка к экзаменам</li></ul>
-        <a href="#" class="btn btn-outline">Оплатить</a>
-      </div>
+      <div class="card price-card reveal"><h3>Группа / мини-группа</h3><div class="sub">4–6 человек · мини 2–3 человека</div><div class="amount">6 000 ₽<small> / мес</small></div><ul><li>Мини-группа — 8 000 ₽ / мес</li><li>Курс 3 месяца — 13 500 ₽</li><li>Или 5 500 ₽ / мес в рассрочку</li><li>Один уровень, живая практика</li></ul><a href="#" class="btn btn-outline">Оплатить</a></div>
+      <div class="card price-card featured reveal"><span class="badge">Популярно</span><h3>Индивидуально</h3><div class="sub">Очно (Новослободская) или онлайн</div><div class="amount">1 600 ₽<small> / ак. час</small></div><ul><li>Онлайн по Skype — 12 000 ₽ / 10 занятий</li><li>Персональная программа</li><li>Гибкое расписание</li><li>Занятие 60–120 минут</li></ul><a href="#" class="btn btn-cta">Оплатить</a></div>
+      <div class="card price-card reveal"><h3>Онлайн-группа / интенсив</h3><div class="sub">Дистанционно из любой точки</div><div class="amount">900 ₽<small> / 90 мин</small></div><ul><li>Абонемент 36 занятий — 32 400 ₽</li><li>Суперинтенсив — 16 000 ₽</li><li>Материал курса за один месяц</li><li>Подготовка к экзаменам</li></ul><a href="#" class="btn btn-outline">Оплатить</a></div>
     </div>
     <p class="pay-note">Оплата картой онлайн через <b>ЮKassa (Яндекс.Касса)</b> — подключается на этапе интеграции. Кнопки «Оплатить» пока ведут на заглушку.</p>
   </div>
@@ -540,15 +519,15 @@ body.s3 #level-test .cta-band h2{color:#f2c521}
 <!-- ============================= ОТЗЫВЫ ============================= -->
 <section id="reviews">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow">Отзывы</span>
       <h2>Что говорят наши ученики</h2>
       <p>Реальные отзывы студентов Ensina-me.</p>
     </div>
     <div class="cards cards-3">
-      <div class="card review"><div class="stars">★★★★★</div><p class="quote">«Занимаюсь с сентября, начинала с европейского португальского у Дана — он вырос в Португалии. Через три месяца смогла применить знания в Лиссабоне. Потом перешла на испанский к Никсару — очень харизматичный, всегда весело и легко.»</p><div class="who"><div class="ava">У</div><div><b>Ученица</b><span>Португальский → испанский</span></div></div></div>
-      <div class="card review"><div class="stars">★★★★★</div><p class="quote">«Огромное спасибо школе и преподавателю испанского Эрику за очень информативные, понятные и интересные уроки. Всё разложено по полочкам.»</p><div class="who"><div class="ava">У</div><div><b>Ученик</b><span>Испанский</span></div></div></div>
-      <div class="card review"><div class="stars">★★★★★</div><p class="quote">«Прошёл “Суперинтенсив” за полтора месяца — четыре недели ежедневных занятий с Алёной и Любовью. За такой срок реально сдвинуться с места.»</p><div class="who"><div class="ava">У</div><div><b>Ученик</b><span>Суперинтенсив</span></div></div></div>
+      <div class="card review reveal"><div class="stars">★★★★★</div><p class="quote">«Занимаюсь с сентября, начинала с европейского португальского у Дана — он вырос в Португалии. Через три месяца смогла применить знания в Лиссабоне. Потом перешла на испанский к Никсару — очень харизматичный, всегда весело и легко.»</p><div class="who"><div class="ava">У</div><div><b>Ученица</b><span>Португальский → испанский</span></div></div></div>
+      <div class="card review reveal"><div class="stars">★★★★★</div><p class="quote">«Огромное спасибо школе и преподавателю испанского Эрику за очень информативные, понятные и интересные уроки. Всё разложено по полочкам.»</p><div class="who"><div class="ava">У</div><div><b>Ученик</b><span>Испанский</span></div></div></div>
+      <div class="card review reveal"><div class="stars">★★★★★</div><p class="quote">«Прошёл “Суперинтенсив” за полтора месяца — четыре недели ежедневных занятий с Алёной и Любовью. За такой срок реально сдвинуться с места.»</p><div class="who"><div class="ava">У</div><div><b>Ученик</b><span>Суперинтенсив</span></div></div></div>
     </div>
   </div>
 </section>
@@ -557,12 +536,12 @@ body.s3 #level-test .cta-band h2{color:#f2c521}
 <section id="club">
   <div class="wrap">
     <div class="split">
-      <div class="promo club">
+      <div class="promo club reveal">
         <h3>Разговорный клуб</h3>
         <p>Встречи с носителем языка каждую субботу в 18:00. Живая практика без учебников — реальные темы и никакого страха ошибиться.</p>
         <a href="#" onclick="openChat();return false" class="btn">Присоединиться</a>
       </div>
-      <div class="promo gift">
+      <div class="promo gift reveal">
         <h3>Подарочный сертификат</h3>
         <p>Подарите близкому человеку занятия португальским или испанским. Сертификат на любую сумму и любой формат обучения.</p>
         <a href="#" onclick="openChat();return false" class="btn">Купить сертификат</a>
@@ -574,15 +553,15 @@ body.s3 #level-test .cta-band h2{color:#f2c521}
 <!-- ============================= СТАТЬИ ============================= -->
 <section id="articles">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow">Блог</span>
       <h2>Статьи о языке и обучении</h2>
       <p>Полезные материалы для тех, кто учит португальский и испанский.</p>
     </div>
     <div class="cards cards-3">
-      <div class="card article"><div class="thumb">изображение статьи</div><div class="a-body"><div class="date">[ДАТА]</div><h3>Европейский или бразильский португальский — что выбрать?</h3><p>Краткий анонс статьи в две строки: различия вариантов и как понять, какой нужен именно вам.</p><span class="read">Читать →</span></div></div>
-      <div class="card article"><div class="thumb">изображение статьи</div><div class="a-body"><div class="date">[ДАТА]</div><h3>Как проходят экзамены CAPLE и CELPE-Bras</h3><p>Краткий анонс статьи в две строки: форматы, уровни и как к ним готовиться.</p><span class="read">Читать →</span></div></div>
-      <div class="card article"><div class="thumb">изображение статьи</div><div class="a-body"><div class="date">[ДАТА]</div><h3>Португальский для тех, кто уже знает испанский</h3><p>Краткий анонс статьи в две строки: что общего, где ловушки и как учить быстрее.</p><span class="read">Читать →</span></div></div>
+      <div class="card article reveal"><div class="thumb">изображение статьи</div><div class="a-body"><div class="date">[ДАТА]</div><h3>Европейский или бразильский португальский — что выбрать?</h3><p>Краткий анонс статьи в две строки: различия вариантов и как понять, какой нужен именно вам.</p><span class="read">Читать →</span></div></div>
+      <div class="card article reveal"><div class="thumb">изображение статьи</div><div class="a-body"><div class="date">[ДАТА]</div><h3>Как проходят экзамены CAPLE и CELPE-Bras</h3><p>Краткий анонс статьи в две строки: форматы, уровни и как к ним готовиться.</p><span class="read">Читать →</span></div></div>
+      <div class="card article reveal"><div class="thumb">изображение статьи</div><div class="a-body"><div class="date">[ДАТА]</div><h3>Португальский для тех, кто уже знает испанский</h3><p>Краткий анонс статьи в две строки: что общего, где ловушки и как учить быстрее.</p><span class="read">Читать →</span></div></div>
     </div>
   </div>
 </section>
@@ -590,7 +569,7 @@ body.s3 #level-test .cta-band h2{color:#f2c521}
 <!-- ============================= FAQ ============================= -->
 <section id="faq">
   <div class="wrap">
-    <div class="section-head center">
+    <div class="section-head center reveal">
       <span class="eyebrow">Вопросы и ответы</span>
       <h2>Частые вопросы</h2>
     </div>
@@ -604,15 +583,15 @@ body.s3 #level-test .cta-band h2{color:#f2c521}
   </div>
 </section>
 
-<!-- ============================= AI-АССИСТЕНТ (вместо формы) + КОНТАКТЫ ============================= -->
+<!-- ============================= AI-АССИСТЕНТ + КОНТАКТЫ ============================= -->
 <section id="contacts">
   <div class="wrap">
     <div class="assistant">
-      <div>
+      <div class="reveal">
         <span class="eyebrow">Запись через ассистента</span>
         <h2>Запишитесь за минуту — спросите ИИ-ассистента</h2>
-        <p class="lead">Наш ассистент поможет подобрать курс, преподавателя и формат и запишет на пробное занятие. Задайте вопрос в чате — он открыт круглосуточно.</p>
-        <a href="#" onclick="openChat();return false" class="btn btn-primary">Открыть чат с ассистентом</a>
+        <p style="color:var(--text-muted);font-size:16px;margin-bottom:22px">Наш ассистент поможет подобрать курс, преподавателя и формат и запишет на пробное занятие. Задайте вопрос в чате — он открыт круглосуточно.</p>
+        <a href="#" onclick="openChat();return false" class="btn btn-cta">Открыть чат с ассистентом</a>
         <div class="contact-rows">
           <div class="row"><div class="k">Адрес</div><div class="v">Москва, ул. Новослободская, 11 (м. Новослободская)</div></div>
           <div class="row"><div class="k">Телефон</div><div class="v">+7 (495) 066-52-78</div></div>
@@ -620,15 +599,14 @@ body.s3 #level-test .cta-band h2{color:#f2c521}
           <div class="row"><div class="k">Формат</div><div class="v">Очно и онлайн (Skype)</div></div>
         </div>
       </div>
-      <!-- статичное превью чата -->
-      <div class="chat-preview" aria-hidden="true">
+      <div class="chat-preview reveal" aria-hidden="true">
         <div class="cp-head"><span class="dot"></span><div><b>Ассистент Ensina-me</b><span>обычно отвечает сразу</span></div></div>
         <div class="cp-body">
           <div class="bubble bot">Привет! Помогу подобрать курс и записать на пробное занятие 🇵🇹 Какой язык вам интересен?</div>
           <div class="bubble user">Португальский, европейский вариант</div>
           <div class="bubble bot">Отлично! Занимались раньше или начинаете с нуля? Подберу преподавателя и удобный формат — очно или онлайн.</div>
         </div>
-        <div class="chat-chips"><span onclick="openChat()">Подобрать курс</span><span onclick="openChat()">Записаться на пробное</span><span onclick="openChat()">Узнать стоимость</span></div>
+        <div class="chat-chips"><span onclick="openChat()">Подобрать курс</span><span onclick="openChat()">Записаться</span><span onclick="openChat()">Узнать стоимость</span></div>
         <div class="cp-input"><input type="text" placeholder="Напишите сообщение…" onfocus="openChat()"><button onclick="openChat()">➤</button></div>
       </div>
     </div>
@@ -662,19 +640,19 @@ body.s3 #level-test .cta-band h2{color:#f2c521}
       </div>
       <div class="footer-col">
         <h4>Обучение</h4>
+        <a href="#schedule">Расписание</a>
         <a href="#courses">Наборы в группы</a>
         <a href="#courses">Индивидуальные занятия</a>
         <a href="#courses">Подготовка к экзаменам</a>
-        <a href="#courses">Корпоративное обучение</a>
-        <a href="#level-test">Тест на уровень</a>
+        <a href="#pricing">Стоимость</a>
       </div>
       <div class="footer-col">
         <h4>Центр</h4>
-        <a href="#about">О центре</a>
         <a href="#teachers">Преподаватели</a>
         <a href="#reviews">Отзывы</a>
         <a href="#articles">Статьи</a>
         <a href="#contacts">Контакты</a>
+        <a href="#level-test">Тест на уровень</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -688,7 +666,7 @@ body.s3 #level-test .cta-band h2{color:#f2c521}
   </div>
 </footer>
 
-<!-- ============================= ПЛАВАЮЩИЙ ЧАТ-ВИДЖЕТ (заглушка под ИИ-ассистента) ============================= -->
+<!-- ============================= ЧАТ-ВИДЖЕТ ============================= -->
 <button class="chat-fab" id="chatFab" onclick="toggleChat()" aria-label="Открыть чат с ассистентом">
   <svg viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.8 2 11.5c0 2.2 1 4.2 2.7 5.7-.1 1.2-.6 2.6-1.6 3.8 1.7-.2 3.4-.8 4.7-1.7 1.3.4 2.7.7 4.2.7 5.5 0 10-3.8 10-8.5S17.5 3 12 3z"/></svg>
   <span class="badge">AI</span>
@@ -698,17 +676,17 @@ body.s3 #level-test .cta-band h2{color:#f2c521}
   <div class="cw-body" id="cwBody">
     <div class="bubble bot">Привет! Помогу подобрать курс и записать на пробное занятие 🇵🇹 Какой язык вам интересен — португальский или испанский?</div>
   </div>
-  <div class="cw-chips"><span onclick="chatChip(this)">Подобрать курс</span><span onclick="chatChip(this)">Записаться на пробное</span><span onclick="chatChip(this)">Узнать стоимость</span></div>
+  <div class="cw-chips"><span onclick="chatChip(this)">Подобрать курс</span><span onclick="chatChip(this)">Записаться</span><span onclick="chatChip(this)">Узнать стоимость</span></div>
   <div class="cw-input"><input type="text" id="cwInput" placeholder="Напишите сообщение…" onkeydown="if(event.key==='Enter')chatSend()"><button onclick="chatSend()" aria-label="Отправить">➤</button></div>
   <div class="cw-note">Демо-виджет. ИИ-ассистент подключается на следующем этапе.</div>
 </div>
 
 <script>
+document.documentElement.classList.add('js');
 /* Мобильное меню */
 document.getElementById('burger').addEventListener('click',function(){document.getElementById('nav').classList.toggle('open');});
 document.querySelectorAll('#nav a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('nav').classList.remove('open');});});
-
-/* FAQ-аккордеон */
+/* FAQ */
 document.querySelectorAll('.faq-q').forEach(function(btn){
   btn.addEventListener('click',function(){
     var item=btn.parentElement, ans=btn.nextElementSibling, isOpen=item.classList.contains('open');
@@ -716,14 +694,17 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
     if(!isOpen){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
   });
 });
-
-/* Чат-виджет (визуальная заглушка, без реальной логики) */
+/* Плавное появление блоков при скролле */
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.12});
+  els.forEach(function(e){io.observe(e);});
+})();
+/* Чат-виджет (визуальная заглушка) */
 function toggleChat(){document.getElementById('chatWindow').classList.toggle('open');}
 function openChat(){document.getElementById('chatWindow').classList.add('open');document.getElementById('cwInput').focus();}
-function addBubble(text,who){
-  var b=document.createElement('div');b.className='bubble '+who;b.textContent=text;
-  var body=document.getElementById('cwBody');body.appendChild(b);body.scrollTop=body.scrollHeight;
-}
+function addBubble(t,w){var b=document.createElement('div');b.className='bubble '+w;b.textContent=t;var y=document.getElementById('cwBody');y.appendChild(b);y.scrollTop=y.scrollHeight;}
 function botReply(){setTimeout(function(){addBubble('Спасибо! Это демо-версия ассистента. Скоро он сможет ответить и записать вас автоматически, а пока оставьте контакт — мы свяжемся с вами.','bot');},500);}
 function chatSend(){var i=document.getElementById('cwInput');if(!i.value.trim())return;addBubble(i.value.trim(),'user');i.value='';botReply();}
 function chatChip(el){openChat();addBubble(el.textContent,'user');botReply();}
