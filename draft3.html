@@ -10,53 +10,65 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   ЧЕРНОВИК 3 — нейтральный светлый: зелёный/красный точечно
+   ЧЕРНОВИК 3 — та же палитра, третья раскладка цветных секций
    Палитра вынесена в :root между маркерами THEME — черновики 2 и 3
    отличаются ТОЛЬКО этим блоком (и файлом логотипа).
    ============================================================ */
 /*THEME_START*/
 :root{
-  /* ЧЕРНОВИК 3 — нейтральный светлый фон, зелёный и красный только точечно (кнопки/иконки/детали) */
-  --primary:      #1a7a3c;
-  --primary-2:    #155f2f;
-  --primary-soft: #e8f3ec;
-  --accent:       #a97a1f;
-  --accent-2:     #8c6218;
-  --red:          #c62828;
-  --red-2:        #a51f1f;
+  /* зелёный — основной акцент (кнопки, заголовки-акценты, ссылки) */
+  --primary:      #15693a;   /* глубокий зелёный */
+  --primary-2:    #0e4a29;   /* тёмный зелёный */
+  --primary-soft: #e7f0ea;   /* светлая зелёная подложка */
+  --accent:       #c1902f;   /* приглушённое золото — акцент */
+  --accent-2:     #a97a1f;
+  --red:          #a52a1f;
+  --red-2:        #8a1f16;
 
-  --bg:           #f6f7f8;
-  --bg-alt:       #eef0f2;
+  /* цвета флага Португалии — для триколор-разделителя */
+  --flag-red:     #d0181f;
+  --flag-yellow:  #f2c521;
+  --flag-green:   #1f9430;
+
+  /* фоновые тона секций */
+  --c-light:      #f4f6f7;   /* светлые секции */
+  --c-blue:       #cde4f5;   /* пастельный голубой */
+  --c-beige:      #ece0cc;   /* «кофе с молоком» */
+  --c-dark:       #121212;   /* чёрный акцентный блок */
+
+  /* поверхности / текст (по умолчанию — светлая тема) */
+  --bg:           #f4f6f7;
   --surface:      #ffffff;
-  --text:         #191c1f;
-  --text-muted:   #5f6870;
-  --border:       #e2e5e8;
+  --text:         #1b2620;
+  --text-muted:   #5a6b62;
+  --border:       #d5ddd6;
 
-  --shadow:       0 1px 3px rgba(20,25,30,.07), 0 4px 14px rgba(20,25,30,.05);
-  --shadow-hover: 0 4px 10px rgba(20,25,30,.10), 0 12px 28px rgba(20,25,30,.08);
+  --shadow:       0 1px 3px rgba(15,50,30,.08), 0 4px 14px rgba(15,50,30,.06);
+  --shadow-hover: 0 4px 10px rgba(15,50,30,.12), 0 12px 30px rgba(15,50,30,.10);
 
   --on-primary:   #ffffff;
-  --on-accent:    #ffffff;
+  --on-accent:    #241a05;
 
   --header-bg:    #ffffff;
-  --nav-text:     #191c1f;
+  --nav-text:     #1b2620;
 
-  --hero-bg:            linear-gradient(180deg,#ffffff 0%,#eef0f2 100%);
-  --hero-text:          #191c1f;
-  --hero-lead:          #5f6870;
-  --hero-accent:        #1a7a3c;
-  --hero-card-bg:       #ffffff;
-  --hero-card-border:   #e2e5e8;
-  --hero-card-text:     #191c1f;
-  --hero-card-num:      #1a7a3c;
-  --hero-ghost-bd:      #1a7a3c;
-  --hero-ghost-tx:      #1a7a3c;
+  /* hero — светлый фон, тёмный текст, зелёный акцент */
+  --hero-bg:          linear-gradient(180deg,#ffffff 0%,#eef2f0 100%);
+  --hero-text:        #1b2620;
+  --hero-lead:        #5a6b62;
+  --hero-accent:      #15693a;
+  --hero-card-bg:     #ffffff;
+  --hero-card-border: #d5ddd6;
+  --hero-card-text:   #1b2620;
+  --hero-card-num:    #15693a;
+  --hero-ghost-bd:      #15693a;
+  --hero-ghost-tx:      #15693a;
   --hero-ghost-hbg:     var(--primary);
   --hero-ghost-htx:     #ffffff;
 
-  --photo-grad:  repeating-linear-gradient(45deg,#e7eaed 0 14px,#dfe3e7 14px 28px);
-  --footer-bg:   #1a1d21;
-  --footer-text: #a7afb6;
+  --photo-grad:  repeating-linear-gradient(45deg,#dfe6e0 0 14px,#d6ded7 14px 28px);
+  --footer-bg:   #0e3d22;
+  --footer-text: #bcd0c2;
   --footer-head: #ffffff;
   --logo-sub:    #2b2b2b;
 
@@ -81,7 +93,49 @@ h1,h2,h3{line-height:1.18;color:var(--primary);font-weight:700;font-family:var(-
 h2{font-size:32px;margin-bottom:14px}
 h3{font-size:20px}
 .section-head p{color:var(--text-muted);font-size:17px}
-.section-alt{background:var(--bg-alt)}
+/* ============================================================
+   ФОНЫ СЕКЦИЙ + ТРИКОЛОР-РАЗДЕЛИТЕЛЬ
+   Композиция задаётся классом на <body>: s1 / s2 / s3.
+   Меняя её, получаем разную раскладку цветов при той же вёрстке.
+   ============================================================ */
+section{position:relative;background:var(--c-light)}
+.hero{background:var(--hero-bg)}
+/* тонкая брендовая триколор-полоса между секциями */
+section::before,.site-footer::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:repeating-linear-gradient(90deg,
+    var(--flag-red) 0 44px, var(--flag-yellow) 44px 88px, var(--flag-green) 88px 132px);
+}
+.hero::before{display:none}
+.site-footer{position:relative}
+
+/* --- палитры-«краски» (переопределяют переменные внутри секции) --- */
+.paint-blue{background:var(--c-blue);--surface:#ffffff;--border:#b3d3ea;--primary-soft:#e2eef8}
+.paint-beige{background:var(--c-beige);--surface:#fffaf0;--border:#e0cfb2;--primary-soft:#efe6d5}
+.paint-dark{background:var(--c-dark);--text:#f4f4f5;--text-muted:#b9bdc2;--surface:#1c1c1e;--border:#333638;--primary:#f2c521;--primary-soft:rgba(242,197,33,.14)}
+.paint-dark .cta-band{background:#1c1c1e;border:1px solid #333638}
+.paint-dark .cta-band h2{color:#f2c521}
+.paint-dark .promo.club{background:linear-gradient(135deg,#15693a,#0e4a29)}
+
+/* ============ СХЕМА 1 ============ */
+body.s1 #about,   body.s1 #faq{background:var(--c-blue);--surface:#ffffff;--border:#b3d3ea;--primary-soft:#e2eef8}
+body.s1 #club,    body.s1 #contacts{background:var(--c-beige);--surface:#fffaf0;--border:#e0cfb2;--primary-soft:#efe6d5}
+body.s1 #level-test{background:var(--c-dark);--text:#f4f4f5;--text-muted:#b9bdc2;--surface:#1c1c1e;--border:#333638;--primary:#f2c521;--primary-soft:rgba(242,197,33,.14)}
+body.s1 #level-test .cta-band{background:#1c1c1e;border:1px solid #333638}
+body.s1 #level-test .cta-band h2{color:#f2c521}
+
+/* ============ СХЕМА 2 ============ */
+body.s2 #courses, body.s2 #pricing{background:var(--c-blue);--surface:#ffffff;--border:#b3d3ea;--primary-soft:#e2eef8}
+body.s2 #reviews, body.s2 #faq{background:var(--c-beige);--surface:#fffaf0;--border:#e0cfb2;--primary-soft:#efe6d5}
+body.s2 #club{background:var(--c-dark);--text:#f4f4f5;--text-muted:#b9bdc2;--surface:#1c1c1e;--border:#333638;--primary:#f2c521;--primary-soft:rgba(242,197,33,.14)}
+body.s2 #club .promo.club{background:linear-gradient(135deg,#15693a,#0e4a29)}
+
+/* ============ СХЕМА 3 ============ */
+body.s3 #teachers, body.s3 #reviews{background:var(--c-blue);--surface:#ffffff;--border:#b3d3ea;--primary-soft:#e2eef8}
+body.s3 #about,    body.s3 #articles, body.s3 #contacts{background:var(--c-beige);--surface:#fffaf0;--border:#e0cfb2;--primary-soft:#efe6d5}
+body.s3 #level-test{background:var(--c-dark);--text:#f4f4f5;--text-muted:#b9bdc2;--surface:#1c1c1e;--border:#333638;--primary:#f2c521;--primary-soft:rgba(242,197,33,.14)}
+body.s3 #level-test .cta-band{background:#1c1c1e;border:1px solid #333638}
+body.s3 #level-test .cta-band h2{color:#f2c521}
 
 /* ---------- Кнопки ---------- */
 .btn{display:inline-block;font-family:var(--font-head);font-size:16px;font-weight:600;padding:14px 28px;border:2px solid transparent;border-radius:var(--radius);cursor:pointer;transition:.15s ease;text-align:center}
@@ -307,7 +361,7 @@ h3{font-size:20px}
 }
 </style>
 </head>
-<body>
+<body class="s3">
 
 <!-- ============================= ХЕДЕР ============================= -->
 <header class="site-header">
@@ -387,7 +441,7 @@ h3{font-size:20px}
 </section>
 
 <!-- ============================= КУРСЫ / ФОРМАТЫ ============================= -->
-<section id="courses" class="section-alt">
+<section id="courses">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Форматы обучения</span>
@@ -451,7 +505,7 @@ h3{font-size:20px}
 </section>
 
 <!-- ============================= СТОИМОСТЬ + ОПЛАТА ============================= -->
-<section id="pricing" class="section-alt">
+<section id="pricing">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Стоимость и оплата</span>
@@ -500,7 +554,7 @@ h3{font-size:20px}
 </section>
 
 <!-- ============================= КЛУБ + СЕРТИФИКАТ ============================= -->
-<section class="section-alt">
+<section id="club">
   <div class="wrap">
     <div class="split">
       <div class="promo club">
@@ -534,7 +588,7 @@ h3{font-size:20px}
 </section>
 
 <!-- ============================= FAQ ============================= -->
-<section class="section-alt">
+<section id="faq">
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Вопросы и ответы</span>
