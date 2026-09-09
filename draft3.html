@@ -7,58 +7,53 @@
 <title>Ensina-me — португальский и испанский с носителями</title>
 <style>
 /* ============================================================
-   ЧЕРНОВИК 1 — «Зелёный основной, красный/золото — акцент»
+   ЧЕРНОВИК 3 — нейтральный светлый: зелёный/красный точечно
    Палитра вынесена в :root между маркерами THEME — черновики 2 и 3
    отличаются ТОЛЬКО этим блоком (и файлом логотипа).
    ============================================================ */
 /*THEME_START*/
 :root{
-  /* фирменные (для логотипа/деталей) */
-  --primary:      #15693a;   /* глубокий зелёный — основной */
-  --primary-2:    #0e4a29;   /* тёмный зелёный */
-  --primary-soft: #e7f0ea;   /* светлая зелёная подложка */
-  --accent:       #c1902f;   /* приглушённое золото — акцент */
-  --accent-2:     #a97a1f;   /* золото: наведение */
-  --red:          #a52a1f;   /* глубокий красный — акцент */
-  --red-2:        #8a1f16;
+  /* ЧЕРНОВИК 3 — нейтральный светлый фон, зелёный и красный только точечно (кнопки/иконки/детали) */
+  --primary:      #1a7a3c;
+  --primary-2:    #155f2f;
+  --primary-soft: #e8f3ec;
+  --accent:       #a97a1f;
+  --accent-2:     #8c6218;
+  --red:          #c62828;
+  --red-2:        #a51f1f;
 
-  /* поверхности / текст */
-  --bg:           #f1f4f1;
-  --bg-alt:       #e7ece7;
+  --bg:           #f6f7f8;
+  --bg-alt:       #eef0f2;
   --surface:      #ffffff;
-  --text:         #1b2620;
-  --text-muted:   #5a6b62;
-  --border:       #d5ddd6;
+  --text:         #191c1f;
+  --text-muted:   #5f6870;
+  --border:       #e2e5e8;
 
-  --shadow:       0 1px 3px rgba(15,50,30,.08), 0 4px 14px rgba(15,50,30,.06);
-  --shadow-hover: 0 4px 10px rgba(15,50,30,.12), 0 12px 30px rgba(15,50,30,.10);
+  --shadow:       0 1px 3px rgba(20,25,30,.07), 0 4px 14px rgba(20,25,30,.05);
+  --shadow-hover: 0 4px 10px rgba(20,25,30,.10), 0 12px 28px rgba(20,25,30,.08);
 
-  /* кнопки */
   --on-primary:   #ffffff;
-  --on-accent:    #241a05;
+  --on-accent:    #ffffff;
 
-  /* хедер */
   --header-bg:    #ffffff;
-  --nav-text:     #1b2620;
+  --nav-text:     #191c1f;
 
-  /* hero */
-  --hero-bg:          linear-gradient(135deg,#15693a 0%,#0e4a29 100%);
-  --hero-text:        #ffffff;
-  --hero-lead:        #d7e6dc;
-  --hero-accent:      #f2c94c;
-  --hero-card-bg:     rgba(255,255,255,.07);
-  --hero-card-border: rgba(255,255,255,.16);
-  --hero-card-text:   #eaf2ec;
-  --hero-card-num:    #f2c94c;
-  --hero-ghost-bd:      rgba(255,255,255,.55);
-  --hero-ghost-tx:      #ffffff;
-  --hero-ghost-hbg:     #ffffff;
-  --hero-ghost-htx:     var(--primary);
+  --hero-bg:            linear-gradient(180deg,#ffffff 0%,#eef0f2 100%);
+  --hero-text:          #191c1f;
+  --hero-lead:          #5f6870;
+  --hero-accent:        #1a7a3c;
+  --hero-card-bg:       #ffffff;
+  --hero-card-border:   #e2e5e8;
+  --hero-card-text:     #191c1f;
+  --hero-card-num:      #1a7a3c;
+  --hero-ghost-bd:      #1a7a3c;
+  --hero-ghost-tx:      #1a7a3c;
+  --hero-ghost-hbg:     var(--primary);
+  --hero-ghost-htx:     #ffffff;
 
-  /* прочее */
-  --photo-grad:  repeating-linear-gradient(45deg,#dfe6e0 0 14px,#d6ded7 14px 28px);
-  --footer-bg:   #0e3d22;
-  --footer-text: #bcd0c2;
+  --photo-grad:  repeating-linear-gradient(45deg,#e7eaed 0 14px,#dfe3e7 14px 28px);
+  --footer-bg:   #1a1d21;
+  --footer-text: #a7afb6;
   --footer-head: #ffffff;
 
   --radius: 4px;

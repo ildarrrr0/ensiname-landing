@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 210" role="img" aria-label="Ensina me — языковой центр">
+  <!-- Веб-версия логотипа Ensina-me (пересобрана в SVG из фирменного знака,
+       т.к. исходник .cdr не открывается в браузере). Цвета — фирменные. -->
+  <defs>
+    <linearGradient id="grn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2ba03a"/>
+      <stop offset="1" stop-color="#0f7a25"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e11d22"/>
+      <stop offset="1" stop-color="#b30f14"/>
+    </linearGradient>
+  </defs>
+  <!-- Лента: зелёная левая часть -->
+  <polygon points="34,20 342,20 330,150 34,150 60,85"
+           fill="url(#grn)" stroke="#0c5d1c" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Лента: красная правая часть -->
+  <polygon points="342,20 506,20 480,85 506,150 330,150"
+           fill="url(#red)" stroke="#8f0c11" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Блик сверху -->
+  <polygon points="40,26 500,26 498,40 42,40" fill="#ffffff" opacity="0.14"/>
+  <!-- Текст логотипа -->
+  <g font-family="'Arial Black','Segoe UI',sans-serif" font-weight="900" fill="#ffd21e" stroke="#caa400" stroke-width="1">
+    <text x="185" y="112" font-size="82" text-anchor="middle" letter-spacing="-2">ensina</text>
+    <text x="416" y="112" font-size="82" text-anchor="middle" letter-spacing="-2">me</text>
+  </g>
+  <!-- Подпись -->
+  <text x="270" y="192" text-anchor="middle" font-family="'Segoe UI',sans-serif"
+        font-size="26" letter-spacing="14" fill="#2b2b2b">языковой центр</text>
+</svg>
