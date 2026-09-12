@@ -148,6 +148,7 @@ body.vB .hero .lead{margin-left:auto;margin-right:auto;max-width:620px}
 body.vB .hero-actions{flex-direction:row;justify-content:center;flex-wrap:wrap}
 body.vB .hero-actions .btn{width:auto}
 body.vB .hero-stats{justify-content:center}
+body.vB .hero-slider{max-width:680px;margin-left:auto;margin-right:auto}
 
 /* ============================================================ КАРТОЧКИ / СЕТКИ */
 .cards{display:grid;gap:16px}
@@ -311,13 +312,71 @@ html.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease
 html.js .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){html.js .reveal{opacity:1;transform:none;transition:none}}
 
+/* ============================================================ HERO ФОТО-СЛАЙДЕР */
+.hero-slider{position:relative;margin-top:26px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;background:#e6ebe6}
+.hslide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;display:flex;align-items:center;justify-content:center;color:#8a968a;font-weight:700;font-size:14px;background:repeating-linear-gradient(45deg,#e7ece7 0 16px,#dde3dd 16px 32px)}
+.hslide.on{opacity:1}
+.hslide .cap{position:absolute;top:12px;left:12px;background:rgba(0,0,0,.55);color:#fff;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:700}
+.hero-dots{position:absolute;left:0;right:0;bottom:12px;display:flex;gap:7px;justify-content:center;z-index:2}
+.hero-dots button{width:9px;height:9px;border-radius:50%;border:0;background:rgba(255,255,255,.65);cursor:pointer;padding:0;transition:.2s}
+.hero-dots button.on{background:#fff;width:22px;border-radius:6px}
+
+/* ============================================================ УНИВЕРСАЛЬНЫЙ СЛАЙДЕР (преподаватели/отзывы) */
+.slider-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px;margin:-4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.slider-track::-webkit-scrollbar{display:none}
+.slider-track>.slide{scroll-snap-align:start;flex:0 0 auto;width:250px}
+.slider-track.wide>.slide{width:300px}
+@media(min-width:600px){.slider-track>.slide{width:270px}.slider-track.wide>.slide{width:340px}}
+.slider-nav{display:flex;gap:10px;justify-content:center;margin-top:20px}
+.slider-nav button{width:46px;height:46px;border-radius:50%;border:2px solid var(--border);background:#fff;cursor:pointer;font-size:18px;color:var(--text);display:flex;align-items:center;justify-content:center;transition:.15s}
+.slider-nav button:hover{border-color:var(--green);color:var(--green)}
+
+/* ============================================================ СТИКЕР-ПЛАШКА */
+.sticker{display:flex;align-items:center;gap:12px;background:var(--yellow);color:#241f04;font-weight:700;font-family:var(--font-head);font-size:14px;line-height:1.35;padding:14px 18px;border-radius:var(--radius);box-shadow:var(--shadow);transform:rotate(-1.4deg);border:2px dashed rgba(0,0,0,.18);max-width:540px;margin:24px 0 0}
+.sticker .s-ic{font-size:24px;flex-shrink:0}
+
+/* ============================================================ ВКЛАДКИ ФОРМАТА */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.fmt-tab{font-family:var(--font-head);font-weight:700;font-size:15px;padding:10px 18px;border:2px solid var(--border);background:#fff;border-radius:30px;cursor:pointer;color:var(--text);transition:.15s}
+.fmt-tab.on{background:var(--green);border-color:var(--green);color:#fff}
+.fmt-panel-w{display:none}
+.fmt-panel-w.on{display:block}
+.fmt-panel{display:grid;grid-template-columns:1fr;gap:14px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.fmt-panel h4{font-size:19px;margin-bottom:6px}
+.fmt-panel p{color:var(--text-muted);font-size:15px}
+.fmt-side{display:flex;flex-direction:column;gap:10px;justify-content:center}
+.fmt-price{font-family:var(--font-head);font-weight:800;font-size:22px}
+.fmt-price small{font-weight:500;font-size:14px;color:var(--text-muted)}
+@media(min-width:700px){.fmt-panel{grid-template-columns:1.7fr 1fr;align-items:center;gap:24px}.fmt-side{border-left:1px solid var(--border);padding-left:24px}}
+
+/* ============================================================ ФИЛЬТР РАСПИСАНИЯ */
+.sch-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.sch-filter button{font-family:var(--font-head);font-weight:700;font-size:14px;padding:9px 16px;border:2px solid var(--border);background:#fff;border-radius:30px;cursor:pointer;color:var(--text);transition:.15s}
+.sch-filter button.on{background:var(--green);border-color:var(--green);color:#fff}
+.sch-lvl{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#fff;background:var(--text);padding:2px 8px;border-radius:20px;margin-bottom:4px}
+.sch-lvl.cont{background:#7a6a12;background:var(--text-muted)}
+.sch-row[hidden]{display:none}
+
+/* ============================================================ ИКОНКИ «ПОЧЕМУ МЫ» */
+.feature .ic svg{width:26px;height:26px;fill:var(--green)}
+
+/* ============================================================ ЯНДЕКС-БЕЙДЖ ОТЗЫВОВ */
+.yandex-badge{display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 20px;margin-bottom:26px}
+.yandex-badge .yb-logo{font-family:var(--font-head);font-weight:800;font-size:18px;color:var(--text)}
+.yandex-badge .yb-logo .ya{color:#fc3f1d}
+.yandex-badge .yb-rate{font-family:var(--font-head);font-weight:800;font-size:24px;line-height:1}
+.yandex-badge .yb-stars{color:var(--yellow);-webkit-text-stroke:.5px #e0b100;font-size:16px}
+.yandex-badge .yb-count{color:var(--text-muted);font-size:14px}
+.yandex-badge a.yb-link{margin-left:auto;font-family:var(--font-head);font-weight:700;color:var(--text);border:2px solid var(--yellow);border-radius:var(--radius-sm);padding:9px 16px;white-space:nowrap}
+.yandex-badge a.yb-link:hover{background:var(--yellow);color:var(--cta-fg)}
+
 /* ============================================================ ПЛАНШЕТ / ДЕСКТОП (mobile-first → вверх) */
 @media(min-width:600px){
   .cards-2{grid-template-columns:repeat(2,1fr)}
   .cards-3{grid-template-columns:repeat(2,1fr)}
   .cards-4{grid-template-columns:repeat(2,1fr)}
   .split{grid-template-columns:1fr 1fr}
-  .sch-row{grid-template-columns:1.4fr 1fr .9fr auto;align-items:center}
+  .sch-row{grid-template-columns:1.3fr 1.1fr 1fr .9fr auto;align-items:center}
   .hero-actions{flex-direction:row}
   .hero-actions .btn{width:auto}
 }
@@ -403,14 +462,18 @@ html.js .reveal.in{opacity:1;transform:none}
         <div><div class="num">Очно + онлайн</div><div class="lbl">Новослободская и Skype</div></div>
       </div>
     </div>
-    <div class="hero-visual reveal">
-      <h3>Как начать заниматься</h3>
-      <ul>
-        <li><b>01</b> Пройдите короткий тест на уровень</li>
-        <li><b>02</b> Подбираем преподавателя и формат</li>
-        <li><b>03</b> Пробное занятие — знакомство с преподавателем</li>
-        <li><b>04</b> Составляем программу под вашу цель</li>
-      </ul>
+    <!-- Фото-слайдер: плейсхолдеры; реальные фото учеников/занятий заказчик пришлёт позже -->
+    <div class="hero-slider" id="heroSlider">
+      <div class="hslide on">фото с занятия<span class="cap">Занятие в группе</span></div>
+      <div class="hslide">фото ученика<span class="cap">Индивидуально с носителем</span></div>
+      <div class="hslide">фото разговорного клуба<span class="cap">Разговорный клуб</span></div>
+      <div class="hslide">фото офиса на Новослободской<span class="cap">Очно · Новослободская</span></div>
+      <div class="hero-dots" id="heroDots">
+        <button class="on" aria-label="Слайд 1"></button>
+        <button aria-label="Слайд 2"></button>
+        <button aria-label="Слайд 3"></button>
+        <button aria-label="Слайд 4"></button>
+      </div>
     </div>
   </div>
 </section>
@@ -424,10 +487,10 @@ html.js .reveal.in{opacity:1;transform:none}
       <p>Мы занимаемся только португальским и испанским — и делаем это профессионально.</p>
     </div>
     <div class="cards cards-4">
-      <div class="card feature reveal"><div class="ic">1</div><h3>Только PT и ES</h3><p>Единственный в Москве центр, который специализируется исключительно на португальском и испанском языках.</p></div>
-      <div class="card feature reveal"><div class="ic">2</div><h3>Носители языка</h3><p>Более 17 преподавателей — носители европейского и бразильского португальского, свободно говорящие по-русски.</p></div>
-      <div class="card feature reveal"><div class="ic">3</div><h3>Два варианта</h3><p>Учим и европейскому (Португалия), и бразильскому варианту — вы выбираете нужный именно вам.</p></div>
-      <div class="card feature reveal"><div class="ic">4</div><h3>Свои материалы</h3><p>Собственная учебная библиотека и статус официального дилера издательств Lidel, Porto Editora и EPU.</p></div>
+      <div class="card feature reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 3h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H8l-4 4V4a1 1 0 0 1 1-1zm3 5v2h10V8H7zm0 3.5v2h6v-2H7z"/></svg></div><h3>Только PT и ES</h3><p>Единственный в Москве центр, который специализируется исключительно на португальском и испанском языках.</p></div>
+      <div class="card feature reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-4 0-8 2-8 5v2h16v-2c0-3-4-5-8-5z"/></svg></div><h3>Носители языка</h3><p>Более 17 преподавателей — носители европейского и бразильского португальского, свободно говорящие по-русски.</p></div>
+      <div class="card feature reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 2c1.6 0 3 2.8 3.4 6H8.6C9 6.8 10.4 4 12 4zM4.3 11h2.3c.1-2 .5-3.8 1.1-5.2A8 8 0 0 0 4.3 11zM6.6 13H4.3a8 8 0 0 0 3.4 5.2C7.1 16.8 6.7 15 6.6 13zm2 0h6.8c-.4 3.2-1.8 6-3.4 6s-3-2.8-3.4-6zm8.8 0c-.1 2-.5 3.8-1.1 5.2A8 8 0 0 0 19.7 13zm0-2h2.3a8 8 0 0 0-3.4-5.2c.6 1.4 1 3.2 1.1 5.2z"/></svg></div><h3>Два варианта</h3><p>Учим и европейскому (Португалия), и бразильскому варианту — вы выбираете нужный именно вам.</p></div>
+      <div class="card feature reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm8 1.5V8h4.5L14 3.5zM8 12v2h8v-2H8zm0 4v2h8v-2H8z"/></svg></div><h3>Свои материалы</h3><p>Собственная учебная библиотека и статус официального дилера издательств Lidel, Porto Editora и EPU.</p></div>
     </div>
   </div>
 </section>
@@ -438,15 +501,25 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="section-head reveal">
       <span class="eyebrow">Расписание</span>
       <h2>Ближайшие наборы в группы</h2>
-      <p>Выберите удобное время — или спросите ассистента о свободных местах и индивидуальном графике.</p>
+      <p>Одновременно набираем группы с нуля по каждому языку, плюс есть открытые группы для продолжающих — к ним можно присоединиться в процессе.</p>
     </div>
+    <!-- Фильтр по языку -->
+    <div class="sch-filter">
+      <button class="on" onclick="schFilter(this,'all')">Все языки</button>
+      <button onclick="schFilter(this,'pt-eu')">Португальский · EU</button>
+      <button onclick="schFilter(this,'pt-br')">Португальский · BR</button>
+      <button onclick="schFilter(this,'es')">Испанский</button>
+    </div>
+    <!-- ЗАКАЗЧИКУ: строки легко добавлять/менять. data-lang: pt-eu | pt-br | es. -->
     <div class="schedule">
-      <div class="sch-row reveal"><div class="sch-lang">Португальский · A1 <span>европейский</span></div><div class="sch-when">Пн, Чт · 19:00</div><div class="sch-fmt">очно + онлайн</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
-      <div class="sch-row reveal"><div class="sch-lang">Португальский · A1 <span>бразильский</span></div><div class="sch-when">Сб · 12:00</div><div class="sch-fmt">онлайн</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
-      <div class="sch-row reveal"><div class="sch-lang">Испанский · A1</div><div class="sch-when">Вт, Пт · 19:00</div><div class="sch-fmt">очно + онлайн</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
-      <div class="sch-row reveal"><div class="sch-lang">Разговорный клуб</div><div class="sch-when">Сб · 18:00</div><div class="sch-fmt">с носителем языка</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
+      <div class="sch-row" data-lang="pt-eu"><div class="sch-lang">Португальский <span>европейский</span></div><div><span class="sch-lvl">Для начинающих · A1</span></div><div class="sch-when">Пн, Чт · 19:00</div><div class="sch-fmt">очно + онлайн</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
+      <div class="sch-row" data-lang="pt-eu"><div class="sch-lang">Португальский <span>европейский</span></div><div><span class="sch-lvl cont">Для продолжающих</span></div><div class="sch-when">Ср, Сб · 12:00</div><div class="sch-fmt">очно + онлайн</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
+      <div class="sch-row" data-lang="pt-br"><div class="sch-lang">Португальский <span>бразильский</span></div><div><span class="sch-lvl">Для начинающих · A1</span></div><div class="sch-when">Вт, Пт · 19:00</div><div class="sch-fmt">онлайн</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
+      <div class="sch-row" data-lang="pt-br"><div class="sch-lang">Португальский <span>бразильский</span></div><div><span class="sch-lvl cont">Для продолжающих</span></div><div class="sch-when">Сб · 14:00</div><div class="sch-fmt">онлайн</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
+      <div class="sch-row" data-lang="es"><div class="sch-lang">Испанский</div><div><span class="sch-lvl">Для начинающих · A1</span></div><div class="sch-when">Пн, Чт · 20:00</div><div class="sch-fmt">очно + онлайн</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
+      <div class="sch-row" data-lang="es"><div class="sch-lang">Испанский</div><div><span class="sch-lvl cont">Для продолжающих</span></div><div class="sch-when">Ср · 19:00</div><div class="sch-fmt">очно + онлайн</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
     </div>
-    <p class="sch-note">Даты и время — примерные; актуальное расписание и свободные места уточним в чате.</p>
+    <p class="sch-note">Дни и время — редактируемые заглушки; «уровень уточняется» для групп продолжающих. Актуальные наборы и свободные места подскажет ассистент в чате.</p>
   </div>
 </section>
 
@@ -475,11 +548,42 @@ html.js .reveal.in{opacity:1;transform:none}
       <h2>Выберите преподавателя, с которым будете на одной волне</h2>
       <p>Носители языка и опытные русскоговорящие преподаватели. Познакомьтесь на пробном занятии.</p>
     </div>
-    <div class="cards cards-4">
-      <div class="card teacher reveal"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Дан</h3><div class="exp">вырос в Португалии</div><p>Европейский португальский, снятие языкового барьера, разговорная практика с первых занятий.</p><div class="langs"><span>PT-PT</span></div></div></div>
-      <div class="card teacher reveal"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Никсару</h3><div class="exp">носитель · харизматичный</div><p>Испанский язык: разные методики, живые занятия. Ученики отмечают, что «всегда весело и легко».</p><div class="langs"><span>ES</span></div></div></div>
-      <div class="card teacher reveal"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Анабела</h3><div class="exp">носитель языка</div><p>Португальский для тех, кто уже владеет испанским, и с нуля. Европейский вариант.</p><div class="langs"><span>PT-PT</span></div></div></div>
-      <div class="card teacher reveal"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Эрик</h3><div class="exp">носитель языка</div><p>Испанский: «очень информативно, понятно и интересно» — из отзывов учеников.</p><div class="langs"><span>ES</span></div></div></div>
+    <!-- Вкладки формата занятий -->
+    <div class="tabs reveal" role="tablist">
+      <button class="fmt-tab on" onclick="fmtTab(this,'fmt-mini')">В мини-группе</button>
+      <button class="fmt-tab" onclick="fmtTab(this,'fmt-pair')">Вдвоём</button>
+      <button class="fmt-tab" onclick="fmtTab(this,'fmt-solo')">Индивидуально</button>
+    </div>
+    <div id="fmt-mini" class="fmt-panel-w on"><div class="fmt-panel">
+      <div><h4>В мини-группе (2–4 человека)</h4><p>Небольшая группа одного уровня: больше практики, чем в большой группе, и заметно доступнее индивидуальных. Живое общение и поддержка одногруппников.</p></div>
+      <div class="fmt-side"><div class="fmt-price">от 8 000 ₽<small> / мес</small></div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
+    </div></div>
+    <div id="fmt-pair" class="fmt-panel-w"><div class="fmt-panel">
+      <div><h4>Вдвоём</h4><p>Занятия в паре с другом, коллегой или близким — общий темп и цель, внимание преподавателя почти как на индивидуальных, но выгоднее по цене.</p></div>
+      <div class="fmt-side"><div class="fmt-price">от 1 100 ₽<small> / ак. час с человека</small></div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
+    </div></div>
+    <div id="fmt-solo" class="fmt-panel-w"><div class="fmt-panel">
+      <div><h4>Индивидуально (1-на-1)</h4><p>Максимальный темп и внимание. Программа полностью под вашу цель, гибкое расписание — очно на Новослободской или онлайн по Skype.</p></div>
+      <div class="fmt-side"><div class="fmt-price">от 1 600 ₽<small> / ак. час</small></div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
+    </div></div>
+
+    <!-- Стикер-плашка -->
+    <div class="sticker reveal"><span class="s-ic">📌</span><span>При индивидуальных занятиях вы можете заменить преподавателя на любом этапе обучения.</span></div>
+
+    <!-- Слайдер преподавателей -->
+    <div class="slider" style="margin-top:30px">
+      <div class="slider-track" id="teachersTrack">
+        <div class="card teacher slide"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Дан</h3><div class="exp">вырос в Португалии</div><p>Европейский португальский, снятие языкового барьера, разговорная практика с первых занятий.</p><div class="langs"><span>PT-PT</span></div></div></div>
+        <div class="card teacher slide"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Никсару</h3><div class="exp">носитель · харизматичный</div><p>Испанский язык: разные методики, живые занятия. Ученики отмечают, что «всегда весело и легко».</p><div class="langs"><span>ES</span></div></div></div>
+        <div class="card teacher slide"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Анабела</h3><div class="exp">носитель языка</div><p>Португальский для тех, кто уже владеет испанским, и с нуля. Европейский вариант.</p><div class="langs"><span>PT-PT</span></div></div></div>
+        <div class="card teacher slide"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Эрик</h3><div class="exp">носитель языка</div><p>Испанский: «очень информативно, понятно и интересно» — из отзывов учеников.</p><div class="langs"><span>ES</span></div></div></div>
+        <div class="card teacher slide"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Дерио</h3><div class="exp">носитель языка</div><p>Бразильский португальский, разговорная практика и подготовка к CELPE-Bras.</p><div class="langs"><span>PT-BR</span></div></div></div>
+        <div class="card teacher slide"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Рафаэль</h3><div class="exp">носитель языка</div><p>Бизнес-португальский и деловое общение, корпоративные группы, телефонные переговоры.</p><div class="langs"><span>PT-PT</span><span>ES</span></div></div></div>
+      </div>
+      <div class="slider-nav">
+        <button onclick="slide('teachersTrack',-1)" aria-label="Предыдущие">‹</button>
+        <button onclick="slide('teachersTrack',1)" aria-label="Следующие">›</button>
+      </div>
     </div>
     <div class="center-cta"><a href="#" onclick="openChat();return false" class="btn btn-outline">Подобрать преподавателя — в штате 17+ носителей</a></div>
   </div>
@@ -521,10 +625,31 @@ html.js .reveal.in{opacity:1;transform:none}
       <h2>Что говорят наши ученики</h2>
       <p>Реальные отзывы студентов Ensina-me.</p>
     </div>
-    <div class="cards cards-3">
-      <div class="card review reveal"><div class="stars">★★★★★</div><p class="quote">«Занимаюсь с сентября, начинала с европейского португальского у Дана — он вырос в Португалии. Через три месяца смогла применить знания в Лиссабоне. Потом перешла на испанский к Никсару — очень харизматичный, всегда весело и легко.»</p><div class="who"><div class="ava">У</div><div><b>Ученица</b><span>Португальский → испанский</span></div></div></div>
-      <div class="card review reveal"><div class="stars">★★★★★</div><p class="quote">«Огромное спасибо школе и преподавателю испанского Эрику за очень информативные, понятные и интересные уроки. Всё разложено по полочкам.»</p><div class="who"><div class="ava">У</div><div><b>Ученик</b><span>Испанский</span></div></div></div>
-      <div class="card review reveal"><div class="stars">★★★★★</div><p class="quote">«Прошёл “Суперинтенсив” за полтора месяца — четыре недели ежедневных занятий с Алёной и Любовью. За такой срок реально сдвинуться с места.»</p><div class="who"><div class="ava">У</div><div><b>Ученик</b><span>Суперинтенсив</span></div></div></div>
+    <!-- Бейдж рейтинга Яндекса (временное решение). Значения [ ] заказчик заменит. -->
+    <div class="yandex-badge reveal">
+      <span class="yb-logo"><span class="ya">Я</span>ндекс</span>
+      <span class="yb-rate">5,0</span>
+      <span class="yb-stars">★★★★★</span>
+      <span class="yb-count">[171] отзыв на Яндекс.Картах</span>
+      <a class="yb-link" href="#" target="_blank" rel="noopener">Смотреть отзывы</a>
+    </div>
+    <!--
+      ОФИЦИАЛЬНЫЙ ВИДЖЕТ ЯНДЕКС.ОТЗЫВОВ (для статики):
+      В кабинете «Яндекс Бизнес» → «Виджеты» → «Отзывы» выдают готовый iframe.
+      Вставьте его сюда ВМЕСТО бейджа выше, например:
+      <iframe src="https://yandex.ru/maps-reviews-widget/ВАШ_ID?comments" width="100%" height="560" frameborder="0" style="border:1px solid #e2e7e1;border-radius:10px"></iframe>
+    -->
+    <div class="slider">
+      <div class="slider-track wide" id="reviewsTrack">
+        <div class="card review slide"><div class="stars">★★★★★</div><p class="quote">«Занимаюсь с сентября, начинала с европейского португальского у Дана — он вырос в Португалии. Через три месяца смогла применить знания в Лиссабоне. Потом перешла на испанский к Никсару — очень харизматичный, всегда весело и легко.»</p><div class="who"><div class="ava">У</div><div><b>Ученица</b><span>Португальский → испанский</span></div></div></div>
+        <div class="card review slide"><div class="stars">★★★★★</div><p class="quote">«Огромное спасибо школе и преподавателю испанского Эрику за очень информативные, понятные и интересные уроки. Всё разложено по полочкам.»</p><div class="who"><div class="ava">У</div><div><b>Ученик</b><span>Испанский</span></div></div></div>
+        <div class="card review slide"><div class="stars">★★★★★</div><p class="quote">«Прошёл “Суперинтенсив” за полтора месяца — четыре недели ежедневных занятий с Алёной и Любовью. За такой срок реально сдвинуться с места.»</p><div class="who"><div class="ava">У</div><div><b>Ученик</b><span>Суперинтенсив</span></div></div></div>
+        <div class="card review slide"><div class="stars">★★★★★</div><p class="quote">«Училась в мини-группе онлайн — удобно совмещать с работой, и в группе не страшно говорить. Преподаватель всегда подскажет и поддержит.»</p><div class="who"><div class="ava">У</div><div><b>Ученица</b><span>Португальский · мини-группа</span></div></div></div>
+      </div>
+      <div class="slider-nav">
+        <button onclick="slide('reviewsTrack',-1)" aria-label="Предыдущие">‹</button>
+        <button onclick="slide('reviewsTrack',1)" aria-label="Следующие">›</button>
+      </div>
     </div>
   </div>
 </section>
@@ -705,6 +830,44 @@ function addBubble(t,w){var b=document.createElement('div');b.className='bubble 
 function botReply(){setTimeout(function(){addBubble('Спасибо! Это демо-версия ассистента. Скоро он сможет ответить и записать вас автоматически, а пока оставьте контакт — мы свяжемся с вами.','bot');},500);}
 function chatSend(){var i=document.getElementById('cwInput');if(!i.value.trim())return;addBubble(i.value.trim(),'user');i.value='';botReply();}
 function chatChip(el){openChat();addBubble(el.textContent,'user');botReply();}
+
+/* Hero фото-слайдер (автосмена + точки) */
+(function(){
+  var sl=document.querySelectorAll('#heroSlider .hslide');
+  var dots=document.querySelectorAll('#heroDots button');
+  if(sl.length<2)return;
+  var i=0,timer;
+  function go(n){sl[i].classList.remove('on');if(dots[i])dots[i].classList.remove('on');
+    i=(n+sl.length)%sl.length;sl[i].classList.add('on');if(dots[i])dots[i].classList.add('on');}
+  function reset(){clearInterval(timer);timer=setInterval(function(){go(i+1);},4500);}
+  dots.forEach(function(d,k){d.addEventListener('click',function(){go(k);reset();});});
+  reset();
+})();
+
+/* Универсальный слайдер (прокрутка на одну карточку стрелками) */
+function slide(id,dir){
+  var tr=document.getElementById(id);if(!tr)return;
+  var s=tr.querySelector('.slide');
+  var step=s?s.getBoundingClientRect().width+16:280;
+  tr.scrollBy({left:dir*step,behavior:'smooth'});
+}
+
+/* Вкладки формата занятий */
+function fmtTab(btn,panelId){
+  document.querySelectorAll('.fmt-tab').forEach(function(b){b.classList.remove('on');});
+  btn.classList.add('on');
+  document.querySelectorAll('.fmt-panel-w').forEach(function(p){p.classList.remove('on');});
+  var el=document.getElementById(panelId);if(el)el.classList.add('on');
+}
+
+/* Фильтр расписания по языку */
+function schFilter(btn,lang){
+  document.querySelectorAll('.sch-filter button').forEach(function(b){b.classList.remove('on');});
+  btn.classList.add('on');
+  document.querySelectorAll('#schedule .sch-row').forEach(function(r){
+    r.hidden=(lang!=='all' && r.getAttribute('data-lang')!==lang);
+  });
+}
 </script>
 </body>
 </html>
