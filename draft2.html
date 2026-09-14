@@ -122,7 +122,7 @@ section::before,.site-footer::before{content:"";position:absolute;top:0;left:0;r
 .site-footer{position:relative}
 
 /* спокойные нейтральные фоны секций (без сплошной яркой заливки) */
-#about,#pricing,#faq{background:#f4f6f7}       /* светло-серый */
+#about,#pricing,#faq,#indiv-pricing{background:#f4f6f7}       /* светло-серый */
 #schedule,#club{background:#e9f1f8}            /* пастельный голубой */
 #teachers,#contacts{background:#f5efe4}        /* бежевый «кофе с молоком» */
 /* остальные секции (hero, courses, reviews, articles) — белые по умолчанию */
@@ -134,9 +134,10 @@ section::before,.site-footer::before{content:"";position:absolute;top:0;left:0;r
 .hero .lead{font-size:17px;color:var(--text-muted);margin-bottom:24px}
 .hero-actions{display:flex;flex-direction:column;gap:12px}
 .hero-actions .btn{width:100%}
-.hero-stats{display:flex;gap:24px;margin-top:28px;flex-wrap:wrap}
-.hero-stats .num{font-size:26px;font-weight:800;color:var(--text);font-family:var(--font-head)}
-.hero-stats .lbl{font-size:13px;color:var(--text-muted)}
+.hero-ribbon{display:flex;flex-direction:column;gap:10px;margin-top:26px;padding:16px 18px;background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);box-shadow:0 1px 3px rgba(20,50,30,.06)}
+.hero-ribbon .hr-item{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text);line-height:1.35}
+.hero-ribbon .hr-item svg{width:20px;height:20px;fill:var(--green);flex-shrink:0}
+.hero-ribbon .hr-item b{font-family:var(--font-head);font-weight:800;color:var(--green)}
 .hero-visual{margin-top:28px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
 .hero-visual h3{font-size:17px;margin-bottom:12px}
 .hero-visual ul{list-style:none}
@@ -147,7 +148,7 @@ body.vB .hero{text-align:center}
 body.vB .hero .lead{margin-left:auto;margin-right:auto;max-width:620px}
 body.vB .hero-actions{flex-direction:row;justify-content:center;flex-wrap:wrap}
 body.vB .hero-actions .btn{width:auto}
-body.vB .hero-stats{justify-content:center}
+body.vB .hero-ribbon{max-width:680px;margin-left:auto;margin-right:auto}
 body.vB .hero-slider{max-width:680px;margin-left:auto;margin-right:auto}
 
 /* ============================================================ КАРТОЧКИ / СЕТКИ */
@@ -210,6 +211,15 @@ body.vB .hero-slider{max-width:680px;margin-left:auto;margin-right:auto}
 .price-card li:last-child{border-bottom:0}
 .pay-note{margin-top:22px;text-align:center;font-size:14px;color:var(--leadfg,var(--text-muted))}
 .pay-note b{color:var(--headfg,var(--text))}
+
+/* ---- ИНДИВИДУАЛЬНЫЕ ЦЕНЫ ---- */
+.indiv-card{padding:26px 22px;text-align:center}
+.indiv-card h3{font-size:18px;margin-bottom:6px;color:var(--text)}
+.indiv-dur{font-size:14px;color:var(--text-muted);margin-bottom:14px;font-weight:700;font-family:var(--font-head)}
+.indiv-price{font-size:32px;font-weight:800;color:var(--green);line-height:1;font-family:var(--font-head);margin-bottom:14px}
+.indiv-card p{color:var(--text-muted);font-size:14px}
+.indiv-card.featured{border:2px solid var(--yellow);position:relative}
+.indiv-card.featured .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--yellow);color:var(--cta-fg);font-size:12px;font-weight:800;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.04em;font-family:var(--font-head)}
 
 /* ---- ОТЗЫВЫ ---- */
 .review{padding:22px 20px}
@@ -347,7 +357,6 @@ html.js .reveal.in{opacity:1;transform:none}
 .fmt-side{display:flex;flex-direction:column;gap:10px;justify-content:center}
 .fmt-price{font-family:var(--font-head);font-weight:800;font-size:22px}
 .fmt-price small{font-weight:500;font-size:14px;color:var(--text-muted)}
-@media(min-width:700px){.fmt-panel{grid-template-columns:1.7fr 1fr;align-items:center;gap:24px}.fmt-side{border-left:1px solid var(--border);padding-left:24px}}
 
 /* ============================================================ ФИЛЬТР РАСПИСАНИЯ */
 .sch-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
@@ -355,6 +364,7 @@ html.js .reveal.in{opacity:1;transform:none}
 .sch-filter button.on{background:var(--green);border-color:var(--green);color:#fff}
 .sch-lvl{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#fff;background:var(--text);padding:2px 8px;border-radius:20px;margin-bottom:4px}
 .sch-lvl.cont{background:#7a6a12;background:var(--text-muted)}
+.sch-price{font-weight:800;color:var(--green);font-family:var(--font-head);font-size:15px;white-space:nowrap}
 .sch-row[hidden]{display:none}
 
 /* ============================================================ ИКОНКИ «ПОЧЕМУ МЫ» */
@@ -376,9 +386,13 @@ html.js .reveal.in{opacity:1;transform:none}
   .cards-3{grid-template-columns:repeat(2,1fr)}
   .cards-4{grid-template-columns:repeat(2,1fr)}
   .split{grid-template-columns:1fr 1fr}
-  .sch-row{grid-template-columns:1.3fr 1.1fr 1fr .9fr auto;align-items:center}
+  .sch-row{grid-template-columns:1.3fr .9fr .9fr .7fr .6fr auto;align-items:center}
   .hero-actions{flex-direction:row}
   .hero-actions .btn{width:auto}
+  .hero-ribbon{flex-direction:row;gap:0}
+  .hero-ribbon .hr-item{flex:1;padding:0 14px}
+  .hero-ribbon .hr-item+.hr-item{border-left:2px solid var(--border)}
+  .hero-ribbon .hr-item:first-child{padding-left:0}
 }
 @media(min-width:900px){
   .wrap{padding:0 24px}
@@ -456,10 +470,10 @@ html.js .reveal.in{opacity:1;transform:none}
         <a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться на курс</a>
         <a href="#level-test" class="btn btn-outline">Пройти тест на уровень</a>
       </div>
-      <div class="hero-stats">
-        <div><div class="num">17+</div><div class="lbl">преподавателей-носителей</div></div>
-        <div><div class="num">EU + BR</div><div class="lbl">варианта португальского</div></div>
-        <div><div class="num">Очно + онлайн</div><div class="lbl">Новослободская и Skype</div></div>
+      <div class="hero-ribbon">
+        <div class="hr-item"><svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-4 0-8 2-8 5v2h16v-2c0-3-4-5-8-5z"/></svg><div><b>17+</b> преподавателей&#8209;носителей</div></div>
+        <div class="hr-item"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 2c1.6 0 3 2.8 3.4 6H8.6C9 6.8 10.4 4 12 4zM4.3 11h2.3c.1-2 .5-3.8 1.1-5.2A8 8 0 0 0 4.3 11z"/></svg><div><b>EU&nbsp;+&nbsp;BR</b> оба варианта португальского</div></div>
+        <div class="hr-item"><svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg><div><b>Очно&nbsp;+&nbsp;онлайн</b> Новослободская и&nbsp;Skype</div></div>
       </div>
     </div>
     <!-- Фото-слайдер: плейсхолдеры; реальные фото учеников/занятий заказчик пришлёт позже -->
@@ -512,14 +526,14 @@ html.js .reveal.in{opacity:1;transform:none}
     </div>
     <!-- ЗАКАЗЧИКУ: строки легко добавлять/менять. data-lang: pt-eu | pt-br | es. -->
     <div class="schedule">
-      <div class="sch-row" data-lang="pt-eu"><div class="sch-lang">Португальский <span>европейский</span></div><div><span class="sch-lvl">Для начинающих · A1</span></div><div class="sch-when">Пн, Чт · 19:00</div><div class="sch-fmt">очно + онлайн</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
-      <div class="sch-row" data-lang="pt-eu"><div class="sch-lang">Португальский <span>европейский</span></div><div><span class="sch-lvl cont">Для продолжающих</span></div><div class="sch-when">Ср, Сб · 12:00</div><div class="sch-fmt">очно + онлайн</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
-      <div class="sch-row" data-lang="pt-br"><div class="sch-lang">Португальский <span>бразильский</span></div><div><span class="sch-lvl">Для начинающих · A1</span></div><div class="sch-when">Вт, Пт · 19:00</div><div class="sch-fmt">онлайн</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
-      <div class="sch-row" data-lang="pt-br"><div class="sch-lang">Португальский <span>бразильский</span></div><div><span class="sch-lvl cont">Для продолжающих</span></div><div class="sch-when">Сб · 14:00</div><div class="sch-fmt">онлайн</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
-      <div class="sch-row" data-lang="es"><div class="sch-lang">Испанский</div><div><span class="sch-lvl">Для начинающих · A1</span></div><div class="sch-when">Пн, Чт · 20:00</div><div class="sch-fmt">очно + онлайн</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
-      <div class="sch-row" data-lang="es"><div class="sch-lang">Испанский</div><div><span class="sch-lvl cont">Для продолжающих</span></div><div class="sch-when">Ср · 19:00</div><div class="sch-fmt">очно + онлайн</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
+      <div class="sch-row" data-lang="pt-eu"><div class="sch-lang">Португальский <span>европейский</span></div><div><span class="sch-lvl">Для начинающих · A1</span></div><div class="sch-when">Пн, Чт · 19:00</div><div class="sch-fmt">очно + онлайн</div><div class="sch-price">8 000 ₽/мес</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
+      <div class="sch-row" data-lang="pt-eu"><div class="sch-lang">Португальский <span>европейский</span></div><div><span class="sch-lvl cont">Для продолжающих</span></div><div class="sch-when">Ср, Сб · 12:00</div><div class="sch-fmt">очно + онлайн</div><div class="sch-price">8 000 ₽/мес</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
+      <div class="sch-row" data-lang="pt-br"><div class="sch-lang">Португальский <span>бразильский</span></div><div><span class="sch-lvl">Для начинающих · A1</span></div><div class="sch-when">Вт, Пт · 19:00</div><div class="sch-fmt">онлайн</div><div class="sch-price">6 000 ₽/мес</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
+      <div class="sch-row" data-lang="pt-br"><div class="sch-lang">Португальский <span>бразильский</span></div><div><span class="sch-lvl cont">Для продолжающих</span></div><div class="sch-when">Сб · 14:00</div><div class="sch-fmt">онлайн</div><div class="sch-price">6 000 ₽/мес</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
+      <div class="sch-row" data-lang="es"><div class="sch-lang">Испанский</div><div><span class="sch-lvl">Для начинающих · A1</span></div><div class="sch-when">Пн, Чт · 20:00</div><div class="sch-fmt">очно + онлайн</div><div class="sch-price">8 000 ₽/мес</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
+      <div class="sch-row" data-lang="es"><div class="sch-lang">Испанский</div><div><span class="sch-lvl cont">Для продолжающих</span></div><div class="sch-when">Ср · 19:00</div><div class="sch-fmt">очно + онлайн</div><div class="sch-price">8 000 ₽/мес</div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
     </div>
-    <p class="sch-note">Дни и время — редактируемые заглушки; «уровень уточняется» для групп продолжающих. Актуальные наборы и свободные места подскажет ассистент в чате.</p>
+    <p class="sch-note">Дни, время и стоимость — редактируемые заглушки; «уровень уточняется» для групп продолжающих. Актуальные наборы и свободные места подскажет ассистент в чате.</p>
   </div>
 </section>
 
@@ -532,10 +546,10 @@ html.js .reveal.in{opacity:1;transform:none}
       <p>Португальский (европейский и бразильский) и испанский — очно и онлайн, в группе или индивидуально.</p>
     </div>
     <div class="cards cards-4">
-      <div class="card course reveal"><span class="tag">Группы</span><h3>Наборы в группы</h3><p>Группы 4–6 человек и мини-группы 2–3 человека одного уровня. Регулярная практика и живое общение.</p><div class="course-foot"><span class="price">от 6 000 ₽<small> / мес</small></span><a href="#" onclick="openChat();return false" class="more">Записаться →</a></div></div>
-      <div class="card course reveal"><span class="tag">1-на-1</span><h3>Индивидуальные</h3><p>Персональная программа и темп. Очно на Новослободской или онлайн по Skype — 60–120 минут.</p><div class="course-foot"><span class="price">от 1 600 ₽<small> / ак. час</small></span><a href="#" onclick="openChat();return false" class="more">Записаться →</a></div></div>
-      <div class="card course reveal"><span class="tag">Экзамены</span><h3>Подготовка к экзаменам</h3><p>CAPLE (CIPLE, DEPLE, DIPLE, DAPLE, DUPLE), CELPE-Bras для бразильского и DELE для испанского.</p><div class="course-foot"><span class="price">по программе</span><a href="#" onclick="openChat();return false" class="more">Подробнее →</a></div></div>
-      <div class="card course reveal"><span class="tag">Бизнес</span><h3>Корпоративное обучение</h3><p>Бизнес-португальский, деловая переписка и телефонные переговоры для сотрудников и команд.</p><div class="course-foot"><span class="price">по запросу</span><a href="#" onclick="openChat();return false" class="more">Обсудить →</a></div></div>
+      <div class="card course reveal"><span class="tag">Группы</span><h3>Наборы в группы</h3><p>Группы 4–6 человек и мини-группы 2–3 человека одного уровня. Регулярная практика и живое общение.</p></div>
+      <div class="card course reveal"><span class="tag">1-на-1</span><h3>Индивидуальные</h3><p>Персональная программа и темп. Очно на Новослободской или онлайн по Skype — 60–120 минут.</p></div>
+      <div class="card course reveal"><span class="tag">Экзамены</span><h3>Подготовка к экзаменам</h3><p>CAPLE (CIPLE, DEPLE, DIPLE, DAPLE, DUPLE), CELPE-Bras для бразильского и DELE для испанского.</p></div>
+      <div class="card course reveal"><span class="tag">Бизнес</span><h3>Корпоративное обучение</h3><p>Бизнес-португальский, деловая переписка и телефонные переговоры для сотрудников и команд.</p></div>
     </div>
   </div>
 </section>
@@ -556,19 +570,16 @@ html.js .reveal.in{opacity:1;transform:none}
     </div>
     <div id="fmt-mini" class="fmt-panel-w on"><div class="fmt-panel">
       <div><h4>В мини-группе (2–4 человека)</h4><p>Небольшая группа одного уровня: больше практики, чем в большой группе, и заметно доступнее индивидуальных. Живое общение и поддержка одногруппников.</p></div>
-      <div class="fmt-side"><div class="fmt-price">от 8 000 ₽<small> / мес</small></div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
     </div></div>
     <div id="fmt-pair" class="fmt-panel-w"><div class="fmt-panel">
       <div><h4>Вдвоём</h4><p>Занятия в паре с другом, коллегой или близким — общий темп и цель, внимание преподавателя почти как на индивидуальных, но выгоднее по цене.</p></div>
-      <div class="fmt-side"><div class="fmt-price">от 1 100 ₽<small> / ак. час с человека</small></div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
     </div></div>
     <div id="fmt-solo" class="fmt-panel-w"><div class="fmt-panel">
       <div><h4>Индивидуально (1-на-1)</h4><p>Максимальный темп и внимание. Программа полностью под вашу цель, гибкое расписание — очно на Новослободской или онлайн по Skype.</p></div>
-      <div class="fmt-side"><div class="fmt-price">от 1 600 ₽<small> / ак. час</small></div><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться</a></div>
     </div></div>
 
     <!-- Стикер-плашка -->
-    <div class="sticker reveal"><span class="s-ic">📌</span><span>При индивидуальных занятиях вы можете заменить преподавателя на любом этапе обучения.</span></div>
+    <div class="sticker reveal"><span class="s-ic">📌</span><span>У нас 17+ носителей — на индивидуальных занятиях можно попробовать разных преподавателей и найти «своего».</span></div>
 
     <!-- Слайдер преподавателей -->
     <div class="slider" style="margin-top:30px">
@@ -586,6 +597,39 @@ html.js .reveal.in{opacity:1;transform:none}
       </div>
     </div>
     <div class="center-cta"><a href="#" onclick="openChat();return false" class="btn btn-outline">Подобрать преподавателя — в штате 17+ носителей</a></div>
+  </div>
+</section>
+
+<!-- ============================= ИНДИВИДУАЛЬНЫЕ ЦЕНЫ ============================= -->
+<section id="indiv-pricing">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Индивидуальные занятия</span>
+      <h2>Стоимость индивидуальных занятий</h2>
+      <p>Очно на Новослободской или онлайн по Skype — с носителем языка.</p>
+    </div>
+    <div class="cards cards-3">
+      <div class="card indiv-card reveal">
+        <h3>Индивидуально</h3>
+        <div class="indiv-dur">60 минут</div>
+        <div class="indiv-price">[цена]</div>
+        <p>Одно занятие с носителем, программа под вашу цель и темп.</p>
+      </div>
+      <div class="card indiv-card featured reveal">
+        <span class="badge">Популярно</span>
+        <h3>Индивидуально</h3>
+        <div class="indiv-dur">90 минут</div>
+        <div class="indiv-price">[цена]</div>
+        <p>Расширенное занятие — больше практики и погружения в язык.</p>
+      </div>
+      <div class="card indiv-card reveal">
+        <h3>Вдвоём</h3>
+        <div class="indiv-dur">90 минут</div>
+        <div class="indiv-price">[цена]</div>
+        <p>Занятие в паре с другом или коллегой — общий темп и выгодная цена.</p>
+      </div>
+    </div>
+    <div class="center-cta"><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться на занятие</a></div>
   </div>
 </section>
 
@@ -767,6 +811,7 @@ html.js .reveal.in{opacity:1;transform:none}
         <a href="#courses">Индивидуальные занятия</a>
         <a href="#courses">Подготовка к экзаменам</a>
         <a href="#pricing">Стоимость</a>
+        <a href="pay.html">Оплата обучения</a>
       </div>
       <div class="footer-col">
         <h4>Центр</h4>

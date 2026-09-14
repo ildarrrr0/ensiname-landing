@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Оплата обучения в языковом центре Ensina-me — португальский и испанский.">
+<title>Оплата обучения — Ensina-me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1a8a38;--green-2:#14722e;--green-3:#0e3d22;
+  --red:#cc2027;--red-2:#a81a20;
+  --yellow:#ffd21e;--yellow-2:#f4c400;
+  --cta-bg:#ffd21e;--cta-bg-h:#f4c400;--cta-fg:#241f04;
+  --bg:#ffffff;--surface:#ffffff;
+  --text:#1f241d;--text-muted:#5c665c;--border:#e2e7e1;
+  --shadow:0 1px 2px rgba(20,50,30,.06),0 6px 18px rgba(20,50,30,.07);
+  --shadow-hover:0 4px 10px rgba(20,50,30,.10),0 14px 32px rgba(20,50,30,.10);
+  --radius:10px;--radius-sm:6px;--maxw:900px;
+  --font:'PT Sans','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --font-head:'Montserrat','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--text);background:#f4f6f7;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--font-head);overflow-wrap:break-word}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-head);
+  font-size:16px;font-weight:700;padding:14px 24px;border:2px solid transparent;border-radius:var(--radius-sm);
+  cursor:pointer;transition:.15s ease;text-align:center;min-height:50px}
+.btn-cta{background:var(--cta-bg);color:var(--cta-fg);border-color:var(--cta-bg)}
+.btn-cta:hover{background:var(--cta-bg-h);border-color:var(--cta-bg-h)}
+.btn-oy{background:transparent;border-color:var(--yellow);color:var(--text)}
+.btn-oy:hover{background:var(--yellow);color:var(--cta-fg);border-color:var(--yellow)}
+
+/* ХЕДЕР */
+.pay-header{background:#fff;border-bottom:1px solid var(--border);padding:18px 0}
+.pay-header .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.pay-header .brand-logo{height:38px;width:auto;display:block}
+.pay-header .brand-logo .sub{fill:#2b2b2b}
+.pay-header .back{font-size:14px;font-weight:700;color:var(--text-muted);margin-left:auto}
+.pay-header .back:hover{color:var(--text)}
+
+/* КОНТЕНТ */
+.pay-hero{text-align:center;padding:44px 0 20px}
+.pay-hero h1{font-size:28px;margin-bottom:10px}
+.pay-hero p{color:var(--text-muted);font-size:16px;max-width:600px;margin:0 auto}
+
+.cards{display:grid;gap:16px;padding:0 0 20px}
+.pay-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:28px 24px;text-align:center;transition:.18s;display:flex;flex-direction:column}
+.pay-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px)}
+.pay-card.featured{border:2px solid var(--yellow);position:relative}
+.pay-card.featured .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--yellow);color:var(--cta-fg);font-size:12px;font-weight:800;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.04em;font-family:var(--font-head)}
+.pay-card h3{font-size:18px;margin-bottom:6px}
+.pay-card .sub{font-size:14px;color:var(--text-muted);margin-bottom:16px}
+.pay-card .amount{font-size:32px;font-weight:800;color:var(--green);line-height:1;font-family:var(--font-head);margin-bottom:6px}
+.pay-card .amount small{font-size:15px;font-weight:500;color:var(--text-muted)}
+.pay-card ul{list-style:none;margin:16px 0;flex:1;text-align:left}
+.pay-card li{padding:7px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--text);display:flex;gap:10px}
+.pay-card li::before{content:"\2713";color:var(--green);font-weight:800}
+.pay-card li:last-child{border-bottom:0}
+.pay-card .btn{margin-top:auto;width:100%}
+
+.pay-note{text-align:center;padding:10px 0 40px;font-size:14px;color:var(--text-muted)}
+.pay-note b{color:var(--text)}
+
+/* ФУТЕР */
+.pay-footer{background:#fff;border-top:1px solid var(--border);padding:24px 0;text-align:center}
+.pay-footer p{font-size:13px;color:var(--text-muted)}
+.pay-footer a{color:var(--green);font-weight:700}
+
+/* триколор-полоса */
+.pay-hero::before{content:"";display:block;height:5px;
+  background:linear-gradient(90deg,var(--red) 0 33.33%,var(--yellow) 33.33% 66.66%,var(--green) 66.66% 100%);
+  margin-bottom:44px}
+
+@media(min-width:600px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:900px){
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .pay-hero h1{font-size:34px}
+}
+</style>
+</head>
+<body>
+
+<header class="pay-header">
+  <div class="wrap">
+    <a href="draft1.html" aria-label="Ensina-me">
+      <svg class="brand-logo" viewBox="0 0 540 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ensina-me">
+        <defs>
+          <linearGradient id="grnH" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2ba03a"/><stop offset="1" stop-color="#0f7a25"/></linearGradient>
+          <linearGradient id="redH" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e11d22"/><stop offset="1" stop-color="#b30f14"/></linearGradient>
+        </defs>
+        <polygon points="34,20 342,20 330,150 34,150 60,85" fill="url(#grnH)" stroke="#0c5d1c" stroke-width="4" stroke-linejoin="round"/>
+        <polygon points="342,20 506,20 480,85 506,150 330,150" fill="url(#redH)" stroke="#8f0c11" stroke-width="4" stroke-linejoin="round"/>
+        <polygon points="40,26 500,26 498,40 42,40" fill="#ffffff" opacity="0.14"/>
+        <g font-family="'Arial Black','Montserrat',sans-serif" font-weight="900" fill="#ffd21e" stroke="#caa400" stroke-width="1">
+          <text x="185" y="112" font-size="82" text-anchor="middle" letter-spacing="-2">ensina</text>
+          <text x="416" y="112" font-size="82" text-anchor="middle" letter-spacing="-2">me</text>
+        </g>
+        <text class="sub" x="270" y="192" text-anchor="middle" font-family="'Montserrat',sans-serif" font-size="26" letter-spacing="14">языковой центр</text>
+      </svg>
+    </a>
+    <a href="draft1.html" class="back">&larr; На главную</a>
+  </div>
+</header>
+
+<main>
+  <div class="pay-hero">
+    <h1>Оплата обучения</h1>
+    <p>Выберите формат и оплатите обучение онлайн. После оплаты мы свяжемся для подтверждения и подберём удобное расписание.</p>
+  </div>
+
+  <div class="wrap">
+    <div class="cards">
+      <!-- ЗАКАЗЧИКУ: замените суммы на актуальные; href кнопок — на ссылки оплаты ЮKassa -->
+      <div class="pay-card">
+        <h3>Группа</h3>
+        <div class="sub">4–6 человек · 1 месяц</div>
+        <div class="amount">6 000 ₽<small> / мес</small></div>
+        <ul>
+          <li>Два занятия в неделю</li>
+          <li>Очно + онлайн</li>
+          <li>Один уровень</li>
+        </ul>
+        <a href="#" class="btn btn-oy">Оплатить</a>
+      </div>
+
+      <div class="pay-card">
+        <h3>Мини-группа</h3>
+        <div class="sub">2–3 человека · 1 месяц</div>
+        <div class="amount">8 000 ₽<small> / мес</small></div>
+        <ul>
+          <li>Два занятия в неделю</li>
+          <li>Очно + онлайн</li>
+          <li>Больше внимания каждому</li>
+        </ul>
+        <a href="#" class="btn btn-oy">Оплатить</a>
+      </div>
+
+      <div class="pay-card featured">
+        <span class="badge">Популярно</span>
+        <h3>Индивидуально</h3>
+        <div class="sub">1 на 1 · абонемент 10 занятий</div>
+        <div class="amount">12 000 ₽<small> / 10 занятий</small></div>
+        <ul>
+          <li>Онлайн по Skype</li>
+          <li>Персональная программа</li>
+          <li>Гибкое расписание</li>
+        </ul>
+        <a href="#" class="btn btn-oy">Оплатить</a>
+      </div>
+
+      <div class="pay-card">
+        <h3>Курс 3 месяца</h3>
+        <div class="sub">Группа · оплата за курс</div>
+        <div class="amount">13 500 ₽</div>
+        <ul>
+          <li>Экономия vs помесячной оплаты</li>
+          <li>Фиксированная цена</li>
+          <li>Два занятия в неделю</li>
+        </ul>
+        <a href="#" class="btn btn-oy">Оплатить</a>
+      </div>
+
+      <div class="pay-card">
+        <h3>Суперинтенсив</h3>
+        <div class="sub">Ежедневные занятия · 1 месяц</div>
+        <div class="amount">16 000 ₽</div>
+        <ul>
+          <li>Материал курса за 4 недели</li>
+          <li>Очно или онлайн</li>
+          <li>Подготовка к экзаменам</li>
+        </ul>
+        <a href="#" class="btn btn-oy">Оплатить</a>
+      </div>
+
+      <div class="pay-card">
+        <h3>Абонемент 36 занятий</h3>
+        <div class="sub">Онлайн-группа · полугодие</div>
+        <div class="amount">32 400 ₽</div>
+        <ul>
+          <li>+ месяц обучения в подарок</li>
+          <li>Максимальная экономия</li>
+          <li>Все уровни</li>
+        </ul>
+        <a href="#" class="btn btn-oy">Оплатить</a>
+      </div>
+    </div>
+
+    <p class="pay-note">Оплата картой онлайн через <b>ЮKassa (Яндекс.Касса)</b>. Кнопки «Оплатить» пока ведут на заглушку — интеграция оплаты подключается на следующем этапе.</p>
+  </div>
+</main>
+
+<footer class="pay-footer">
+  <div class="wrap">
+    <p>&copy; Ensina-me. Языковой центр португальского и испанского. <a href="draft1.html">Вернуться на сайт</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
