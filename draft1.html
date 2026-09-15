@@ -370,15 +370,11 @@ html.js .reveal.in{opacity:1;transform:none}
 /* ============================================================ ИКОНКИ «ПОЧЕМУ МЫ» */
 .feature .ic svg{width:26px;height:26px;fill:var(--green)}
 
-/* ============================================================ ЯНДЕКС-БЕЙДЖ ОТЗЫВОВ */
-.yandex-badge{display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 20px;margin-bottom:26px}
-.yandex-badge .yb-logo{font-family:var(--font-head);font-weight:800;font-size:18px;color:var(--text)}
-.yandex-badge .yb-logo .ya{color:#fc3f1d}
-.yandex-badge .yb-rate{font-family:var(--font-head);font-weight:800;font-size:24px;line-height:1}
-.yandex-badge .yb-stars{color:var(--yellow);-webkit-text-stroke:.5px #e0b100;font-size:16px}
-.yandex-badge .yb-count{color:var(--text-muted);font-size:14px}
-.yandex-badge a.yb-link{margin-left:auto;font-family:var(--font-head);font-weight:700;color:var(--text);border:2px solid var(--yellow);border-radius:var(--radius-sm);padding:9px 16px;white-space:nowrap}
-.yandex-badge a.yb-link:hover{background:var(--yellow);color:var(--cta-fg)}
+/* ============================================================ ВИДЖЕТ ЯНДЕКС.ОТЗЫВОВ */
+.yandex-widget-wrap{margin-bottom:26px}
+.yandex-widget-wrap iframe{display:block;width:100%}
+.yandex-widget-wrap .yb-fallback-link{display:inline-block;margin-top:10px;font-family:var(--font-head);font-weight:700;font-size:14px;color:var(--text)}
+.yandex-widget-wrap .yb-fallback-link:hover{color:var(--green)}
 
 /* ============================================================ ПЛАНШЕТ / ДЕСКТОП (mobile-first → вверх) */
 @media(min-width:600px){
@@ -585,7 +581,7 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="slider" style="margin-top:30px">
       <div class="slider-track" id="teachersTrack">
         <div class="card teacher slide"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Дан</h3><div class="exp">вырос в Португалии · носитель</div><p>Европейский португальский с нуля и для продолжающих. Снимает языковой барьер — ученики начинают говорить с первого занятия.</p><div class="langs"><span>PT-PT</span></div></div></div>
-        <div class="card teacher slide"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Никсару</h3><div class="exp">носитель · опыт 5+ лет</div><p>Испанский язык. Использует разные методики, живые и интерактивные занятия. Ученики: «всегда весело и легко».</p><div class="langs"><span>ES</span></div></div></div>
+        <div class="card teacher slide"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Никсар</h3><div class="exp">носитель · Перу · в Ensina-me с 2011</div><p>Дипломированный переводчик (исп.–рус., Universidad Mayor de San Marcos, Лима). Испанский для всех уровней, включая деловой и корпоративный формат. Ученики: «всегда весело и легко».</p><div class="langs"><span>ES</span></div></div></div>
         <div class="card teacher slide"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Анабела</h3><div class="exp">носитель · Порту, Португалия</div><p>Европейский португальский с нуля и для владеющих испанским. Опыт преподавания в России и Португалии.</p><div class="langs"><span>PT-PT</span></div></div></div>
         <div class="card teacher slide"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Эрик</h3><div class="exp">носитель · Испания</div><p>Испанский для всех уровней. Из отзывов: «очень информативно, понятно и интересно, всё разложено по полочкам».</p><div class="langs"><span>ES</span></div></div></div>
         <div class="card teacher slide"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Дерио</h3><div class="exp">носитель · Кабо-Верде · 14+ лет опыта</div><p>Владеет европейским и бразильским вариантами португальского, креольским и русским. Выпускник МГЛУ (2005) и Университета Коимбры (диплом преподавания PT как иностранного, 2016). В Ensina-me с 2012 года.</p><div class="langs"><span>PT-EU</span><span>PT-BR</span></div></div></div>
@@ -669,27 +665,19 @@ html.js .reveal.in{opacity:1;transform:none}
       <h2>Что говорят наши ученики</h2>
       <p>Реальные отзывы студентов Ensina-me.</p>
     </div>
-    <!-- Бейдж рейтинга Яндекса (временное решение). Значения [ ] заказчик заменит. -->
-    <div class="yandex-badge reveal">
-      <span class="yb-logo"><span class="ya">Я</span>ндекс</span>
-      <span class="yb-rate">5,0</span>
-      <span class="yb-stars">★★★★★</span>
-      <span class="yb-count">отзывы на Яндекс.Картах</span>
-      <a class="yb-link" href="https://yandex.ru/maps/org/yazykovoy_tsentr_ensina_me/6544707136/reviews/" target="_blank" rel="noopener">Смотреть отзывы</a>
+    <!-- Официальный виджет Яндекс.Отзывов — организация «Языковой центр Ensina-me», Org ID 6544707136 (Яндекс.Карты).
+         Виджет сам подтягивает актуальный рейтинг и количество отзывов с серверов Яндекса — цифры не хардкодятся. -->
+    <div class="yandex-widget-wrap reveal">
+      <iframe src="https://yandex.ru/maps-reviews-widget/6544707136?comments" width="100%" height="560" frameborder="0" style="border:1px solid #e2e7e1;border-radius:10px" loading="lazy" title="Отзывы на Яндекс.Картах — Ensina-me"></iframe>
+      <a class="yb-fallback-link" href="https://yandex.ru/maps/org/yazykovoy_tsentr_ensina_me/6544707136/reviews/" target="_blank" rel="noopener">Открыть отзывы на Яндекс.Картах →</a>
     </div>
-    <!--
-      ОФИЦИАЛЬНЫЙ ВИДЖЕТ ЯНДЕКС.ОТЗЫВОВ (для статики):
-      В кабинете «Яндекс Бизнес» → «Виджеты» → «Отзывы» выдают готовый iframe.
-      Вставьте его сюда ВМЕСТО бейджа выше, например:
-      <iframe src="https://yandex.ru/maps-reviews-widget/ВАШ_ID?comments" width="100%" height="560" frameborder="0" style="border:1px solid #e2e7e1;border-radius:10px"></iframe>
-    -->
     <div class="slider">
       <div class="slider-track wide" id="reviewsTrack">
-        <div class=”card review slide”><div class=”stars”>★★★★★</div><p class=”quote”>«Занимаюсь с сентября, начинала с европейского португальского у Дана — он вырос в Португалии. Через три месяца смогла применить знания в Лиссабоне. Потом перешла на испанский к Никсару — очень харизматичный, всегда весело и легко.»</p><div class=”who”><div class=”ava”>М</div><div><b>Марина</b><span>Португальский EU → испанский</span></div></div></div>
-        <div class=”card review slide”><div class=”stars”>★★★★★</div><p class=”quote”>«Огромное спасибо школе и преподавателю испанского Эрику за очень информативные, понятные и интересные уроки. Всё разложено по полочкам — с нуля до А2 за два месяца!»</p><div class=”who”><div class=”ava”>А</div><div><b>Алексей</b><span>Испанский · с нуля до А2</span></div></div></div>
-        <div class=”card review slide”><div class=”stars”>★★★★★</div><p class=”quote”>«Прошёл “Суперинтенсив” за полтора месяца — четыре недели ежедневных занятий. За такой срок реально сдвинуться с места. Преподаватели используют дополнительные материалы помимо основного учебника.»</p><div class=”who”><div class=”ava”>Д</div><div><b>Дмитрий</b><span>Суперинтенсив · португальский</span></div></div></div>
-        <div class=”card review slide”><div class=”stars”>★★★★★</div><p class=”quote”>«После двух лет обучения свободно перевожу экскурсии с португальского и даже дала интервью местному телевидению в Португалии. Материалы очень качественные, индивидуальный подход.»</p><div class=”who”><div class=”ava”>Е</div><div><b>Екатерина</b><span>Португальский EU · 2 года</span></div></div></div>
-        <div class=”card review slide”><div class=”stars”>★★★★★</div><p class=”quote”>«Училась в мини-группе онлайн — удобно совмещать с работой. В маленькой группе не страшно говорить, преподаватель-носитель объясняет грамматику на русском, а 80% урока — чистая практика.»</p><div class=”who”><div class=”ava”>О</div><div><b>Ольга</b><span>Португальский · мини-группа онлайн</span></div></div></div>
+        <div class="card review slide"><div class="stars">★★★★★</div><p class="quote">«Занимаюсь с сентября, начинала с европейского португальского у Дана — он вырос в Португалии. Через три месяца смогла применить знания в Лиссабоне. Потом перешла на испанский к Никсару — очень харизматичный, всегда весело и легко.»</p><div class="who"><div class="ava">М</div><div><b>Марина</b><span>Португальский EU → испанский</span></div></div></div>
+        <div class="card review slide"><div class="stars">★★★★★</div><p class="quote">«Огромное спасибо школе и преподавателю испанского Эрику за очень информативные, понятные и интересные уроки. Всё разложено по полочкам — с нуля до А2 за два месяца!»</p><div class="who"><div class="ava">А</div><div><b>Алексей</b><span>Испанский · с нуля до А2</span></div></div></div>
+        <div class="card review slide"><div class="stars">★★★★★</div><p class="quote">«Прошёл “Суперинтенсив” за полтора месяца — четыре недели ежедневных занятий. За такой срок реально сдвинуться с места. Преподаватели используют дополнительные материалы помимо основного учебника.»</p><div class="who"><div class="ava">Д</div><div><b>Дмитрий</b><span>Суперинтенсив · португальский</span></div></div></div>
+        <div class="card review slide"><div class="stars">★★★★★</div><p class="quote">«После двух лет обучения свободно перевожу экскурсии с португальского и даже дала интервью местному телевидению в Португалии. Материалы очень качественные, индивидуальный подход.»</p><div class="who"><div class="ava">Е</div><div><b>Екатерина</b><span>Португальский EU · 2 года</span></div></div></div>
+        <div class="card review slide"><div class="stars">★★★★★</div><p class="quote">«Училась в мини-группе онлайн — удобно совмещать с работой. В маленькой группе не страшно говорить, преподаватель-носитель объясняет грамматику на русском, а 80% урока — чистая практика.»</p><div class="who"><div class="ava">О</div><div><b>Ольга</b><span>Португальский · мини-группа онлайн</span></div></div></div>
       </div>
       <div class="slider-nav">
         <button onclick="slide('reviewsTrack',-1)" aria-label="Предыдущие">‹</button>
