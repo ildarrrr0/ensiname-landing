@@ -17,7 +17,7 @@
   --bg:#ffffff;--surface:#ffffff;
   --text:#1f241d;--text-muted:#5c665c;--border:#e2e7e1;
   --shadow:0 1px 2px rgba(20,50,30,.06),0 6px 18px rgba(20,50,30,.07);
-  --radius:10px;--radius-sm:6px;--maxw:900px;
+  --radius:10px;--radius-sm:6px;--maxw:820px;
   --font:'PT Sans','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
   --font-head:'Montserrat','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
 }
@@ -27,10 +27,10 @@ body{font-family:var(--font);color:var(--text);background:#f4f6f7;line-height:1.
 a{color:var(--green);text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
-h1,h2{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--font-head);overflow-wrap:break-word}
+h1{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--font-head);overflow-wrap:break-word}
 
 .pay-header{background:#fff;border-bottom:1px solid var(--border);padding:18px 0}
-.pay-header .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.pay-header .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;max-width:900px}
 .pay-header .brand-logo{height:38px;width:auto;display:block}
 .pay-header .back{font-size:14px;font-weight:700;color:var(--text-muted);margin-left:auto}
 .pay-header .back:hover{color:var(--text);text-decoration:none}
@@ -42,19 +42,16 @@ h1,h2{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--font-
   background:linear-gradient(90deg,var(--red) 0 33.33%,var(--yellow) 33.33% 66.66%,var(--green) 66.66% 100%);
   margin-bottom:44px}
 
-.notice{background:#fff8e0;border:1px solid var(--yellow);border-radius:var(--radius);padding:18px 22px;margin-bottom:26px;font-size:14px}
-.notice b{color:var(--text)}
-
-.policy-embed{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:36px}
-.policy-embed iframe{display:block;width:100%;height:70vh;min-height:500px}
-.policy-fallback{padding:40px 24px;text-align:center;color:var(--text-muted)}
-.policy-fallback a.btn{display:inline-block;margin-top:14px;background:var(--cta-bg);color:var(--cta-fg);font-family:var(--font-head);font-weight:700;padding:12px 22px;border-radius:var(--radius-sm);text-decoration:none}
+.policy{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:32px 30px;margin-bottom:40px;font-size:15px}
+.policy p{margin-bottom:18px}
+.policy p:last-child{margin-bottom:0}
 
 .pay-footer{background:#fff;border-top:1px solid var(--border);padding:24px 0;text-align:center;margin-top:20px}
 .pay-footer p{font-size:13px;color:var(--text-muted)}
 .pay-footer a{color:var(--green);font-weight:700}
 
 @media(min-width:900px){ .pay-hero h1{font-size:34px} }
+@media(max-width:480px){ .policy{padding:24px 18px} }
 </style>
 </head>
 <body>
@@ -84,27 +81,28 @@ h1,h2{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--font-
 <main>
   <div class="pay-hero">
     <h1>Политика конфиденциальности</h1>
-    <p>Языковой центр Ensina-me. Обработка и защита персональных данных пользователей сайта.</p>
+    <p>Языковой центр Ensina-me. Обработка и защита персональных данных пользователей сайта ensina-me.ru.</p>
   </div>
 
   <div class="wrap">
-    <!-- ВРЕМЕННОЕ РЕШЕНИЕ: живой текст политики взять напрямую с ensina-me.ru не удалось —
-         сеть, в которой работает Claude Code, блокирует домен ensina-me.ru полностью
-         (проверено на уровне TCP/CONNECT, не только для инструментов чтения страниц).
-         Ниже — встроенный iframe с оригинальной страницей: у реальных посетителей сайта
-         браузер открывает ensina-me.ru без проблем, так что виджет рабочий уже сейчас.
-         КОГДА ЗАКАЗЧИК ПРИШЛЁТ ПОЛНЫЙ ТЕКСТ ПОЛИТИКИ — замените блок .policy-embed
-         на обычный текст (заголовки h2 + параграфы p), это будет надёжнее, чем iframe
-         на внешний сайт, который может измениться или стать недоступным. -->
-    <div class="notice">
-      <b>Уточнить у заказчика:</b> не удалось скопировать полный текст политики конфиденциальности напрямую (сеть, где работает автоматизация, блокирует ensina-me.ru). Ниже страница встроена «вживую» через iframe — для посетителей сайта она работает. Пришлите текст политики — заменим на полноценную локальную страницу.
-    </div>
-    <div class="policy-embed">
-      <iframe src="https://ensina-me.ru/mi-o-seb/politika-konfidentsialnosti" title="Политика конфиденциальности Ensina-me" loading="lazy" onerror="this.style.display='none';document.getElementById('policyFallback').hidden=false"></iframe>
-    </div>
-    <div class="policy-fallback" id="policyFallback" hidden>
-      <p>Не удалось загрузить встроенную страницу.</p>
-      <a class="btn" href="https://ensina-me.ru/mi-o-seb/politika-konfidentsialnosti" target="_blank" rel="noopener">Открыть политику конфиденциальности на ensina-me.ru →</a>
+    <div class="policy">
+      <p>Настоящие Положение о политике конфиденциальности (далее — Положение) является официальным документом, и определяет порядок обработки и защиты информации о физических лицах (далее — Пользователь), пользующихся сервисами, информацией, услугами, программами (в т.ч. программами лояльности) и продуктами веб-сайта, расположенного на доменных именах ensina-me.ru (далее — Сайт).</p>
+
+      <p>В соответствии с требованиями ФЗ N 152-ФЗ от 27.07.2006 «О персональных данных», оформляя заказ, подписку на новости, а также регистрируясь или заполняя формы отправки данных на Сайте, Пользователь дает свое согласие Оператору на обработку, а именно сбор, систематизацию, накопление, хранение, использование, обезличивание, удаление, изменение, его персональных данных, включающих в себя: фамилию, имя, отчество, номер мобильного/домашнего телефона, адрес электронной почты в целях заключения договора оказания услуг.</p>
+
+      <p>Пользователь также дает свое согласие на обработку вышеперечисленных персональных данных и направление на указанный Пользователем адрес электронной почты и/или на номер мобильного телефона информации о товарах, работах, услугах Оператора. Пользователь также дает свое согласие на использование вышеперечисленных персональных данных Оператором для осуществления действий по регистрации доменных имен и услуг хостинга.</p>
+
+      <p>Пользователь подтверждает, что персональные данные и иные сведения, относящиеся к нему предоставлены им Оператору добровольно и являются достоверными.</p>
+
+      <p>Согласие может быть отозвано Пользователем в любой момент путем направления письменного уведомления по адресу, указанному на странице ensina-me.ru.</p>
+
+      <p>Оператор осуществляет обработку персональных данных без уведомления уполномоченного органа по защите прав субъектов персональных данных в соответствии с п.2) ч.2. Ст.22. Федерального закона от 27.07.2006 N 152-ФЗ «О персональных данных». Оператор подтверждает, что персональные данные Пользователя не распространяются, а также не предоставляются третьим лицам без согласия субъекта персональных данных и используются оператором исключительно для исполнения договора и заключения договоров с субъектом персональных данных.</p>
+
+      <p>Все действия, связанные с обработкой персональных данных, осуществляются Оператором строго в рамках действующего законодательства. Оператор принимает все необходимые и достаточные меры для сохранности и безопасности персональных данных Пользователя. Информация о посетителях сайта (IP-адрес, имя домена, тип браузера и операционная система, дата и время посещения и т. п.) собирается и сохраняется в целях ведения статистики посещений. Эта информация является общедоступной и не подпадает под действия норм действующего законодательства о персональных данных.</p>
+
+      <p>Согласием Пользователя с данной политикой конфиденциальности и подтверждением согласия Пользователя на обработку персональных данных Оператором является любое из следующих действий Пользователя на Сайте: регистрация, оформление заказа, онлайн оплата услуг, подписка на новости, заполнение текстовых форм для отправки на Сайт.</p>
+
+      <p>В случае несогласия с указанной политикой и нежелании давать свое согласие на обработку персональных данных Оператором, Пользователь обязуется не совершать указанных действий на Сайте.</p>
     </div>
   </div>
 </main>

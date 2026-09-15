@@ -36,12 +36,12 @@ h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--fo
 .btn-cta:hover{background:var(--cta-bg-h);border-color:var(--cta-bg-h)}
 .btn-oy{background:transparent;border-color:var(--yellow);color:var(--text)}
 .btn-oy:hover{background:var(--yellow);color:var(--cta-fg);border-color:var(--yellow)}
+.btn-block{width:100%}
 
 /* ХЕДЕР */
 .pay-header{background:#fff;border-bottom:1px solid var(--border);padding:18px 0}
 .pay-header .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .pay-header .brand-logo{height:38px;width:auto;display:block}
-.pay-header .brand-logo .sub{fill:#2b2b2b}
 .pay-header .back{font-size:14px;font-weight:700;color:var(--text-muted);margin-left:auto}
 .pay-header .back:hover{color:var(--text)}
 
@@ -49,6 +49,9 @@ h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--fo
 .pay-hero{text-align:center;padding:44px 0 20px}
 .pay-hero h1{font-size:28px;margin-bottom:10px}
 .pay-hero p{color:var(--text-muted);font-size:16px;max-width:600px;margin:0 auto}
+.pay-hero::before{content:"";display:block;height:5px;
+  background:linear-gradient(90deg,var(--red) 0 33.33%,var(--yellow) 33.33% 66.66%,var(--green) 66.66% 100%);
+  margin-bottom:44px}
 
 .cards{display:grid;gap:16px;padding:0 0 20px}
 .pay-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);
@@ -66,18 +69,34 @@ h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--fo
 .pay-card li:last-child{border-bottom:0}
 .pay-card .btn{margin-top:auto;width:100%}
 
-.pay-note{text-align:center;padding:10px 0 40px;font-size:14px;color:var(--text-muted)}
+.pay-note{text-align:center;padding:10px 0 30px;font-size:14px;color:var(--text-muted)}
 .pay-note b{color:var(--text)}
 
+.section-title{text-align:center;margin:50px 0 22px}
+.section-title h2{font-size:24px;margin-bottom:8px}
+.section-title p{color:var(--text-muted);font-size:15px;max-width:560px;margin:0 auto}
+
+.pay-form-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:32px;max-width:520px;margin:0 auto 20px}
+.pay-form-card .field{margin-bottom:16px}
+.pay-form-card label{display:block;font-size:13px;font-weight:700;color:var(--text-muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.03em}
+.pay-form-card input,.pay-form-card select{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:var(--font);font-size:15px;color:var(--text);background:#fff}
+.pay-form-card input:focus,.pay-form-card select:focus{outline:2px solid var(--green);outline-offset:1px}
+.pay-form-card .hint{font-size:12px;color:var(--text-muted);margin-top:6px}
+.pay-form-card .yk-note{text-align:center;font-size:13px;color:var(--text-muted);margin-top:14px}
+
+.stub-panel{max-width:520px;margin:0 auto 20px;background:#eefaf0;border:2px solid var(--green);border-radius:var(--radius);padding:24px 26px;font-size:14px}
+.stub-panel h4{font-family:var(--font-head);font-size:15px;margin-bottom:10px;color:var(--green-3)}
+.stub-panel dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin-bottom:12px}
+.stub-panel dt{color:var(--text-muted)}
+.stub-panel dd{font-weight:700}
+.stub-panel .stub-foot{font-size:12px;color:var(--text-muted);border-top:1px dashed #9fcfa9;padding-top:10px;margin-top:6px}
+
+.installment-note{max-width:520px;margin:0 auto 18px;font-size:13px;color:var(--text-muted);text-align:center}
+
 /* ФУТЕР */
-.pay-footer{background:#fff;border-top:1px solid var(--border);padding:24px 0;text-align:center}
+.pay-footer{background:#fff;border-top:1px solid var(--border);padding:24px 0;text-align:center;margin-top:20px}
 .pay-footer p{font-size:13px;color:var(--text-muted)}
 .pay-footer a{color:var(--green);font-weight:700}
-
-/* триколор-полоса */
-.pay-hero::before{content:"";display:block;height:5px;
-  background:linear-gradient(90deg,var(--red) 0 33.33%,var(--yellow) 33.33% 66.66%,var(--green) 66.66% 100%);
-  margin-bottom:44px}
 
 @media(min-width:600px){
   .cards{grid-template-columns:repeat(2,1fr)}
@@ -115,7 +134,7 @@ h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--fo
 <main>
   <div class="pay-hero">
     <h1>Оплата обучения</h1>
-    <p>Выберите формат и оплатите обучение онлайн. После оплаты мы свяжемся для подтверждения и подберём удобное расписание.</p>
+    <p>Выберите пакет ниже или сразу заполните форму — оплата проходит online через сервис ЮKassa (Яндекс.Касса).</p>
   </div>
 
   <div class="wrap">
@@ -129,7 +148,7 @@ h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--fo
           <li>609 ₽ / ак. час</li>
           <li>80% — разговорная практика</li>
         </ul>
-        <a href="#" class="btn btn-oy">Оплатить</a>
+        <button type="button" class="btn btn-oy" onclick="selectPlan('Группа · 1 раз в неделю',6500)">Выбрать</button>
       </div>
 
       <div class="pay-card">
@@ -141,7 +160,7 @@ h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--fo
           <li>609 ₽ / ак. час</li>
           <li>Быстрый прогресс</li>
         </ul>
-        <a href="#" class="btn btn-oy">Оплатить</a>
+        <button type="button" class="btn btn-oy" onclick="selectPlan('Группа · 2 раза в неделю',9750)">Выбрать</button>
       </div>
 
       <div class="pay-card featured">
@@ -154,7 +173,7 @@ h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--fo
           <li>Персональная программа</li>
           <li>Гибкое расписание</li>
         </ul>
-        <a href="#" class="btn btn-oy">Оплатить</a>
+        <button type="button" class="btn btn-oy" onclick="selectPlan('Индивидуально · онлайн, 10×60 мин',19000)">Выбрать</button>
       </div>
 
       <div class="pay-card">
@@ -166,7 +185,7 @@ h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--fo
           <li>2 р/нед — 25 250 ₽ / 3 мес</li>
           <li>Фиксированная цена</li>
         </ul>
-        <a href="#" class="btn btn-oy">Оплатить</a>
+        <button type="button" class="btn btn-oy" onclick="selectPlan('Курс 3 месяца · 1 раз в неделю',17500)">Выбрать</button>
       </div>
 
       <div class="pay-card">
@@ -178,7 +197,7 @@ h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--fo
           <li>Персональная программа</li>
           <li>Очно или онлайн</li>
         </ul>
-        <a href="#" class="btn btn-oy">Оплатить</a>
+        <button type="button" class="btn btn-oy" onclick="selectPlan('Вдвоём, 90 мин',2800)">Выбрать</button>
       </div>
 
       <div class="pay-card">
@@ -190,11 +209,69 @@ h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--fo
           <li>Все уровни</li>
           <li>Носитель языка</li>
         </ul>
-        <a href="#" class="btn btn-oy">Оплатить</a>
+        <button type="button" class="btn btn-oy" onclick="selectPlan('Подготовка к экзаменам, 90 мин',2800)">Выбрать</button>
       </div>
     </div>
 
-    <p class="pay-note">Оплата по QR-коду (СБП), переводом на карту (Сбер / Т-Банк / Альфа) или наличными в школе. Скидка <b>5% студентам</b>, <b>7% — приведи друга</b>. Кнопки «Оплатить» пока ведут на заглушку — интеграция оплаты подключается на следующем этапе.</p>
+    <p class="pay-note">Также можно оплатить по QR-коду (СБП), переводом на карту (Сбер / Т-Банк / Альфа) или наличными в школе. Скидка <b>5% студентам</b>, <b>7% — приведи друга</b>.</p>
+
+    <!-- ============================= ФОРМА ОПЛАТЫ ============================= -->
+    <div class="section-title" id="pay-form-anchor">
+      <h2>Оплата курса</h2>
+      <p>Заполните форму — на кассе ЮKassa сумма и данные подставятся автоматически, вводить их повторно не нужно.</p>
+    </div>
+    <form class="pay-form-card" id="payForm" onsubmit="submitPayment(event,'main')">
+      <div class="field">
+        <label for="p-course">Язык курса</label>
+        <select id="p-course" name="course" required>
+          <option value="">Выберите язык…</option>
+          <option value="Курсы португальского языка">Курсы португальского языка</option>
+          <option value="Курсы испанского языка">Курсы испанского языка</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="p-sum">Сумма, ₽</label>
+        <input id="p-sum" name="sum" type="number" min="1" step="1" required placeholder="Например, 9750">
+      </div>
+      <div class="field">
+        <label for="p-name">ФИО</label>
+        <input id="p-name" name="name" type="text" required placeholder="Иванова Мария Сергеевна">
+      </div>
+      <div class="field">
+        <label for="p-phone">Телефон</label>
+        <input id="p-phone" name="phone" type="tel" required placeholder="+7 900 000-00-00">
+      </div>
+      <div class="field">
+        <label for="p-email">E-mail</label>
+        <input id="p-email" name="email" type="email" required placeholder="mail@example.com">
+      </div>
+      <button type="submit" class="btn btn-cta btn-block">Оплатить через ЮKassa</button>
+      <p class="yk-note">Online-оплата через сервис ЮKassa (Яндекс.Касса)</p>
+    </form>
+    <div class="stub-panel" id="mainStub" hidden></div>
+
+    <!-- ============================= РАССРОЧКА ============================= -->
+    <div class="section-title">
+      <h2>Оплата в рассрочку</h2>
+      <p>Рассрочка через Яндекс Кошелёк: сумма от 3 000 до 150 000 ₽, срок 6 или 12 месяцев.</p>
+    </div>
+    <form class="pay-form-card" id="installmentForm" onsubmit="submitPayment(event,'inst')">
+      <div class="field">
+        <label for="i-sum">Сумма, ₽</label>
+        <input id="i-sum" name="sum" type="number" min="3000" max="150000" step="1" required placeholder="От 3 000 до 150 000 ₽">
+      </div>
+      <div class="field">
+        <label for="i-name">ФИО</label>
+        <input id="i-name" name="name" type="text" required placeholder="Иванова Мария Сергеевна">
+      </div>
+      <div class="field">
+        <label for="i-email">E-mail</label>
+        <input id="i-email" name="email" type="email" required placeholder="mail@example.com">
+      </div>
+      <button type="submit" class="btn btn-oy btn-block">Оформить рассрочку через Яндекс</button>
+    </form>
+    <p class="installment-note">Решение по рассрочке принимает Яндекс, школа в этом процессе не участвует.</p>
+    <div class="stub-panel" id="instStub" hidden></div>
   </div>
 </main>
 
@@ -203,6 +280,65 @@ h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--fo
     <p>&copy; 2010–2026 Ensina-me. Языковой центр португальского и испанского. <a href="draft1.html">Вернуться на сайт</a></p>
   </div>
 </footer>
+
+<script>
+function selectPlan(course, sum){
+  document.getElementById('p-course').value = /испан/i.test(course) ? 'Курсы испанского языка' :
+    (/парал|порт/i.test(course) ? 'Курсы португальского языка' : '');
+  document.getElementById('p-sum').value = sum;
+  document.getElementById('pay-form-anchor').scrollIntoView({behavior:'smooth', block:'start'});
+  document.getElementById('p-name').focus({preventScroll:true});
+}
+
+/*
+ * РЕАЛЬНАЯ ИНТЕГРАЦИЯ ЮKASSA (когда заказчик пришлёт shop_id + secret_key):
+ * Ключ секрета никогда не должен попадать во фронтенд — платёж создаётся на бэкенде.
+ * 1) Фронтенд отправляет данные формы на свой бэкенд, например POST /api/create-payment
+ * 2) Бэкенд делает запрос к YooKassa Payments API:
+ *      POST https://api.yookassa.ru/v3/payments
+ *      Headers: Idempotence-Key: <uuid>, Authorization: Basic base64(shop_id:secret_key)
+ *      Body: {
+ *        "amount": {"value": "<sum>.00", "currency": "RUB"},
+ *        "confirmation": {"type": "redirect", "return_url": "https://ensina-me.ru/pay/success"},
+ *        "capture": true,
+ *        "description": "<course>",
+ *        "metadata": {"name": "<name>", "phone": "<phone>", "email": "<email>"}
+ *      }
+ * 3) В ответе YooKassa возвращает confirmation.confirmation_url — форма/бэкенд
+ *    редиректит пользователя туда: window.location.href = confirmation_url
+ * 4) Похожая механика для рассрочки — отдельный продукт Яндекса (Yandex Split /
+ *    Яндекс Кредит), тоже создаётся на бэкенде, сюда подставится своя ссылка.
+ * До появления реальных ключей ниже — только имитация (заглушка), которая
+ * показывает, что данные формы собираются корректно и были бы отправлены дальше.
+ */
+function submitPayment(evt, type){
+  evt.preventDefault();
+  const form = evt.target;
+  const data = new FormData(form);
+  const sum = data.get('sum');
+  const name = data.get('name');
+  const email = data.get('email');
+  const phone = data.get('phone');
+  const course = data.get('course');
+
+  const panel = document.getElementById(type === 'main' ? 'mainStub' : 'instStub');
+  const rows = [];
+  if (course) rows.push(['Курс', course]);
+  rows.push(['Сумма', sum + ' ₽']);
+  rows.push(['ФИО', name]);
+  if (phone) rows.push(['Телефон', phone]);
+  rows.push(['E-mail', email]);
+
+  const dl = rows.map(([k,v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('');
+  const title = type === 'main'
+    ? 'Здесь будет переход на оплату ЮKassa'
+    : 'Здесь будет переход на оформление рассрочки (Яндекс)';
+
+  panel.innerHTML = `<h4>${title}</h4><dl>${dl}</dl><div class="stub-foot">Данные из формы собраны корректно и готовы к отправке. Реальный переход на оплату подключим, когда появятся ключи ЮKassa (см. комментарий в коде).</div>`;
+  panel.hidden = false;
+  panel.scrollIntoView({behavior:'smooth', block:'center'});
+}
+</script>
 
 </body>
 </html>

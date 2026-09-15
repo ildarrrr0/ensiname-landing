@@ -17,7 +17,7 @@
   --bg:#ffffff;--surface:#ffffff;
   --text:#1f241d;--text-muted:#5c665c;--border:#e2e7e1;
   --shadow:0 1px 2px rgba(20,50,30,.06),0 6px 18px rgba(20,50,30,.07);
-  --radius:10px;--radius-sm:6px;--maxw:900px;
+  --radius:10px;--radius-sm:6px;--maxw:820px;
   --font:'PT Sans','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
   --font-head:'Montserrat','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
 }
@@ -29,8 +29,14 @@ a:hover{text-decoration:underline}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
 h1,h2{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--font-head);overflow-wrap:break-word}
 
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-head);
+  font-size:16px;font-weight:700;padding:14px 24px;border:2px solid transparent;border-radius:var(--radius-sm);
+  cursor:pointer;transition:.15s ease;text-align:center;min-height:50px;text-decoration:none}
+.btn-cta{background:var(--cta-bg);color:var(--cta-fg);border-color:var(--cta-bg)}
+.btn-cta:hover{background:var(--cta-bg-h);border-color:var(--cta-bg-h);text-decoration:none}
+
 .pay-header{background:#fff;border-bottom:1px solid var(--border);padding:18px 0}
-.pay-header .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.pay-header .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;max-width:900px}
 .pay-header .brand-logo{height:38px;width:auto;display:block}
 .pay-header .back{font-size:14px;font-weight:700;color:var(--text-muted);margin-left:auto}
 .pay-header .back:hover{color:var(--text);text-decoration:none}
@@ -42,17 +48,23 @@ h1,h2{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--font-
   background:linear-gradient(90deg,var(--red) 0 33.33%,var(--yellow) 33.33% 66.66%,var(--green) 66.66% 100%);
   margin-bottom:44px}
 
-.notice{background:#fff8e0;border:1px solid var(--yellow);border-radius:var(--radius);padding:18px 22px;margin-bottom:26px;font-size:14px}
-.notice b{color:var(--text)}
+.vac-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:32px 30px;margin-bottom:24px}
+.vac-card h2{font-size:19px;margin-bottom:16px}
+.vac-card ul{list-style:none;margin-bottom:0}
+.vac-card li{padding:9px 0;border-bottom:1px solid var(--border);font-size:15px;display:flex;gap:10px}
+.vac-card li:last-child{border-bottom:0}
+.vac-card li::before{content:"\2713";color:var(--green);font-weight:800;flex-shrink:0}
+.vac-card.reqs li::before{content:"\2192";color:var(--green)}
 
-.policy-embed{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:36px}
-.policy-embed iframe{display:block;width:100%;height:70vh;min-height:500px}
+.apply-box{text-align:center;background:#fff;border:2px solid var(--yellow);border-radius:var(--radius);box-shadow:var(--shadow);padding:32px 30px;margin-bottom:40px}
+.apply-box p{margin-bottom:16px;font-size:15px;color:var(--text-muted)}
 
 .pay-footer{background:#fff;border-top:1px solid var(--border);padding:24px 0;text-align:center;margin-top:20px}
 .pay-footer p{font-size:13px;color:var(--text-muted)}
 .pay-footer a{color:var(--green);font-weight:700}
 
 @media(min-width:900px){ .pay-hero h1{font-size:34px} }
+@media(max-width:480px){ .vac-card,.apply-box{padding:24px 18px} }
 </style>
 </head>
 <body>
@@ -82,19 +94,35 @@ h1,h2{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--font-
 <main>
   <div class="pay-hero">
     <h1>Вакансии</h1>
-    <p>Присоединяйтесь к команде Ensina-me — ищем преподавателей португальского и испанского.</p>
+    <p>Приглашаем к сотрудничеству профессиональных преподавателей португальского и испанского языков.</p>
   </div>
 
   <div class="wrap">
-    <!-- ВРЕМЕННОЕ РЕШЕНИЕ: как и privacy.html — прямой доступ к ensina-me.ru/vakansii
-         заблокирован сетью, в которой работает Claude Code (проверено на уровне TCP).
-         Встроено через iframe — рабочее решение для реальных посетителей уже сейчас.
-         КОГДА ЗАКАЗЧИК ПРИШЛЁТ АКТУАЛЬНЫЙ ТЕКСТ ВАКАНСИЙ — замените на локальный контент. -->
-    <div class="notice">
-      <b>Уточнить у заказчика:</b> не удалось скопировать содержимое страницы вакансий напрямую (сеть, где работает автоматизация, блокирует ensina-me.ru). Ниже страница встроена «вживую» через iframe. Пришлите актуальный текст вакансий — заменим на полноценную локальную страницу.
+    <div class="vac-card">
+      <h2>Мы предлагаем</h2>
+      <ul>
+        <li>Комфортные условия работы и своевременную оплату (2 раза в месяц)</li>
+        <li>Полностью подготовленные учебные материалы, включая дополнительные упражнения и карточки на платформе Quizlet</li>
+        <li>Минимальную отчётность — никакой лишней бумажной и административной работы, всё в несколько кликов в личном кабинете преподавателя</li>
+        <li>Возможность преподавать очно в школе или дистанционно, через Skype или Zoom</li>
+        <li>В основном мини-группы до 4 студентов, а также индивидуальные занятия</li>
+        <li>Любую нагрузку — от пары уроков в неделю и больше, можно совмещать с репетиторством или работой в другой школе</li>
+        <li>Оплату от 25% до 100% стоимости курсов повышения квалификации и тренингов</li>
+      </ul>
     </div>
-    <div class="policy-embed">
-      <iframe src="https://ensina-me.ru/vakansii" title="Вакансии Ensina-me" loading="lazy"></iframe>
+
+    <div class="vac-card reqs">
+      <h2>Если вы</h2>
+      <ul>
+        <li>Свободно владеете португальским или испанским языком (от уровня C1)</li>
+        <li>Имеете педагогическое или лингвистическое образование</li>
+        <li>Стремитесь развиваться как профессионал</li>
+      </ul>
+    </div>
+
+    <div class="apply-box">
+      <p>Присылайте резюме на почту</p>
+      <a class="btn btn-cta" href="mailto:info@ensina-me.ru">info@ensina-me.ru</a>
     </div>
   </div>
 </main>
