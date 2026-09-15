@@ -182,7 +182,12 @@ body.vB .hero-slider{max-width:680px;margin-left:auto;margin-right:auto}
 
 /* ---- ПРЕПОДАВАТЕЛИ ---- */
 .teacher{overflow:hidden}
-.teacher .photo{aspect-ratio:4/5;background:repeating-linear-gradient(45deg,#e6ebe6 0 14px,#dde3dd 14px 28px);display:flex;align-items:center;justify-content:center;color:#8a968a;font-size:13px;font-weight:600}
+.teacher .photo{aspect-ratio:4/5;background:repeating-linear-gradient(45deg,#e6ebe6 0 14px,#dde3dd 14px 28px);display:flex;align-items:center;justify-content:center;color:#8a968a;font-size:13px;font-weight:600;overflow:hidden;padding:0}
+.teacher .photo img{width:100%;height:100%;object-fit:cover;display:block}
+.teacher .photo.ph-fallback{padding:0}
+.teacher .photo.ph-fallback::after{content:"фото недоступно"}
+.teacher .exp.tbd{color:var(--red);font-weight:700}
+.teacher .tbd-p{color:var(--text-muted);font-style:italic}
 .teacher .t-body{padding:16px 18px}
 .teacher h3{font-size:18px;margin-bottom:4px;color:var(--text)}
 .teacher .exp{font-size:13px;color:var(--text-muted);font-weight:700;margin-bottom:10px;font-family:var(--font-head)}
@@ -260,6 +265,8 @@ body.vB .hero-slider{max-width:680px;margin-left:auto;margin-right:auto}
 
 /* ---- AI-АССИСТЕНТ + КОНТАКТЫ ---- */
 .assistant{display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
+.contacts-map{margin-top:30px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.contacts-map iframe{display:block;width:100%}
 .assistant .btn{margin-bottom:22px}
 .contact-rows .row{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}
 .contact-rows .k{font-size:13px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em;min-width:90px}
@@ -288,6 +295,9 @@ body.vB .hero-slider{max-width:680px;margin-left:auto;margin-right:auto}
 .social a{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--text);background:#fff;border:1px solid var(--border);padding:10px 16px;border-radius:var(--radius-sm);transition:.15s}
 .social a.tg:hover{background:#2aa2e0;border-color:#2aa2e0;color:#fff}
 .social a.yt:hover{background:#e0201b;border-color:#e0201b;color:#fff}
+.social a.ig:hover{background:#c1327a;border-color:#c1327a;color:#fff}
+.social a.fb:hover{background:#1877f2;border-color:#1877f2;color:#fff}
+.social a.vk:hover{background:#0077ff;border-color:#0077ff;color:#fff}
 .social a svg{width:20px;height:20px;fill:currentColor}
 .footer-col h4{color:var(--text);font-size:15px;margin-bottom:12px;font-family:var(--font-head)}
 .footer-col a{display:block;font-size:14px;color:var(--text-muted);padding:5px 0}
@@ -581,11 +591,30 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="slider" style="margin-top:30px">
       <div class="slider-track" id="teachersTrack">
         <div class="card teacher slide"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Дан</h3><div class="exp">вырос в Португалии · носитель</div><p>Европейский португальский с нуля и для продолжающих. Снимает языковой барьер — ученики начинают говорить с первого занятия.</p><div class="langs"><span>PT-PT</span></div></div></div>
-        <div class="card teacher slide"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Никсар</h3><div class="exp">носитель · Перу · в Ensina-me с 2011</div><p>Дипломированный переводчик (исп.–рус., Universidad Mayor de San Marcos, Лима). Испанский для всех уровней, включая деловой и корпоративный формат. Ученики: «всегда весело и легко».</p><div class="langs"><span>ES</span></div></div></div>
-        <div class="card teacher slide"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Анабела</h3><div class="exp">носитель · Порту, Португалия</div><p>Европейский португальский с нуля и для владеющих испанским. Опыт преподавания в России и Португалии.</p><div class="langs"><span>PT-PT</span></div></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/354a1486__-i-1.jpg" alt="Никсар" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Никсар</h3><div class="exp">носитель · Перу · в Ensina-me с 2011</div><p>Дипломированный переводчик (исп.–рус., Universidad Mayor de San Marcos, Лима). Испанский для всех уровней, включая деловой и корпоративный формат.</p><div class="langs"><span>ES</span></div></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/Anabela_novo.jpg" alt="Анабела" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Анабела</h3><div class="exp">носитель · Порту, Португалия</div><p>Европейский португальский с нуля и для владеющих испанским. Опыт преподавания в России и Португалии.</p><div class="langs"><span>PT-PT</span></div></div></div>
         <div class="card teacher slide"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Эрик</h3><div class="exp">носитель · Испания</div><p>Испанский для всех уровней. Из отзывов: «очень информативно, понятно и интересно, всё разложено по полочкам».</p><div class="langs"><span>ES</span></div></div></div>
-        <div class="card teacher slide"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Дерио</h3><div class="exp">носитель · Кабо-Верде · 14+ лет опыта</div><p>Владеет европейским и бразильским вариантами португальского, креольским и русским. Выпускник МГЛУ (2005) и Университета Коимбры (диплом преподавания PT как иностранного, 2016). В Ensina-me с 2012 года.</p><div class="langs"><span>PT-EU</span><span>PT-BR</span></div></div></div>
-        <div class="card teacher slide"><div class="photo">фото преподавателя</div><div class="t-body"><h3>Рафаэль</h3><div class="exp">носитель · Бразилия, Минас-Жерайс</div><p>Бразильский португальский: разговорная практика, культура Бразилии, деловое общение и перевод.</p><div class="langs"><span>PT-BR</span></div></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/Derio_novo.jpg" alt="Дерио" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Дерио</h3><div class="exp">носитель · Кабо-Верде · 14+ лет опыта</div><p>Владеет европейским и бразильским вариантами португальского, креольским и русским. Выпускник МГЛУ (2005) и Университета Коимбры (диплом преподавания PT как иностранного, 2016). В Ensina-me с 2012 года.</p><div class="langs"><span>PT-EU</span><span>PT-BR</span></div></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/Rafael_novo.jpg" alt="Рафаэль" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Рафаэль</h3><div class="exp">носитель · Бразилия, Минас-Жерайс</div><p>Бразильский португальский: разговорная практика, культура Бразилии, деловое общение и перевод.</p><div class="langs"><span>PT-BR</span></div></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/dsc03282_ki.jpg" alt="Лилит" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Лилит</h3><div class="exp">преподаёт испанский 10+ лет</div><p>Испанский для всех уровней. Считает испанский самым красивым и выразительным языком.</p><div class="langs"><span>ES</span></div></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/Samuel.JPG" alt="Самуэль" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Самуэль</h3><div class="exp">носитель · Куба</div><p>Испанский язык. По отзывам учеников — артистичность и позитивный настрой на занятиях.</p><div class="langs"><span>ES</span></div></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/Ricardo_portugues_mini2.png" alt="Рикардо" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Рикардо</h3><div class="exp">носитель · Порту · в Ensina-me с 2015</div><p>Европейский португальский.</p><div class="langs"><span>PT-PT</span></div></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/354a1821.jpg" alt="Сержио" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Сержио</h3><div class="exp">носитель</div><p>Португальский язык, акцент на постановке европейского произношения; учитывает конкретные цели ученика.</p><div class="langs"><span>PT-PT</span></div></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/lidiya.jpg" alt="Лидия" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Лидия</h3><div class="exp tbd">уточнить у заказчика</div><p class="tbd-p">Язык и описание уточняются.</p></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/Elena_portugues_espanol.jpg" alt="Елена" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Елена</h3><div class="exp tbd">уточнить у заказчика</div><p class="tbd-p">Язык и описание уточняются.</p></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/racita.jpg" alt="Расита" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Расита</h3><div class="exp tbd">уточнить у заказчика</div><p class="tbd-p">Язык и описание уточняются.</p></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/Vadushka1.jpg" alt="Вадюшка" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Вадюшка</h3><div class="exp tbd">уточнить у заказчика</div><p class="tbd-p">Язык и описание уточняются.</p></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/Gezilda.jpg" alt="Жезилда" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Жезилда</h3><div class="exp tbd">уточнить у заказчика</div><p class="tbd-p">Язык и описание уточняются.</p></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/Gabriel.jpg" alt="Габриэль" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Габриэль</h3><div class="exp tbd">уточнить у заказчика</div><p class="tbd-p">Язык и описание уточняются.</p></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/Tito2.jpg" alt="Тито" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Тито</h3><div class="exp tbd">уточнить у заказчика</div><p class="tbd-p">Язык и описание уточняются.</p></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/vassili_mini.jpg" alt="Василий" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Василий</h3><div class="exp tbd">уточнить у заказчика</div><p class="tbd-p">Язык и описание уточняются.</p></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/Vilma.jpg" alt="Вильма" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Вильма</h3><div class="exp tbd">уточнить у заказчика</div><p class="tbd-p">Язык и описание уточняются.</p></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/maria_portugues_novo.jpg" alt="Мария" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Мария</h3><div class="exp tbd">уточнить у заказчика</div><p class="tbd-p">Язык и описание уточняются.</p></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/Paola.jpg" alt="Паола" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Паола</h3><div class="exp tbd">уточнить у заказчика</div><p class="tbd-p">Язык и описание уточняются.</p></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/Tatiana.jpg" alt="Татьяна" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Татьяна</h3><div class="exp tbd">уточнить у заказчика</div><p class="tbd-p">Язык и описание уточняются.</p></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/Pavel_novo.jpg" alt="Павел" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Павел</h3><div class="exp tbd">уточнить у заказчика</div><p class="tbd-p">Язык и описание уточняются.</p></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/vladimir_nuevo_photo_mini2.jpg" alt="Владимир" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Владимир</h3><div class="exp tbd">уточнить у заказчика</div><p class="tbd-p">Язык и описание уточняются.</p></div></div>
+        <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/Yulia.jpg" alt="Юлия" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3>Юлия</h3><div class="exp tbd">уточнить у заказчика</div><p class="tbd-p">Язык и описание уточняются.</p></div></div>
       </div>
       <div class="slider-nav">
         <button onclick="slide('teachersTrack',-1)" aria-label="Предыдущие">‹</button>
@@ -769,6 +798,9 @@ html.js .reveal.in{opacity:1;transform:none}
         <div class="cp-input"><input type="text" placeholder="Напишите сообщение…" onfocus="openChat()"><button onclick="openChat()">➤</button></div>
       </div>
     </div>
+    <div class="contacts-map reveal">
+      <iframe src="https://yandex.ru/map-widget/v1/-/CCUBfIF3sB" width="100%" height="400" frameborder="0" loading="lazy" title="Схема проезда — Ensina-me, Новослободская 11"></iframe>
+    </div>
   </div>
 </section>
 
@@ -793,9 +825,11 @@ html.js .reveal.in{opacity:1;transform:none}
         </svg>
         <p>Языковой центр Ensina-me. Португальский (европейский и бразильский) и испанский с носителями языка. Очно на Новослободской и онлайн.</p>
         <div class="social">
-          <!-- уточнить у заказчика: ссылка на Telegram-канал школы -->
-          <a class="tg" href="#" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>Telegram-канал</a>
-          <a class="yt" href="https://www.youtube.com/@ensina-me9600" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.5 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>YouTube</a>
+          <a class="tg" href="https://t.me/ensiname" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>Telegram</a>
+          <a class="yt" href="https://www.youtube.com/channel/UClU_gAe1w84oNW5YKFG47iw" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.5 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>YouTube</a>
+          <a class="ig" href="https://instagram.com/ensina.me/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2 .25 2.6.5.7.28 1.2.6 1.7 1.1.5.5.9 1 1.1 1.7.25.7.44 1.4.5 2.6.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 2-.5 2.6a4.9 4.9 0 0 1-1.1 1.7c-.5.5-1 .9-1.7 1.1-.7.25-1.4.44-2.6.5-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-2-.25-2.6-.5a4.9 4.9 0 0 1-1.7-1.1 4.9 4.9 0 0 1-1.1-1.7c-.25-.7-.44-1.4-.5-2.6C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-2 .5-2.6.28-.7.6-1.2 1.1-1.7.5-.5 1-.9 1.7-1.1.7-.25 1.4-.44 2.6-.5C9.4 2.2 9.8 2.2 12 2.2zm0 1.8c-3.15 0-3.52 0-4.77.07-1 .04-1.55.2-1.9.34-.48.19-.82.4-1.18.77-.36.36-.58.7-.77 1.18-.14.36-.3.9-.34 1.9C3 9.28 3 9.65 3 12s0 3.52.07 4.77c.04 1 .2 1.55.34 1.9.19.48.4.82.77 1.18.36.36.7.58 1.18.77.36.14.9.3 1.9.34 1.25.06 1.62.07 4.77.07s3.52 0 4.77-.07c1-.04 1.55-.2 1.9-.34.48-.19.82-.4 1.18-.77.36-.36.58-.7.77-1.18.14-.36.3-.9.34-1.9.06-1.25.07-1.62.07-4.77s0-3.52-.07-4.77c-.04-1-.2-1.55-.34-1.9a3.1 3.1 0 0 0-.77-1.18 3.1 3.1 0 0 0-1.18-.77c-.36-.14-.9-.3-1.9-.34C15.52 4 15.15 4 12 4zm0 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 1.8a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4zm5.7-2a1.05 1.05 0 1 1-2.1 0 1.05 1.05 0 0 1 2.1 0z"/></svg>Instagram</a>
+          <a class="fb" href="https://www.facebook.com/ensiname.portuguese" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7.6h2.55l.38-2.96h-2.93V8.55c0-.86.24-1.44 1.47-1.44h1.57V4.46c-.27-.04-1.2-.12-2.28-.12-2.26 0-3.8 1.38-3.8 3.9v2.18H7.99v2.96h2.47V21h3.04z"/></svg>Facebook</a>
+          <a class="vk" href="https://vk.com/ensinameportuguese" target="_blank" rel="noopener" aria-label="VK"><svg viewBox="0 0 24 24"><path d="M13.16 17.4c-6.26 0-9.84-4.3-9.99-11.45h3.13c.1 5.27 2.42 7.5 4.26 7.96V5.95h2.95v4.53c1.8-.2 3.7-2.26 4.34-4.53h2.95a8.7 8.7 0 0 1-3.98 5.7A9 9 0 0 1 21 17.4h-3.26a5.6 5.6 0 0 0-3.63-3.99v3.99h-.35c-.2 0-.4 0-.6-.01z"/></svg>VK</a>
         </div>
       </div>
       <div class="footer-col">
@@ -819,11 +853,10 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="footer-bottom">
       <div class="copy">© 2010–2026 Ensina-me. Языковой центр португальского и испанского.</div>
       <div class="legal">
-        <!-- уточнить у заказчика: ссылка на страницу документов -->
+        <!-- уточнить у заказчика: отдельной страницы "Документы" на старом сайте не найдено -->
         <a href="#">Документы</a>
-        <a href="https://ensina-me.ru/mi-o-seb/politika-konfidentsialnosti" target="_blank" rel="noopener">Политика конфиденциальности</a>
-        <!-- уточнить у заказчика: ссылка на страницу вакансий -->
-        <a href="#">Вакансии</a>
+        <a href="privacy.html">Политика конфиденциальности</a>
+        <a href="vacancies.html">Вакансии</a>
       </div>
     </div>
   </div>
