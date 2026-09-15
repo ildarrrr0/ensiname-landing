@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Пройти онлайн-тест на уровень португальского или испанского языка — Ensina-me.">
+<title>Тест на уровень — Ensina-me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1a8a38;--green-2:#14722e;--green-3:#0e3d22;
+  --red:#cc2027;--red-2:#a81a20;
+  --yellow:#ffd21e;--yellow-2:#f4c400;
+  --cta-bg:#ffd21e;--cta-bg-h:#f4c400;--cta-fg:#241f04;
+  --bg:#ffffff;--surface:#ffffff;
+  --text:#1f241d;--text-muted:#5c665c;--border:#e2e7e1;
+  --shadow:0 1px 2px rgba(20,50,30,.06),0 6px 18px rgba(20,50,30,.07);
+  --shadow-hover:0 4px 10px rgba(20,50,30,.10),0 14px 32px rgba(20,50,30,.10);
+  --radius:10px;--radius-sm:6px;--maxw:820px;
+  --font:'PT Sans','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --font-head:'Montserrat','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--text);background:#f4f6f7;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+h1,h2{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--font-head);overflow-wrap:break-word}
+
+.pay-header{background:#fff;border-bottom:1px solid var(--border);padding:18px 0}
+.pay-header .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;max-width:900px}
+.pay-header .brand-logo{height:38px;width:auto;display:block}
+.pay-header .back{font-size:14px;font-weight:700;color:var(--text-muted);margin-left:auto}
+.pay-header .back:hover{color:var(--text);text-decoration:underline}
+
+.pay-hero{text-align:center;padding:44px 0 20px}
+.pay-hero h1{font-size:28px;margin-bottom:10px}
+.pay-hero p{color:var(--text-muted);font-size:16px;max-width:640px;margin:0 auto}
+.pay-hero::before{content:"";display:block;height:5px;
+  background:linear-gradient(90deg,var(--red) 0 33.33%,var(--yellow) 33.33% 66.66%,var(--green) 66.66% 100%);
+  margin-bottom:44px}
+
+.intro-box{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 28px;margin-bottom:32px;font-size:14px;color:var(--text-muted)}
+.intro-box p{margin-bottom:12px}
+.intro-box p:last-child{margin-bottom:0}
+
+.lang-grid{display:grid;gap:16px;margin-bottom:20px}
+.lang-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:30px 22px;text-align:center;transition:.18s;display:block}
+.lang-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px);border-color:var(--yellow)}
+.lang-card .flag{font-size:40px;margin-bottom:14px;display:block}
+.lang-card h3{font-size:17px;margin-bottom:6px}
+.lang-card span{font-size:13px;color:var(--text-muted)}
+
+.pay-footer{background:#fff;border-top:1px solid var(--border);padding:24px 0;text-align:center;margin-top:20px}
+.pay-footer p{font-size:13px;color:var(--text-muted)}
+.pay-footer a{color:var(--green);font-weight:700;text-decoration:none}
+
+@media(min-width:700px){ .lang-grid{grid-template-columns:repeat(3,1fr)} }
+@media(min-width:900px){ .pay-hero h1{font-size:34px} }
+</style>
+</head>
+<body>
+
+<header class="pay-header">
+  <div class="wrap">
+    <a href="draft1.html" aria-label="Ensina-me">
+      <img class="brand-logo" src="https://ensina-me.ru/templates/ensina-me-main/img/logo.png" alt="Ensina-me — языковой центр" loading="eager">
+    </a>
+    <a href="draft1.html" class="back">&larr; На главную</a>
+  </div>
+</header>
+
+<main>
+  <div class="pay-hero">
+    <h1>Пройти онлайн-тест</h1>
+    <p>Определите свой уровень владения языком, ответив на вопросы нашего теста.</p>
+  </div>
+
+  <div class="wrap">
+    <div class="intro-box">
+      <p>Тест желательно выполнить за 20 мин, не используя словарь или дополнительные учебные пособия. Результат мы вышлем вам на электронную почту.</p>
+      <p>Обращаем ваше внимание, что данное тестирование — это не экзамен, поэтому результаты теста и ваш уровень знаний определяются приблизительно. Ваша оценка по данному тесту не может служить доказательством официальной языковой квалификации. Чтобы получить более комплексную оценку ваших знаний — записывайтесь на устное тестирование в нашем Центре.</p>
+    </div>
+
+    <!-- уточнить у заказчика: сам тест с вопросами — отдельная большая задача, не входит в этот этап.
+         Пока все три карточки ведут на раздел контактов (запись на устное тестирование). -->
+    <div class="lang-grid">
+      <a class="lang-card" href="draft1.html#contacts">
+        <span class="flag">🇵🇹</span>
+        <h3>Португальский язык</h3>
+        <span>европейский вариант</span>
+      </a>
+      <a class="lang-card" href="draft1.html#contacts">
+        <span class="flag">🇧🇷</span>
+        <h3>Португальский язык</h3>
+        <span>бразильский вариант</span>
+      </a>
+      <a class="lang-card" href="draft1.html#contacts">
+        <span class="flag">🇪🇸</span>
+        <h3>Испанский язык</h3>
+        <span>&nbsp;</span>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="pay-footer">
+  <div class="wrap">
+    <p>&copy; 2010–2026 Ensina-me. Языковой центр португальского и испанского. <a href="draft1.html">Вернуться на сайт</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
