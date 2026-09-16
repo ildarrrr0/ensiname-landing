@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Лилит — преподаватель Ensina-me. преподаватель Ensina-me.">
+<title>Лилит — преподаватель — Ensina-me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1a8a38;--green-2:#14722e;--green-3:#0e3d22;
+  --red:#cc2027;--red-2:#a81a20;
+  --yellow:#ffd21e;--yellow-2:#f4c400;
+  --cta-bg:#ffd21e;--cta-bg-h:#f4c400;--cta-fg:#241f04;
+  --bg:#ffffff;--surface:#ffffff;
+  --text:#1f241d;--text-muted:#5c665c;--border:#e2e7e1;
+  --shadow:0 1px 2px rgba(20,50,30,.06),0 6px 18px rgba(20,50,30,.07);
+  --radius:10px;--radius-sm:6px;--maxw:760px;
+  --font:'PT Sans','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --font-head:'Montserrat','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--text);background:#f4f6f7;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--green);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+h1,h2{line-height:1.2;color:var(--text);font-weight:800;font-family:var(--font-head);overflow-wrap:break-word}
+
+.pay-header{background:#fff;border-bottom:1px solid var(--border);padding:18px 0}
+.pay-header .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;max-width:900px}
+.pay-header .brand-logo{height:38px;width:auto;display:block}
+.pay-header .back{font-size:14px;font-weight:700;color:var(--text-muted);margin-left:auto;text-decoration:none}
+.pay-header .back:hover{color:var(--text)}
+
+.t-hero{padding:40px 0 8px;text-align:center}
+.t-hero::before{content:"";display:block;height:5px;
+  background:linear-gradient(90deg,var(--red) 0 33.33%,var(--yellow) 33.33% 66.66%,var(--green) 66.66% 100%);
+  margin-bottom:34px}
+.t-photo{width:130px;height:130px;border-radius:50%;margin:0 auto 18px;overflow:hidden;border:4px solid #cdae7f;background:repeating-linear-gradient(45deg,#e6ebe6 0 14px,#dde3dd 14px 28px);display:flex;align-items:center;justify-content:center;color:#8a968a;font-size:12px;font-weight:600}
+.t-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.t-photo.ph-fallback::after{content:"фото недоступно"}
+.t-hero h1{font-size:26px;margin-bottom:6px}
+.t-hero .subtitle{font-size:14px;color:var(--text-muted);font-weight:700;font-family:var(--font-head)}
+.t-langs{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.t-langs span{font-size:12px;background:#e7f3ea;border:1px solid var(--border);padding:3px 10px;border-radius:20px;color:var(--text);font-weight:700}
+
+.art-body{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:30px 28px;margin:24px 0 30px;font-size:16px}
+.art-body p{margin-bottom:16px}
+.art-body p:last-child{margin-bottom:0}
+.art-body .tbd{color:var(--red);font-weight:700}
+
+.center-cta{text-align:center;margin-bottom:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-head);
+  font-size:16px;font-weight:700;padding:14px 24px;border:2px solid transparent;border-radius:var(--radius-sm);
+  cursor:pointer;transition:.15s ease;text-align:center;min-height:50px;text-decoration:none}
+.btn-cta{background:var(--cta-bg);color:var(--cta-fg);border-color:var(--cta-bg)}
+.btn-cta:hover{background:var(--cta-bg-h);border-color:var(--cta-bg-h);text-decoration:none}
+
+.back-list{display:block;text-align:center;font-weight:700;margin-bottom:40px}
+
+.pay-footer{background:#fff;border-top:1px solid var(--border);padding:24px 0;text-align:center;margin-top:20px}
+.pay-footer p{font-size:13px;color:var(--text-muted)}
+.pay-footer a{color:var(--green);font-weight:700}
+
+@media(min-width:900px){ .t-hero h1{font-size:32px} }
+@media(max-width:480px){ .art-body{padding:22px 18px} }
+</style>
+</head>
+<body>
+
+<header class="pay-header">
+  <div class="wrap">
+    <a href="draft1.html" aria-label="Ensina-me">
+      <img class="brand-logo" src="https://ensina-me.ru/templates/ensina-me-main/img/logo.png" alt="Ensina-me — языковой центр" loading="eager">
+    </a>
+    <a href="draft1.html#teachers" class="back">&larr; Все преподаватели</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="t-hero">
+      <div class="t-photo"><img src="https://ensina-me.ru/images/our-teacher/dsc03282_ki.jpg" alt="Лилит" loading="eager" onerror="this.closest('.t-photo').classList.add('ph-fallback');this.remove()"></div>
+      <h1>Лилит</h1>
+      <div class="subtitle">преподаватель Ensina-me</div>
+      <div class="t-langs"><span>PT</span></div>
+    </div>
+    <div class="art-body">
+      <p>Носитель языка с педагогическим/лингвистическим образованием, преподаёт в Ensina-me. <span class="tbd">[Уточнить у заказчика полное описание]</span></p>
+    </div>
+    <div class="center-cta"><a href="draft1.html#contacts" class="btn btn-cta">Записаться к преподавателю Лилит</a></div>
+    <a class="back-list" href="draft1.html#teachers">&larr; Все преподаватели</a>
+  </div>
+</main>
+
+<footer class="pay-footer">
+  <div class="wrap">
+    <p>&copy; 2010–2026 Ensina-me. Языковой центр португальского и испанского. <a href="draft1.html">Вернуться на сайт</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
