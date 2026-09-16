@@ -275,11 +275,11 @@ a.card.article{display:block}
 .requisites{margin-top:18px;font-size:12px;color:var(--text-muted);line-height:1.6;text-align:center}
 .requisites a{color:var(--text-muted);text-decoration:underline}
 
-/* ---- скромная сноска про магазин учебной литературы (рядом с футером) ---- */
-.bookshop-note{background:#f4f6f7;padding:20px 0;border-top:1px solid var(--border)}
+/* ---- сноска про магазин учебной литературы (рядом с футером) ---- */
+.bookshop-note{background:var(--c-beige);padding:26px 0;border-top:1px solid var(--border)}
 .bookshop-note .wrap{max-width:720px;text-align:center}
-.bookshop-note b{font-family:var(--font-head);font-weight:700;font-size:13px;color:var(--text-muted);display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:.03em}
-.bookshop-note p{font-size:13px;color:var(--text-muted);line-height:1.6}
+.bookshop-note b{font-family:var(--font-head);font-weight:800;font-size:17px;color:var(--text);display:block;margin-bottom:8px}
+.bookshop-note p{font-size:14px;color:var(--text-muted);line-height:1.6}
 
 .assistant .btn{margin-bottom:22px}
 .contact-rows .row{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}
@@ -349,9 +349,10 @@ html.js .reveal.in{opacity:1;transform:none}
 
 /* ============================================================ HERO ФОТО-СЛАЙДЕР */
 .hero-slider{position:relative;margin-top:26px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;background:#e6ebe6}
-.hslide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;display:flex;align-items:center;justify-content:center;color:#8a968a;font-weight:700;font-size:14px;background:repeating-linear-gradient(45deg,#e7ece7 0 16px,#dde3dd 16px 32px)}
+.hslide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;display:flex;align-items:center;justify-content:center;color:#8a968a;font-weight:700;font-size:14px;background:repeating-linear-gradient(45deg,#e7ece7 0 16px,#dde3dd 16px 32px);overflow:hidden}
 .hslide.on{opacity:1}
-.hslide .cap{position:absolute;top:12px;left:12px;background:rgba(0,0,0,.55);color:#fff;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:700}
+.hslide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.hslide .cap{position:absolute;top:12px;left:12px;background:rgba(0,0,0,.55);color:#fff;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:700;z-index:1}
 .hero-dots{position:absolute;left:0;right:0;bottom:12px;display:flex;gap:7px;justify-content:center;z-index:2}
 .hero-dots button{width:9px;height:9px;border-radius:50%;border:0;background:rgba(255,255,255,.65);cursor:pointer;padding:0;transition:.2s}
 .hero-dots button.on{background:#fff;width:22px;border-radius:6px}
@@ -472,12 +473,13 @@ html.js .reveal.in{opacity:1;transform:none}
       </div>
       <a href="tel:+74950665278" class="hero-phone"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>+7 (495) 066-52-78</a>
     </div>
-    <!-- Фото-слайдер: плейсхолдеры; реальные фото учеников/занятий заказчик пришлёт позже -->
+    <!-- Фото-слайдер: реальные фото занятий/офиса/вручения сертификатов. Заказчик добавляет файлы
+         вручную в assets/gallery/ под этими именами — если файла ещё нет, показывается плейсхолдер. -->
     <div class="hero-slider" id="heroSlider">
-      <div class="hslide on">фото с занятия<span class="cap">Занятие в группе</span></div>
-      <div class="hslide">фото ученика<span class="cap">Индивидуально с носителем</span></div>
-      <div class="hslide">фото разговорного клуба<span class="cap">Разговорный клуб</span></div>
-      <div class="hslide">фото офиса на Новослободской<span class="cap">Очно · Новослободская</span></div>
+      <div class="hslide on"><span class="ph">фото с занятия</span><img src="assets/gallery/gallery-1-class.jpg" alt="Занятие в группе" loading="eager" onerror="this.remove()"><span class="cap">Занятие в группе</span></div>
+      <div class="hslide"><span class="ph">фото офиса</span><img src="assets/gallery/gallery-2-office.jpg" alt="Офис на Новослободской" loading="lazy" onerror="this.remove()"><span class="cap">Очно · Новослободская</span></div>
+      <div class="hslide"><span class="ph">вручение сертификатов</span><img src="assets/gallery/gallery-3-certificates.jpg" alt="Вручение сертификатов" loading="lazy" onerror="this.remove()"><span class="cap">Вручение сертификатов</span></div>
+      <div class="hslide"><span class="ph">фото с занятия</span><img src="assets/gallery/gallery-4-class2.jpg" alt="Занятие" loading="lazy" onerror="this.remove()"><span class="cap">Занятие</span></div>
       <div class="hero-dots" id="heroDots">
         <button class="on" aria-label="Слайд 1"></button>
         <button aria-label="Слайд 2"></button>
@@ -574,13 +576,12 @@ html.js .reveal.in{opacity:1;transform:none}
       <div><h4>Индивидуально (1-на-1)</h4><p>Онлайн 60 мин — 1 900 ₽, 90 мин — 2 650 ₽ (при оплате 10 уроков). Программа полностью под вашу цель, плавающий график — в конце урока договариваетесь о следующем. Очно на Новослободской или по Zoom.</p></div>
     </div></div>
 
-    <!-- Полный список текущих преподавателей получен от заказчика (33 профиля с реальными текстами) —
-         предыдущая пометка про неполный список снята. Не хватает подтверждённых полных текстов только по
-         Жезилде и Юлии (оставлены с плейсхолдером). ВАЖНО: в присланном списке есть карточки «Дан» и «Эрик» —
-         ранее заказчик говорил, что этих имён на сайте не существует и их убирали как выдуманные; теперь
-         пришли подробные тексты с их именами, поэтому вставлены обратно, но это стоит перепроверить у
-         заказчика явно (см. чат). Также исключён «Моном» — по присланному тексту он преподаёт английский,
-         французский и арабский, что не соответствует позиционированию центра «только PT и ES». -->
+    <!-- Полный список преподавателей подтверждён заказчиком лично (все 9 страниц пагинации на
+         ensina-me.ru/informatsiya/nashi-prepodavateli, включая «Дан» и «Эрик» — ранее выглядевшие
+         как выдуманные, теперь подтверждены как реальные, часть могла уже не работать в школе).
+         Не хватает подтверждённых полных текстов только по Жезилде и Юлии (плейсхолдер).
+         Исключён «Моном» — по присланному тексту он преподаёт английский, французский и арабский,
+         что не соответствует позиционированию центра «только PT и ES». -->
     <!-- Слайдер преподавателей -->
     <div class="slider" style="margin-top:30px">
       <div class="slider-track" id="teachersTrack">
