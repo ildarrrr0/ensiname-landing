@@ -367,19 +367,6 @@ html.js .reveal.in{opacity:1;transform:none}
 .slider-nav button{width:46px;height:46px;border-radius:50%;border:2px solid var(--border);background:#fff;cursor:pointer;font-size:18px;color:var(--text);display:flex;align-items:center;justify-content:center;transition:.15s}
 .slider-nav button:hover{border-color:var(--green);color:var(--green)}
 
-/* ============================================================ ВКЛАДКИ ФОРМАТА */
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-.fmt-tab{font-family:var(--font-head);font-weight:700;font-size:15px;padding:10px 18px;border:2px solid var(--border);background:#fff;border-radius:30px;cursor:pointer;color:var(--text);transition:.15s}
-.fmt-tab.on{background:var(--green);border-color:var(--green);color:#fff}
-.fmt-panel-w{display:none}
-.fmt-panel-w.on{display:block}
-.fmt-panel{display:grid;grid-template-columns:1fr;gap:14px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-.fmt-panel h4{font-size:19px;margin-bottom:6px}
-.fmt-panel p{color:var(--text-muted);font-size:15px}
-.fmt-side{display:flex;flex-direction:column;gap:10px;justify-content:center}
-.fmt-price{font-family:var(--font-head);font-weight:800;font-size:22px}
-.fmt-price small{font-weight:500;font-size:14px;color:var(--text-muted)}
-
 /* ============================================================ ФИЛЬТР РАСПИСАНИЯ */
 .sch-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
 .sch-filter button{font-family:var(--font-head);font-weight:700;font-size:14px;padding:9px 16px;border:2px solid var(--border);background:#fff;border-radius:30px;cursor:pointer;color:var(--text);transition:.15s}
@@ -560,28 +547,12 @@ html.js .reveal.in{opacity:1;transform:none}
       <h2>Выберите преподавателя, с которым будете на одной волне</h2>
       <p>Все наши преподаватели имеют высшее лингвистическое образование и являются выпускниками МГУ им. М. В. Ломоносова, МГЛУ им. Мориса Тореза, МГИМО, а также свободно говорят на русском языке.</p>
     </div>
-    <!-- Вкладки формата занятий -->
-    <div class="tabs reveal" role="tablist">
-      <button class="fmt-tab on" onclick="fmtTab(this,'fmt-mini')">В мини-группе</button>
-      <button class="fmt-tab" onclick="fmtTab(this,'fmt-pair')">Вдвоём</button>
-      <button class="fmt-tab" onclick="fmtTab(this,'fmt-solo')">Индивидуально</button>
-    </div>
-    <div id="fmt-mini" class="fmt-panel-w on"><div class="fmt-panel">
-      <div><h4>В мини-группе (3–7 человек)</h4><p>Группа одного уровня, 80% занятия — разговорная практика с носителем. 1 раз в неделю (120 мин) — от 6 500 ₽/мес, 2 раза (90 мин) — от 9 750 ₽/мес. Аутентичные учебники бесплатно в электронном виде.</p></div>
-    </div></div>
-    <div id="fmt-pair" class="fmt-panel-w"><div class="fmt-panel">
-      <div><h4>Вдвоём</h4><p>Занятия в паре с другом, коллегой или близким — 2 800 ₽ за 90 минут (при оплате 10 уроков). Внимание преподавателя почти как на индивидуальных, но выгоднее. Очно или онлайн.</p></div>
-    </div></div>
-    <div id="fmt-solo" class="fmt-panel-w"><div class="fmt-panel">
-      <div><h4>Индивидуально (1-на-1)</h4><p>Онлайн 60 мин — 1 900 ₽, 90 мин — 2 650 ₽ (при оплате 10 уроков). Программа полностью под вашу цель, плавающий график — в конце урока договариваетесь о следующем. Очно на Новослободской или по Zoom.</p></div>
-    </div></div>
-
-    <!-- Полный список преподавателей подтверждён заказчиком лично (все 9 страниц пагинации на
-         ensina-me.ru/informatsiya/nashi-prepodavateli, включая «Дан» и «Эрик» — ранее выглядевшие
-         как выдуманные, теперь подтверждены как реальные, часть могла уже не работать в школе).
-         Не хватает подтверждённых полных текстов только по Жезилде и Юлии (плейсхолдер).
-         Исключён «Моном» — по присланному тексту он преподаёт английский, французский и арабский,
-         что не соответствует позиционированию центра «только PT и ES». -->
+    <!-- Список преподавателей — строго по полному списку, подтверждённому заказчиком лично (все 9 страниц
+         пагинации на ensina-me.ru/informatsiya/nashi-prepodavateli), включая «Дан» и «Эрик». 33 карточки =
+         все профили из этого списка. Жезилда и Юлия убраны — их не было в подтверждённом списке (это были
+         догадки из более раннего черновика без реального текста). Исключён «Моном» — по присланному тексту
+         он преподаёт английский, французский и арабский, что не соответствует позиционированию центра
+         «только PT и ES»; вернуть его на сайт можно по отдельному запросу заказчика. -->
     <!-- Слайдер преподавателей -->
     <div class="slider" style="margin-top:30px">
       <div class="slider-track" id="teachersTrack">
@@ -618,8 +589,6 @@ html.js .reveal.in{opacity:1;transform:none}
                 <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/bruno.jpg" alt="Бруно" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3><a href="teacher-bruno.html">Бруно</a></h3><div class="exp">носитель · Сан-Паулу, Бразилия · 8 лет опыта</div><p>Всем привет! Меня зовут Бруно, я из Бразилии, из города Сау Паулу. Мой родной язык – португальский.</p><div class="langs"><span>PT-BR</span></div></div></div>
                 <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/lubov.jpeg" alt="Любовь" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3><a href="teacher-lyubov.html">Любовь</a></h3><div class="exp">Россия · 10+ лет опыта</div><p>Выпускница кафедры экономической географии Географического факультета МГУ (1984 г.), страновед, специалист по Латинской Америке и Африке, свободно владею португальским языком (диплом…</p><div class="langs"><span>PT-EU</span><span>PT-BR</span></div></div></div>
                 <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/dsc03295_ki.jpg" alt="Жайме" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3><a href="teacher-jaime.html">Жайме</a></h3><div class="exp">носитель · Португалия · 4 года опыта</div><p>Меня зовут Жайме, я билингв, мои родные языки – португальский и английский. Также я свободно владею испанским и русским.</p><div class="langs"><span>PT-EU</span></div></div></div>
-                <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/Gezilda.jpg" alt="Жезилда" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3><a href="teacher-gezilda.html">Жезилда</a></h3><p>Носитель языка с педагогическим/лингвистическим образованием, преподаёт в Ensina-me. <span class="tbd-inline">[Уточнить у заказчика полное описание]</span></p><div class="langs"><span>PT-BR</span></div></div></div>
-                <div class="card teacher slide"><div class="photo"><img src="https://ensina-me.ru/images/our-teacher/Yulia.jpg" alt="Юлия" loading="lazy" onerror="this.closest('.photo').classList.add('ph-fallback');this.remove()"></div><div class="t-body"><h3><a href="teacher-yulia.html">Юлия</a></h3><p>Носитель языка с педагогическим/лингвистическим образованием, преподаёт в Ensina-me. <span class="tbd-inline">[Уточнить у заказчика полное описание]</span></p><div class="langs"><span>ES</span></div></div></div>
       </div>
       <div class="slider-nav">
         <button onclick="slide('teachersTrack',-1)" aria-label="Предыдущие">‹</button>
@@ -934,14 +903,6 @@ function slide(id,dir){
   var s=tr.querySelector('.slide');
   var step=s?s.getBoundingClientRect().width+16:280;
   tr.scrollBy({left:dir*step,behavior:'smooth'});
-}
-
-/* Вкладки формата занятий */
-function fmtTab(btn,panelId){
-  document.querySelectorAll('.fmt-tab').forEach(function(b){b.classList.remove('on');});
-  btn.classList.add('on');
-  document.querySelectorAll('.fmt-panel-w').forEach(function(p){p.classList.remove('on');});
-  var el=document.getElementById(panelId);if(el)el.classList.add('on');
 }
 
 /* Фильтр расписания по языку */

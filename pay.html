@@ -91,8 +91,6 @@ h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--fo
 .stub-panel dd{font-weight:700}
 .stub-panel .stub-foot{font-size:12px;color:var(--text-muted);border-top:1px dashed #9fcfa9;padding-top:10px;margin-top:6px}
 
-.installment-note{max-width:520px;margin:0 auto 18px;font-size:13px;color:var(--text-muted);text-align:center}
-
 /* ФУТЕР */
 .pay-footer{background:#fff;border-top:1px solid var(--border);padding:24px 0;text-align:center;margin-top:20px}
 .pay-footer p{font-size:13px;color:var(--text-muted)}
@@ -207,7 +205,7 @@ h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--fo
       <h2>Оплата курса</h2>
       <p>Заполните форму — на кассе ЮKassa сумма и данные подставятся автоматически, вводить их повторно не нужно.</p>
     </div>
-    <form class="pay-form-card" id="payForm" onsubmit="submitPayment(event,'main')">
+    <form class="pay-form-card" id="payForm" onsubmit="submitPayment(event)">
       <div class="field">
         <label for="p-course">Язык курса</label>
         <select id="p-course" name="course" required>
@@ -236,29 +234,6 @@ h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--fo
       <p class="yk-note">Online-оплата через сервис ЮKassa (Яндекс.Касса)</p>
     </form>
     <div class="stub-panel" id="mainStub" hidden></div>
-
-    <!-- ============================= РАССРОЧКА ============================= -->
-    <div class="section-title">
-      <h2>Оплата в рассрочку</h2>
-      <p>Рассрочка через Яндекс Кошелёк: сумма от 3 000 до 150 000 ₽, срок 6 или 12 месяцев.</p>
-    </div>
-    <form class="pay-form-card" id="installmentForm" onsubmit="submitPayment(event,'inst')">
-      <div class="field">
-        <label for="i-sum">Сумма, ₽</label>
-        <input id="i-sum" name="sum" type="number" min="3000" max="150000" step="1" required placeholder="От 3 000 до 150 000 ₽">
-      </div>
-      <div class="field">
-        <label for="i-name">ФИО</label>
-        <input id="i-name" name="name" type="text" required placeholder="Иванова Мария Сергеевна">
-      </div>
-      <div class="field">
-        <label for="i-email">E-mail</label>
-        <input id="i-email" name="email" type="email" required placeholder="mail@example.com">
-      </div>
-      <button type="submit" class="btn btn-oy btn-block">Оформить рассрочку через Яндекс</button>
-    </form>
-    <p class="installment-note">Решение по рассрочке принимает Яндекс, школа в этом процессе не участвует.</p>
-    <div class="stub-panel" id="instStub" hidden></div>
   </div>
 </main>
 
@@ -293,12 +268,10 @@ function selectPlan(course, sum){
  *      }
  * 3) В ответе YooKassa возвращает confirmation.confirmation_url — форма/бэкенд
  *    редиректит пользователя туда: window.location.href = confirmation_url
- * 4) Похожая механика для рассрочки — отдельный продукт Яндекса (Yandex Split /
- *    Яндекс Кредит), тоже создаётся на бэкенде, сюда подставится своя ссылка.
  * До появления реальных ключей ниже — только имитация (заглушка), которая
  * показывает, что данные формы собираются корректно и были бы отправлены дальше.
  */
-function submitPayment(evt, type){
+function submitPayment(evt){
   evt.preventDefault();
   const form = evt.target;
   const data = new FormData(form);
@@ -308,7 +281,7 @@ function submitPayment(evt, type){
   const phone = data.get('phone');
   const course = data.get('course');
 
-  const panel = document.getElementById(type === 'main' ? 'mainStub' : 'instStub');
+  const panel = document.getElementById('mainStub');
   const rows = [];
   if (course) rows.push(['Курс', course]);
   rows.push(['Сумма', sum + ' ₽']);
@@ -317,11 +290,8 @@ function submitPayment(evt, type){
   rows.push(['E-mail', email]);
 
   const dl = rows.map(([k,v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('');
-  const title = type === 'main'
-    ? 'Здесь будет переход на оплату ЮKassa'
-    : 'Здесь будет переход на оформление рассрочки (Яндекс)';
 
-  panel.innerHTML = `<h4>${title}</h4><dl>${dl}</dl><div class="stub-foot">Данные из формы собраны корректно и готовы к отправке. Реальный переход на оплату подключим, когда появятся ключи ЮKassa (см. комментарий в коде).</div>`;
+  panel.innerHTML = `<h4>Здесь будет переход на оплату ЮKassa</h4><dl>${dl}</dl><div class="stub-foot">Данные из формы собраны корректно и готовы к отправке. Реальный переход на оплату подключим, когда появятся ключи ЮKassa (см. комментарий в коде).</div>`;
   panel.hidden = false;
   panel.scrollIntoView({behavior:'smooth', block:'center'});
 }
