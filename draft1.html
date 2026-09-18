@@ -361,7 +361,6 @@ html.js .reveal.in{opacity:1;transform:none}
 .hslide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;display:flex;align-items:center;justify-content:center;color:#8a968a;font-weight:700;font-size:14px;background:repeating-linear-gradient(45deg,#e7ece7 0 16px,#dde3dd 16px 32px);overflow:hidden}
 .hslide.on{opacity:1}
 .hslide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.hslide .cap{position:absolute;top:12px;left:12px;background:rgba(0,0,0,.55);color:#fff;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:700;z-index:1}
 .hero-dots{position:absolute;left:0;right:0;bottom:12px;display:flex;gap:7px;justify-content:center;z-index:2}
 .hero-dots button{width:9px;height:9px;border-radius:50%;border:0;background:rgba(255,255,255,.65);cursor:pointer;padding:0;transition:.2s}
 .hero-dots button.on{background:#fff;width:22px;border-radius:6px}
@@ -467,10 +466,10 @@ html.js .reveal.in{opacity:1;transform:none}
     <!-- Фото-слайдер: реальные фото занятий/офиса/вручения сертификатов. Заказчик добавляет файлы
          вручную в assets/gallery/ под этими именами — если файла ещё нет, показывается плейсхолдер. -->
     <div class="hero-slider" id="heroSlider">
-      <div class="hslide on"><span class="ph">фото с занятия</span><img src="assets/gallery/gallery-1-class.jpg" alt="Занятие в группе" loading="eager" onerror="this.remove()"><span class="cap">Занятие в группе</span></div>
-      <div class="hslide"><span class="ph">фото офиса</span><img src="assets/gallery/gallery-2-office.jpg" alt="В офисе Ensina-me" loading="lazy" onerror="this.remove()"><span class="cap">В офисе Ensina-me</span></div>
-      <div class="hslide"><span class="ph">вручение сертификатов</span><img src="assets/gallery/gallery-3-certificates.jpg" alt="Вручение сертификатов" loading="lazy" onerror="this.remove()"><span class="cap">Вручение сертификатов</span></div>
-      <div class="hslide"><span class="ph">индивидуальное занятие</span><img src="assets/gallery/gallery-4-class2.jpg" alt="Индивидуальные занятия" loading="lazy" onerror="this.remove()"><span class="cap">Индивидуальные занятия</span></div>
+      <div class="hslide on"><span class="ph">фото с занятия</span><img src="assets/gallery/gallery-1-class.jpg" alt="Занятие в Ensina-me" loading="eager" onerror="this.remove()"></div>
+      <div class="hslide"><span class="ph">фото офиса</span><img src="assets/gallery/gallery-2-office.jpg" alt="В офисе Ensina-me" loading="lazy" onerror="this.remove()"></div>
+      <div class="hslide"><span class="ph">вручение сертификатов</span><img src="assets/gallery/gallery-3-certificates.jpg" alt="Вручение сертификатов" loading="lazy" onerror="this.remove()"></div>
+      <div class="hslide"><span class="ph">фото с занятия</span><img src="assets/gallery/gallery-4-class2.jpg" alt="Занятие в Ensina-me" loading="lazy" onerror="this.remove()"></div>
       <div class="hero-dots" id="heroDots">
         <button class="on" aria-label="Слайд 1"></button>
         <button aria-label="Слайд 2"></button>
