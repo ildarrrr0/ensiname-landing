@@ -78,7 +78,7 @@ h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--fo
 .btn-primary:hover{background:var(--primary-2);border-color:var(--primary-2)}
 .btn-outline{background:transparent;border-color:var(--primary);color:var(--primary)}
 .btn-outline:hover{background:var(--primary);color:#fff}
-/* единая жёлтая обводка для кнопок «Оплатить» */
+/* единая жёлтая обводка для вторичных кнопок (например «Записаться» на карточках тарифов) */
 .btn-oy{background:transparent;border-color:var(--yellow);color:var(--text)}
 .btn-oy:hover{background:var(--yellow);color:var(--cta-fg);border-color:var(--yellow)}
 
@@ -657,9 +657,9 @@ html.js .reveal.in{opacity:1;transform:none}
       <p>Оплата помесячно, за курс целиком или за полгода + месяц обучения в подарок.</p>
     </div>
     <div class="cards cards-3">
-      <div class="card price-card reveal"><h3>Группа</h3><div class="sub">3–7 человек · очно и онлайн</div><div class="amount">от 6 500 ₽<small> / мес</small></div><ul><li>1 раз/нед (120 мин) — 6 500 ₽/мес</li><li>2 раза/нед (90 мин) — 9 750 ₽/мес</li><li>Курс 3 мес — от 17 500 ₽</li><li>80% занятия — разговорная практика</li></ul><a href="pay.html" class="btn btn-oy">Оплатить</a></div>
-      <div class="card price-card featured reveal"><span class="badge">Популярно</span><h3>Индивидуально</h3><div class="sub">Очно (Новослободская) или онлайн</div><div class="amount">от 19 000 ₽<small> за 10 уроков</small></div><ul><li>Онлайн 60 мин — 19 000 ₽ за 10 уроков</li><li>90 мин — 26 500 ₽ за 10 уроков</li><li>Персональная программа</li><li>Гибкое расписание</li></ul><a href="pay.html" class="btn btn-oy">Оплатить</a></div>
-      <div class="card price-card reveal"><h3>Вдвоём / экзамены</h3><div class="sub">Индивидуальный подход в паре</div><div class="amount">28 000 ₽<small> за 10 уроков × 90 мин</small></div><ul><li>Занятие вдвоём с другом или коллегой</li><li>Подготовка к CAPLE, Celpe-Bras, DELE</li><li>Скидка 5% студентам вузов</li><li>Скидка 7% по «Приведи друга»</li></ul><a href="pay.html" class="btn btn-oy">Оплатить</a></div>
+      <div class="card price-card reveal"><h3>Группа</h3><div class="sub">3–7 человек · очно и онлайн</div><div class="amount">от 6 500 ₽<small> / мес</small></div><ul><li>1 раз/нед (120 мин) — 6 500 ₽/мес</li><li>2 раза/нед (90 мин) — 9 750 ₽/мес</li><li>Курс 3 мес — от 17 500 ₽</li><li>80% занятия — разговорная практика</li></ul><a href="#" onclick="openChat();return false" class="btn btn-oy">Записаться</a></div>
+      <div class="card price-card featured reveal"><span class="badge">Популярно</span><h3>Индивидуально</h3><div class="sub">Очно (Новослободская) или онлайн</div><div class="amount">от 19 000 ₽<small> за 10 уроков</small></div><ul><li>Онлайн 60 мин — 19 000 ₽ за 10 уроков</li><li>90 мин — 26 500 ₽ за 10 уроков</li><li>Персональная программа</li><li>Гибкое расписание</li></ul><a href="#" onclick="openChat();return false" class="btn btn-oy">Записаться</a></div>
+      <div class="card price-card reveal"><h3>Вдвоём / экзамены</h3><div class="sub">Индивидуальный подход в паре</div><div class="amount">28 000 ₽<small> за 10 уроков × 90 мин</small></div><ul><li>Занятие вдвоём с другом или коллегой</li><li>Подготовка к CAPLE, Celpe-Bras, DELE</li><li>Скидка 5% студентам вузов</li><li>Скидка 7% по «Приведи друга»</li></ul><a href="#" onclick="openChat();return false" class="btn btn-oy">Записаться</a></div>
     </div>
     <p class="pay-note">Оплата по QR-коду через приложение банка, картой (Сбербанк, Тинькофф, Альфа-банк) или наличными в офисе. Скидка 5% студентам, 7% по программе «Приведи друга».</p>
   </div>
