@@ -83,11 +83,6 @@ h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--fo
 .btn-oy:hover{background:var(--yellow);color:var(--cta-fg);border-color:var(--yellow)}
 
 /* ============================================================ ХЕДЕР */
-.util-bar{display:block;background:var(--green-3);color:#d7e6dc;font-size:14px}
-.util-bar .wrap{display:flex;align-items:center;gap:20px;height:40px}
-.util-bar a{color:#eaf3ec;font-weight:600}
-.util-bar .u-sp{margin-left:auto}
-
 .site-header{position:sticky;top:0;z-index:60;background:var(--header-bg);border-bottom:1px solid var(--border)}
 .header-inner{display:flex;align-items:center;gap:18px;height:66px}
 .brand-logo{height:42px;width:auto;display:block}
@@ -117,7 +112,7 @@ section{padding:48px 0;position:relative}
 /* тонкая фирменная триколор-полоса — ТОЛЬКО как разделитель между секциями */
 section::before,.site-footer::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;
   background:linear-gradient(90deg,var(--red) 0 33.33%,var(--yellow) 33.33% 66.66%,var(--green) 66.66% 100%)}
-.hero::before{display:none}
+.hero::before{background:var(--green)}
 .site-footer{position:relative}
 
 /* спокойные нейтральные фоны секций (без сплошной яркой заливки) */
@@ -437,13 +432,6 @@ html.js .reveal.in{opacity:1;transform:none}
 
 <!-- ============================= ХЕДЕР ============================= -->
 <header class="site-header">
-  <!-- верхняя утилитарная полоса (зелёная) -->
-  <div class="util-bar"><div class="wrap">
-    <span>📍 Новослободская, 11</span>
-    <a href="tel:+74950665278" title="Не ответили? Перезвоним за 15 минут!">+7 (495) 066-52-78</a>
-    <span class="u-sp"></span>
-    <a href="#" onclick="openChat();return false">Записаться →</a>
-  </div></div>
   <div class="wrap header-inner">
     <a href="#" class="logo" aria-label="Ensina-me — языковой центр">
       <img class="brand-logo" src="https://ensina-me.ru/templates/ensina-me-main/img/logo.png" alt="Ensina-me — языковой центр" loading="eager">
