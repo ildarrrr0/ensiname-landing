@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Онлайн-тест на уровень бразильского варианта португальского языка — Ensina-me.">
+<title>Онлайн-тест португальский (бразильский вариант) — Ensina-me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1a8a38;--green-2:#14722e;--green-3:#0e3d22;
+  --red:#cc2027;--red-2:#a81a20;
+  --yellow:#ffd21e;--yellow-2:#f4c400;
+  --cta-bg:#ffd21e;--cta-bg-h:#f4c400;--cta-fg:#241f04;
+  --bg:#ffffff;--surface:#ffffff;
+  --text:#1f241d;--text-muted:#5c665c;--border:#e2e7e1;
+  --shadow:0 1px 2px rgba(20,50,30,.06),0 6px 18px rgba(20,50,30,.07);
+  --radius:10px;--radius-sm:6px;--maxw:700px;
+  --font:'PT Sans','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --font-head:'Montserrat','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--text);background:#f4f6f7;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--green);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+h1{line-height:1.2;color:var(--text);font-weight:800;font-family:var(--font-head);overflow-wrap:break-word}
+
+.pay-header{background:#fff;border-bottom:1px solid var(--border);padding:18px 0}
+.pay-header .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;max-width:900px}
+.pay-header .brand-logo{height:38px;width:auto;display:block}
+.pay-header .back{font-size:14px;font-weight:700;color:var(--text-muted);margin-left:auto;text-decoration:none}
+.pay-header .back:hover{color:var(--text)}
+
+.t-hero{padding:40px 0 8px;text-align:center}
+.t-hero::before{content:"";display:block;height:5px;
+  background:linear-gradient(90deg,var(--red) 0 33.33%,var(--yellow) 33.33% 66.66%,var(--green) 66.66% 100%);
+  margin-bottom:34px}
+.t-hero .flag{font-size:40px;margin-bottom:14px;display:block}
+.t-hero h1{font-size:26px;margin-bottom:6px}
+
+.intro-box{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 28px;margin:24px 0;font-size:15px;color:var(--text)}
+.intro-box p{margin-bottom:14px}
+.intro-box p:last-child{margin-bottom:0}
+
+.test-embed{margin:0 0 30px}
+.test-embed iframe{width:100%;max-width:640px;display:block;margin:0 auto;border:0;border-radius:var(--radius);box-shadow:var(--shadow);background:#fff}
+
+.back-list{display:block;text-align:center;font-weight:700;margin-bottom:40px}
+
+.pay-footer{background:#fff;border-top:1px solid var(--border);padding:24px 0;text-align:center;margin-top:20px}
+.pay-footer p{font-size:13px;color:var(--text-muted)}
+.pay-footer a{color:var(--green);font-weight:700}
+
+@media(min-width:900px){ .t-hero h1{font-size:32px} }
+@media(max-width:480px){ .intro-box{padding:22px 18px} }
+</style>
+</head>
+<body>
+
+<header class="pay-header">
+  <div class="wrap">
+    <a href="draft1.html" aria-label="Ensina-me">
+      <img class="brand-logo" src="https://ensina-me.ru/templates/ensina-me-main/img/logo.png" alt="Ensina-me — языковой центр" loading="eager">
+    </a>
+    <a href="level-test.html" class="back">&larr; Выбрать другой язык</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="t-hero">
+      <span class="flag">🇧🇷</span>
+      <h1>Онлайн-тест португальский (бразильский вариант)</h1>
+    </div>
+
+    <div class="intro-box">
+      <p>Пройдите небольшой тест на знание португальского языка онлайн и определите свой текущий уровень, это поможет при выборе группы и для оценки предыдущих достижений.</p>
+      <p>Подробные результаты теста придут на ваш адрес электронной почты. Если вы наберёте более 25 баллов, то можете продолжить обучение с уровня А2, от 26 до 45 баллов — с уровня В1, а если более 46 баллов, то уже с уровня В2. Желаем успехов!</p>
+    </div>
+
+    <div class="test-embed">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdEnrkb6IFqeNxIZrB__wlQAxnPWOWd3sooMkBSB7E0M_5EHw/viewform?embedded=true" width="640" height="1400" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">Загрузка формы…</iframe>
+    </div>
+
+    <a class="back-list" href="level-test.html">&larr; Выбрать другой язык</a>
+  </div>
+</main>
+
+<footer class="pay-footer">
+  <div class="wrap">
+    <p>&copy; 2010–2026 Ensina-me. Языковой центр португальского и испанского. <a href="draft1.html">Вернуться на сайт</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
