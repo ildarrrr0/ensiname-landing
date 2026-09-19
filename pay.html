@@ -30,14 +30,6 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
 h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--font-head);overflow-wrap:break-word}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-head);
-  font-size:16px;font-weight:700;padding:14px 24px;border:2px solid transparent;border-radius:var(--radius-sm);
-  cursor:pointer;transition:.15s ease;text-align:center;min-height:50px}
-.btn-cta{background:var(--cta-bg);color:var(--cta-fg);border-color:var(--cta-bg)}
-.btn-cta:hover{background:var(--cta-bg-h);border-color:var(--cta-bg-h)}
-.btn-oy{background:transparent;border-color:var(--yellow);color:var(--text)}
-.btn-oy:hover{background:var(--yellow);color:var(--cta-fg);border-color:var(--yellow)}
-
 /* ХЕДЕР */
 .pay-header{background:#fff;border-bottom:1px solid var(--border);padding:18px 0}
 .pay-header .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
@@ -52,22 +44,6 @@ h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--fo
 .pay-hero::before{content:"";display:block;height:5px;
   background:linear-gradient(90deg,var(--red) 0 33.33%,var(--yellow) 33.33% 66.66%,var(--green) 66.66% 100%);
   margin-bottom:44px}
-
-.cards{display:grid;gap:16px;padding:0 0 20px}
-.pay-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);
-  padding:28px 24px;text-align:center;transition:.18s;display:flex;flex-direction:column}
-.pay-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px)}
-.pay-card.featured{border:2px solid var(--yellow);position:relative}
-.pay-card.featured .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--yellow);color:var(--cta-fg);font-size:12px;font-weight:800;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.04em;font-family:var(--font-head)}
-.pay-card h3{font-size:18px;margin-bottom:6px}
-.pay-card .sub{font-size:14px;color:var(--text-muted);margin-bottom:16px}
-.pay-card .amount{font-size:32px;font-weight:800;color:var(--green);line-height:1;font-family:var(--font-head);margin-bottom:6px}
-.pay-card .amount small{font-size:15px;font-weight:500;color:var(--text-muted)}
-.pay-card ul{list-style:none;margin:16px 0;flex:1;text-align:left}
-.pay-card li{padding:7px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--text);display:flex;gap:10px}
-.pay-card li::before{content:"\2713";color:var(--green);font-weight:800}
-.pay-card li:last-child{border-bottom:0}
-.pay-card .btn{margin-top:auto;width:100%}
 
 .pay-note{text-align:center;padding:10px 0 30px;font-size:14px;color:var(--text-muted)}
 .pay-note b{color:var(--text)}
@@ -94,11 +70,7 @@ h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--fo
 .pay-footer p{font-size:13px;color:var(--text-muted)}
 .pay-footer a{color:var(--green);font-weight:700}
 
-@media(min-width:600px){
-  .cards{grid-template-columns:repeat(2,1fr)}
-}
 @media(min-width:900px){
-  .cards{grid-template-columns:repeat(3,1fr)}
   .pay-hero h1{font-size:34px}
 }
 </style>
@@ -117,85 +89,10 @@ h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--fo
 <main>
   <div class="pay-hero">
     <h1>Оплата обучения</h1>
-    <p>Выберите пакет ниже и оставьте заявку — администратор согласует детали, оплата пройдёт по QR-коду (СБП) или через «Сбербанк Онлайн».</p>
+    <p>Оплатите обучение картой онлайн через ЮKassa или по QR-коду (СБП). Актуальные цены — на странице «Стоимость».</p>
   </div>
 
   <div class="wrap">
-    <div class="cards">
-      <div class="pay-card">
-        <h3>Группа · 1 раз в неделю</h3>
-        <div class="sub">3–7 человек · 120 мин · 4 урока/мес</div>
-        <div class="amount">6 500 ₽<small> / мес</small></div>
-        <ul>
-          <li>Очно + онлайн</li>
-          <li>609 ₽ / ак. час</li>
-          <li>80% — разговорная практика</li>
-        </ul>
-        <a href="draft1.html#contacts" class="btn btn-oy">Записаться</a>
-      </div>
-
-      <div class="pay-card">
-        <h3>Группа · 2 раза в неделю</h3>
-        <div class="sub">3–7 человек · 90 мин · 8 уроков/мес</div>
-        <div class="amount">9 750 ₽<small> / мес</small></div>
-        <ul>
-          <li>Очно + онлайн</li>
-          <li>609 ₽ / ак. час</li>
-          <li>Быстрый прогресс</li>
-        </ul>
-        <a href="draft1.html#contacts" class="btn btn-oy">Записаться</a>
-      </div>
-
-      <div class="pay-card featured">
-        <span class="badge">Популярно</span>
-        <h3>Индивидуально · онлайн</h3>
-        <div class="sub">1 на 1 · абонемент 10 уроков</div>
-        <div class="amount">19 000 ₽<small> за 10 уроков × 60 мин</small></div>
-        <ul>
-          <li>90 мин — 26 500 ₽ за 10 уроков</li>
-          <li>Персональная программа</li>
-          <li>Гибкое расписание</li>
-        </ul>
-        <a href="draft1.html#contacts" class="btn btn-oy">Записаться</a>
-      </div>
-
-      <div class="pay-card">
-        <h3>Курс 3 месяца · 1 р/нед</h3>
-        <div class="sub">Группа · оплата за курс</div>
-        <div class="amount">17 500 ₽</div>
-        <ul>
-          <li>546 ₽ / ак. час (экономия!)</li>
-          <li>2 р/нед — 25 250 ₽ / 3 мес</li>
-          <li>Фиксированная цена</li>
-        </ul>
-        <a href="draft1.html#contacts" class="btn btn-oy">Записаться</a>
-      </div>
-
-      <div class="pay-card">
-        <h3>Вдвоём</h3>
-        <div class="sub">Занятие в паре · 10 уроков</div>
-        <div class="amount">28 000 ₽<small> за 10 уроков × 90 мин</small></div>
-        <ul>
-          <li>С другом или коллегой</li>
-          <li>Персональная программа</li>
-          <li>Очно или онлайн</li>
-        </ul>
-        <a href="draft1.html#contacts" class="btn btn-oy">Записаться</a>
-      </div>
-
-      <div class="pay-card">
-        <h3>Подготовка к экзаменам</h3>
-        <div class="sub">CAPLE · Celpe-Bras · DELE</div>
-        <div class="amount">28 000 ₽<small> за 10 уроков × 90 мин</small></div>
-        <ul>
-          <li>Индивидуальный формат</li>
-          <li>Все уровни</li>
-          <li>Носитель языка</li>
-        </ul>
-        <a href="draft1.html#contacts" class="btn btn-oy">Записаться</a>
-      </div>
-    </div>
-
     <p class="pay-note">Перевод на карту (Сбер / Т-Банк / Альфа) или наличными в школе — тоже возможны. Скидка <b>5% студентам</b>, <b>7% — приведи друга</b>.</p>
 
     <!-- ============================= ОПЛАТА КАРТОЙ ОНЛАЙН (ЮKASSA) ============================= -->
