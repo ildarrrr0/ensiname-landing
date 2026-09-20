@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Подарочный сертификат на изучение португальского или испанского языка в языковом центре Ensina-me.">
+<title>Подарочный сертификат — Ensina-me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1a8a38;--green-2:#14722e;--green-3:#0e3d22;
+  --red:#cc2027;--red-2:#a81a20;
+  --yellow:#ffd21e;--yellow-2:#f4c400;
+  --cta-bg:#ffd21e;--cta-bg-h:#f4c400;--cta-fg:#241f04;
+  --bg:#ffffff;--surface:#ffffff;
+  --text:#1f241d;--text-muted:#5c665c;--border:#e2e7e1;
+  --shadow:0 1px 2px rgba(20,50,30,.06),0 6px 18px rgba(20,50,30,.07);
+  --radius:10px;--radius-sm:6px;--maxw:760px;
+  --font:'PT Sans','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --font-head:'Montserrat','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--text);background:#f4f6f7;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--green);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+h1,h2,h3{line-height:1.2;color:var(--text);font-weight:800;font-family:var(--font-head);overflow-wrap:break-word}
+
+.pay-header{background:#fff;border-bottom:1px solid var(--border);padding:18px 0}
+.pay-header .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;max-width:900px}
+.pay-header .brand-logo{height:38px;width:auto;display:block}
+.pay-header .back{font-size:14px;font-weight:700;color:var(--text-muted);margin-left:auto;text-decoration:none}
+.pay-header .back:hover{color:var(--text)}
+
+.t-hero{padding:40px 0 8px;text-align:center}
+.t-hero::before{content:"";display:block;height:5px;
+  background:linear-gradient(90deg,var(--red) 0 33.33%,var(--yellow) 33.33% 66.66%,var(--green) 66.66% 100%);
+  margin-bottom:34px}
+.t-hero h1{font-size:28px;margin-bottom:8px}
+.t-hero p{color:var(--text-muted);font-size:15px}
+
+.intro-box{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 28px;margin:24px 0;font-size:15px;color:var(--text)}
+
+.section-title{margin:36px 0 14px}
+.section-title h2{font-size:19px}
+
+.block-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;margin-bottom:18px}
+.block-card p{font-size:15px;color:var(--text)}
+.block-card ul{list-style:none;margin:0;padding:0}
+.block-card li{position:relative;padding:6px 0 6px 24px;font-size:15px;color:var(--text)}
+.block-card li::before{content:"✓";position:absolute;left:0;top:6px;color:var(--green);font-weight:800}
+
+.steps{list-style:none;margin:0;padding:0;counter-reset:step}
+.steps li{counter-increment:step;position:relative;padding:8px 0 8px 40px;font-size:15px;color:var(--text)}
+.steps li::before{content:counter(step);position:absolute;left:0;top:6px;width:26px;height:26px;border-radius:50%;
+  background:var(--green);color:#fff;font-family:var(--font-head);font-weight:800;font-size:13px;
+  display:flex;align-items:center;justify-content:center}
+
+.cta-box{text-align:center;margin:32px 0 20px}
+.cta-box .btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-head);
+  font-weight:700;font-size:16px;padding:14px 26px;border-radius:var(--radius-sm);
+  background:var(--cta-bg);color:var(--cta-fg);text-decoration:none;transition:.15s}
+.cta-box .btn:hover{background:var(--cta-bg-h);text-decoration:none}
+
+.pay-footer{background:#fff;border-top:1px solid var(--border);padding:24px 0;text-align:center;margin-top:20px}
+.pay-footer p{font-size:13px;color:var(--text-muted)}
+.pay-footer a{color:var(--green);font-weight:700}
+
+@media(min-width:900px){ .t-hero h1{font-size:32px} }
+</style>
+</head>
+<body>
+
+<header class="pay-header">
+  <div class="wrap">
+    <a href="../draft1.html" aria-label="Ensina-me">
+      <img class="brand-logo" src="../assets/logo.png" alt="Ensina-me — языковой центр" loading="eager">
+    </a>
+    <a href="../draft1.html" class="back">&larr; На главную</a>
+  </div>
+</header>
+
+<main>
+  <div class="t-hero">
+    <h1>Подарочный сертификат</h1>
+    <p>На изучение португальского или испанского языка</p>
+  </div>
+
+  <div class="wrap">
+    <div class="intro-box">
+      <p>Подарочный сертификат на изучение иностранного языка станет замечательным, полезным и оригинальным подарком для самых важных людей в Вашей жизни. Можно приобрести сертификат на изучение португальского или испанского языка. Сертификаты действительны в течение 6 месяцев с момента покупки.</p>
+    </div>
+
+    <div class="section-title"><h2>Что это?</h2></div>
+    <div class="block-card">
+      <p>Право на индивидуальное или групповое обучение по любой программе центра.</p>
+    </div>
+
+    <div class="section-title"><h2>Как выглядит?</h2></div>
+    <div class="block-card">
+      <p>На сертификате указан курс и количество часов. Сертификат можно оформить без имени или с именем получателя.</p>
+    </div>
+
+    <div class="section-title"><h2>Почему это лучший подарок?</h2></div>
+    <div class="block-card">
+      <ul>
+        <li>Отличный стимул наконец начать изучение языка</li>
+        <li>Конфиденциальность стоимости — сумма подарка не разглашается</li>
+        <li>Оригинальность — необычный подарок, который запомнится</li>
+      </ul>
+    </div>
+
+    <div class="section-title"><h2>Как работает?</h2></div>
+    <div class="block-card">
+      <ol class="steps">
+        <li>Покупка сертификата</li>
+        <li>Получение сертификата по email с уникальным номером</li>
+        <li>Дарение сертификата</li>
+        <li>Получатель называет номер сертификата при обращении в центр</li>
+        <li>Заключение договора и начало занятий</li>
+      </ol>
+    </div>
+
+    <div class="section-title"><h2>Стоимость</h2></div>
+    <div class="block-card">
+      <p>Соответствует стоимости выбранного курса — актуальные цены смотрите на странице <a href="../draft1.html#indiv-pricing">«Стоимость»</a>.</p>
+    </div>
+
+    <div class="cta-box">
+      <a href="../draft1.html#contacts" class="btn">Оставить заявку на оформление сертификата</a>
+    </div>
+  </div>
+</main>
+
+<footer class="pay-footer">
+  <div class="wrap">
+    <p>&copy; 2010&ndash;2026 Ensina-me. Языковой центр португальского и испанского. <a href="../draft1.html">Вернуться на сайт</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

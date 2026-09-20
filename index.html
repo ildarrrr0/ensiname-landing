@@ -116,7 +116,7 @@ section::before,.site-footer::before{content:"";position:absolute;top:0;left:0;r
 .site-footer{position:relative}
 
 /* спокойные нейтральные фоны секций (без сплошной яркой заливки) */
-#about,#pricing,#faq,#indiv-pricing{background:#f4f6f7}       /* светло-серый */
+#about,#faq,#indiv-pricing{background:#f4f6f7}       /* светло-серый */
 #schedule,#club{background:#e9f1f8}            /* пастельный голубой */
 #teachers,#contacts{background:#f5efe4}         /* бежевый «кофе с молоком» */
 /* остальные секции (hero, courses, reviews, articles) — белые по умолчанию */
@@ -245,7 +245,8 @@ body.vB .hero-slider{max-width:680px;margin-left:auto;margin-right:auto}
 
 /* ---- КЛУБ + СЕРТИФИКАТ ---- */
 .split{display:grid;grid-template-columns:1fr;gap:16px}
-.promo{border-radius:var(--radius);padding:30px 26px;color:#fff;overflow:hidden}
+.promo{display:block;border-radius:var(--radius);padding:30px 26px;color:#fff;overflow:hidden;transition:.18s}
+.promo:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px)}
 .promo.club{background:linear-gradient(135deg,var(--green),var(--green-2))}
 .promo.gift{background:linear-gradient(135deg,var(--red),var(--red-2))}
 .promo h3{color:#fff;font-size:22px;margin-bottom:10px}
@@ -441,7 +442,7 @@ html.js .reveal.in{opacity:1;transform:none}
       <a href="#schedule">Расписание</a>
       <a href="#teachers">Преподаватели</a>
       <a href="#courses">Курсы</a>
-      <a href="#pricing">Стоимость</a>
+      <a href="#schedule">Стоимость</a>
       <a href="#reviews">Отзывы</a>
       <a href="#contacts">Контакты</a>
     </nav>
@@ -543,8 +544,8 @@ html.js .reveal.in{opacity:1;transform:none}
       <p>Португальский (европейский и бразильский) и испанский — очно и онлайн, в группе или индивидуально.</p>
     </div>
     <div class="cards cards-4">
-      <div class="card course reveal"><span class="tag">Группы</span><h3>Наборы в группы</h3><p>Группы 4–6 человек и мини-группы 2–3 человека одного уровня. Регулярная практика и живое общение.</p></div>
-      <div class="card course reveal"><span class="tag">1-на-1</span><h3>Индивидуальные</h3><p>Персональная программа и темп. Очно на Новослободской или онлайн по Zoom — 60–120 минут.</p></div>
+      <a class="card course reveal" href="#schedule"><span class="tag">Группы</span><h3>Наборы в группы</h3><p>Группы 4–6 человек и мини-группы 2–3 человека одного уровня. Регулярная практика и живое общение.</p></a>
+      <a class="card course reveal" href="#indiv-pricing"><span class="tag">1-на-1</span><h3>Индивидуальные</h3><p>Персональная программа и темп. Очно на Новослободской или онлайн по Zoom — 60–120 минут.</p></a>
       <div class="card course reveal"><span class="tag">Экзамены</span><h3>Подготовка к экзаменам</h3><p>CAPLE (CIPLE, DEPLE, DIPLE, DAPLE, DUPLE), CELPE-Bras для бразильского и DELE для испанского.</p></div>
       <div class="card course reveal"><span class="tag">Бизнес</span><h3>Корпоративное обучение</h3><p>Бизнес-португальский, деловая переписка и телефонные переговоры для сотрудников и команд.</p></div>
     </div>
@@ -648,23 +649,6 @@ html.js .reveal.in{opacity:1;transform:none}
   </div>
 </section>
 
-<!-- ============================= СТОИМОСТЬ ============================= -->
-<section id="pricing">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Стоимость и оплата</span>
-      <h2>Прозрачные цены</h2>
-      <p>Оплата помесячно, за курс целиком или за полгода + месяц обучения в подарок.</p>
-    </div>
-    <div class="cards cards-3">
-      <div class="card price-card reveal"><h3>Группа</h3><div class="sub">3–7 человек · очно и онлайн</div><div class="amount">от 6 500 ₽<small> / мес</small></div><ul><li>1 раз/нед (120 мин) — 6 500 ₽/мес</li><li>2 раза/нед (90 мин) — 9 750 ₽/мес</li><li>Курс 3 мес — от 17 500 ₽</li><li>80% занятия — разговорная практика</li></ul><a href="#" onclick="openChat();return false" class="btn btn-oy">Записаться</a></div>
-      <div class="card price-card featured reveal"><span class="badge">Популярно</span><h3>Индивидуально</h3><div class="sub">Очно (Новослободская) или онлайн</div><div class="amount">от 19 000 ₽<small> за 10 уроков</small></div><ul><li>Онлайн 60 мин — 19 000 ₽ за 10 уроков</li><li>90 мин — 26 500 ₽ за 10 уроков</li><li>Персональная программа</li><li>Гибкое расписание</li></ul><a href="#" onclick="openChat();return false" class="btn btn-oy">Записаться</a></div>
-      <div class="card price-card reveal"><h3>Вдвоём / экзамены</h3><div class="sub">Индивидуальный подход в паре</div><div class="amount">28 000 ₽<small> за 10 уроков × 90 мин</small></div><ul><li>Занятие вдвоём с другом или коллегой</li><li>Подготовка к CAPLE, Celpe-Bras, DELE</li><li>Скидка 5% студентам вузов</li><li>Скидка 7% по «Приведи друга»</li></ul><a href="#" onclick="openChat();return false" class="btn btn-oy">Записаться</a></div>
-    </div>
-    <p class="pay-note">Оплата по QR-коду через приложение банка, картой (Сбербанк, Тинькофф, Альфа-банк) или наличными в офисе. Скидка 5% студентам, 7% по программе «Приведи друга».</p>
-  </div>
-</section>
-
 <!-- ============================= ОТЗЫВЫ ============================= -->
 <section id="reviews">
   <div class="wrap">
@@ -718,16 +702,16 @@ html.js .reveal.in{opacity:1;transform:none}
 <section id="club">
   <div class="wrap">
     <div class="split">
-      <div class="promo club reveal">
+      <a class="promo club reveal" href="razgovornyj-klub/">
         <h3>Разговорный клуб</h3>
-        <p>Встречи с носителем языка каждую субботу в 18:00. Живая практика без учебников — реальные темы и никакого страха ошибиться.</p>
-        <a href="#" onclick="openChat();return false" class="btn">Присоединиться</a>
-      </div>
-      <div class="promo gift reveal">
+        <p>Встречи с носителем языка. Живая практика без учебников — реальные темы и никакого страха ошибиться.</p>
+        <span class="btn">Подробнее</span>
+      </a>
+      <a class="promo gift reveal" href="podarochnyj-sertifikat/">
         <h3>Подарочный сертификат</h3>
         <p>Подарите близкому человеку занятия португальским или испанским. Сертификат на любую сумму и любой формат обучения.</p>
-        <a href="#" onclick="openChat();return false" class="btn">Купить сертификат</a>
-      </div>
+        <span class="btn">Подробнее</span>
+      </a>
     </div>
   </div>
 </section>
@@ -843,7 +827,7 @@ html.js .reveal.in{opacity:1;transform:none}
         <a href="#courses">Наборы в группы</a>
         <a href="#courses">Индивидуальные занятия</a>
         <a href="#courses">Подготовка к экзаменам</a>
-        <a href="#pricing">Стоимость</a>
+        <a href="#schedule">Стоимость</a>
         <a href="pay.html">Оплата обучения</a>
         <a href="skhema-proezda/">Схема проезда</a>
       </div>
