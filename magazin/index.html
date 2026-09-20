@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Магазин учебной литературы по португальскому и испанскому языку — официальный дилер Lidel, Porto Editora, EPU. Скидка 10% для студентов Ensina-me.">
+<title>Магазин учебной литературы — Ensina-me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1a8a38;--green-2:#14722e;--green-3:#0e3d22;
+  --red:#cc2027;--red-2:#a81a20;
+  --yellow:#ffd21e;--yellow-2:#f4c400;
+  --cta-bg:#ffd21e;--cta-bg-h:#f4c400;--cta-fg:#241f04;
+  --bg:#ffffff;--surface:#ffffff;
+  --text:#1f241d;--text-muted:#5c665c;--border:#e2e7e1;
+  --shadow:0 1px 2px rgba(20,50,30,.06),0 6px 18px rgba(20,50,30,.07);
+  --radius:10px;--radius-sm:6px;--maxw:700px;
+  --font:'PT Sans','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --font-head:'Montserrat','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--text);background:#f4f6f7;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--green);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+h1,h2{line-height:1.2;color:var(--text);font-weight:800;font-family:var(--font-head);overflow-wrap:break-word}
+
+.pay-header{background:#fff;border-bottom:1px solid var(--border);padding:18px 0}
+.pay-header .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;max-width:900px}
+.pay-header .brand-logo{height:38px;width:auto;display:block}
+.pay-header .back{font-size:14px;font-weight:700;color:var(--text-muted);margin-left:auto;text-decoration:none}
+.pay-header .back:hover{color:var(--text)}
+
+.t-hero{padding:40px 0 8px;text-align:center}
+.t-hero::before{content:"";display:block;height:5px;
+  background:linear-gradient(90deg,var(--red) 0 33.33%,var(--yellow) 33.33% 66.66%,var(--green) 66.66% 100%);
+  margin-bottom:34px}
+.t-hero h1{font-size:26px;margin-bottom:8px}
+.t-hero p{color:var(--text-muted);font-size:15px}
+
+.block-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 26px;margin:18px 0}
+.block-card p{font-size:15px;color:var(--text);margin-bottom:12px}
+.block-card p:last-child{margin-bottom:0}
+.block-card a.inline-link{font-weight:700;color:var(--green);text-decoration:underline}
+
+.discount-box{background:#fff7e0;border:1px solid var(--yellow-2);border-radius:var(--radius);padding:20px 24px;margin:18px 0;font-size:15px;color:var(--text);text-align:center}
+.discount-box b{font-family:var(--font-head);color:var(--green-2)}
+
+.cta-box{text-align:center;margin:30px 0 20px}
+.cta-box .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-head);
+  font-weight:700;font-size:16px;padding:14px 28px;border-radius:var(--radius-sm);
+  background:var(--cta-bg);color:var(--cta-fg);text-decoration:none;transition:.15s}
+.cta-box .btn:hover{background:var(--cta-bg-h);text-decoration:none}
+.cta-box .note{margin-top:10px;font-size:13px;color:var(--text-muted)}
+
+.pay-footer{background:#fff;border-top:1px solid var(--border);padding:24px 0;text-align:center;margin-top:20px}
+.pay-footer p{font-size:13px;color:var(--text-muted)}
+.pay-footer a{color:var(--green);font-weight:700}
+
+@media(min-width:900px){ .t-hero h1{font-size:30px} }
+</style>
+</head>
+<body>
+
+<header class="pay-header">
+  <div class="wrap">
+    <a href="../draft1.html" aria-label="Ensina-me">
+      <img class="brand-logo" src="../assets/logo.png" alt="Ensina-me — языковой центр" loading="eager">
+    </a>
+    <a href="../draft1.html" class="back">&larr; На главную</a>
+  </div>
+</header>
+
+<main>
+  <div class="t-hero">
+    <h1>Собственный магазин учебной литературы из Португалии и Бразилии</h1>
+  </div>
+
+  <div class="wrap">
+    <div class="block-card">
+      <p>Мы — единственный интернет-магазин на территории России, который занимается распространением португальских учебных и методических пособий. Мы являемся официальным дилером таких издательств как Lidel, Porto Editora, EPU.</p>
+      <p>Учебники португальского Português XXI можно заказать в нашем интернет-магазине учебной литературы <a class="inline-link" href="https://portugues.bz" target="_blank" rel="noopener">Português.bz</a>.</p>
+      <p>Важно: <a class="inline-link" href="https://portugues.bz" target="_blank" rel="noopener">Português.bz</a> — это отдельный интернет-магазин, не раздел на сайте ensina-me.ru.</p>
+    </div>
+
+    <div class="discount-box">
+      Для студентов школы — скидка <b>10%</b> на учебную литературу в интернет-магазине <a class="inline-link" href="https://portugues.bz" target="_blank" rel="noopener">Português.bz</a>.
+    </div>
+
+    <div class="cta-box">
+      <a class="btn" href="https://portugues.bz" target="_blank" rel="noopener">Перейти в магазин</a>
+      <p class="note">Откроется в новой вкладке — portugues.bz</p>
+    </div>
+  </div>
+</main>
+
+<footer class="pay-footer">
+  <div class="wrap">
+    <p>&copy; 2010&ndash;2026 Ensina-me. Языковой центр португальского и испанского. <a href="../draft1.html">Вернуться на сайт</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
