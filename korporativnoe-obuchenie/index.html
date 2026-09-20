@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Корпоративное обучение испанскому и португальскому языку — программы, методика, подготовка к международным экзаменам для сотрудников и команд.">
+<title>Корпоративное обучение — Ensina-me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1a8a38;--green-2:#14722e;--green-3:#0e3d22;
+  --red:#cc2027;--red-2:#a81a20;
+  --yellow:#ffd21e;--yellow-2:#f4c400;
+  --cta-bg:#ffd21e;--cta-bg-h:#f4c400;--cta-fg:#241f04;
+  --bg:#ffffff;--surface:#ffffff;
+  --text:#1f241d;--text-muted:#5c665c;--border:#e2e7e1;
+  --shadow:0 1px 2px rgba(20,50,30,.06),0 6px 18px rgba(20,50,30,.07);
+  --radius:10px;--radius-sm:6px;--maxw:820px;
+  --font:'PT Sans','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --font-head:'Montserrat','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--text);background:#f4f6f7;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--green);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+h1,h2,h3,h4{line-height:1.2;color:var(--text);font-weight:800;font-family:var(--font-head);overflow-wrap:break-word}
+
+.pay-header{background:#fff;border-bottom:1px solid var(--border);padding:18px 0}
+.pay-header .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;max-width:900px}
+.pay-header .brand-logo{height:38px;width:auto;display:block}
+.pay-header .back{font-size:14px;font-weight:700;color:var(--text-muted);margin-left:auto;text-decoration:none}
+.pay-header .back:hover{color:var(--text)}
+
+.t-hero{padding:40px 0 8px;text-align:center}
+.t-hero::before{content:"";display:block;height:5px;
+  background:linear-gradient(90deg,var(--red) 0 33.33%,var(--yellow) 33.33% 66.66%,var(--green) 66.66% 100%);
+  margin-bottom:34px}
+.t-hero h1{font-size:24px;margin-bottom:14px;max-width:640px;margin-left:auto;margin-right:auto}
+.t-hero p{color:var(--text-muted);font-size:15px}
+
+.cta-box{text-align:center;margin:22px 0 8px}
+.cta-box .btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-head);
+  font-weight:700;font-size:16px;padding:14px 26px;border-radius:var(--radius-sm);
+  background:var(--cta-bg);color:var(--cta-fg);text-decoration:none;transition:.15s}
+.cta-box .btn:hover{background:var(--cta-bg-h);text-decoration:none}
+
+.section-title{margin:38px 0 14px}
+.section-title h2{font-size:20px}
+.section-title.sub h3{font-size:17px;color:var(--green);margin-top:22px}
+
+.block-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;margin:14px 0}
+.block-card h3{font-size:17px;margin-bottom:10px;color:var(--green)}
+.block-card h4{font-size:15px;margin:16px 0 8px;color:var(--text)}
+.block-card p{font-size:15px;color:var(--text);margin-bottom:12px}
+.block-card p:last-child{margin-bottom:0}
+.block-card ul{list-style:none;margin:0 0 12px;padding:0}
+.block-card ul li{position:relative;padding:5px 0 5px 22px;font-size:15px;color:var(--text)}
+.block-card ul li::before{content:"\2022";position:absolute;left:2px;color:var(--green);font-weight:800}
+.block-card ul.check li::before{content:"\2713";color:var(--green);font-weight:800}
+
+.split-lang{display:grid;gap:14px}
+.lang-col{background:#f4f6f7;border-radius:var(--radius-sm);padding:16px 18px}
+.lang-col h4{font-family:var(--font-head);font-weight:800;font-size:15px;margin-bottom:8px}
+
+.steps{list-style:none;margin:0;padding:0;counter-reset:step}
+.steps li{counter-increment:step;position:relative;padding:8px 0 8px 40px;font-size:15px;color:var(--text)}
+.steps li::before{content:counter(step);position:absolute;left:0;top:6px;width:26px;height:26px;border-radius:50%;
+  background:var(--green);color:#fff;font-family:var(--font-head);font-weight:800;font-size:13px;
+  display:flex;align-items:center;justify-content:center}
+
+.tbl-scroll{overflow-x:auto;margin:14px 0}
+table.tbl{border-collapse:collapse;width:100%;min-width:560px;font-size:13px}
+table.tbl th,table.tbl td{border:1px solid var(--border);padding:8px 10px;text-align:center;vertical-align:top}
+table.tbl th{background:var(--green);color:#fff;font-family:var(--font-head);font-weight:700}
+table.tbl td{background:#fff}
+table.tbl.small{font-size:12px}
+
+.note-box{background:#fff7e0;border:1px solid var(--yellow-2);border-radius:var(--radius-sm);padding:14px 16px;font-size:14px;color:var(--text);margin:14px 0}
+
+.pay-footer{background:#fff;border-top:1px solid var(--border);padding:24px 0;text-align:center;margin-top:20px}
+.pay-footer p{font-size:13px;color:var(--text-muted)}
+.pay-footer a{color:var(--green);font-weight:700}
+
+@media(min-width:640px){ .split-lang{grid-template-columns:1fr 1fr} }
+@media(min-width:900px){ .t-hero h1{font-size:28px} }
+</style>
+</head>
+<body>
+
+<header class="pay-header">
+  <div class="wrap">
+    <a href="../draft1.html" aria-label="Ensina-me">
+      <img class="brand-logo" src="../assets/logo.png" alt="Ensina-me — языковой центр" loading="eager">
+    </a>
+    <a href="../draft1.html" class="back">&larr; На главную</a>
+  </div>
+</header>
+
+<main>
+  <div class="t-hero">
+    <h1>Превалирующая задача нашего Языкового Центра — это обеспечение максимальной отдачи от Ваших инвестиций, направленных на получение и развитие языковых навыков Ваших сотрудников</h1>
+  </div>
+  <div class="cta-box"><a href="../draft1.html#contacts" class="btn">Подать заявку на обучение</a></div>
+
+  <div class="wrap">
+
+    <div class="section-title"><h2>Зачем сотрудникам изучать испанский и португальский?</h2></div>
+    <div class="split-lang">
+      <div class="lang-col">
+        <h4>🇪🇸 Испанский</h4>
+        <ul>
+          <li>Испанский язык — самый распространённый из всех романских языков и второй по популярности изучения язык в мире.</li>
+          <li>Второй по интенсивности использования в деловом международном общении. Количество соглашений между российскими компаниями и фирмами испаноговорящих стран постоянно растёт, активно расширяются контакты не только с Испанией, но и странами Латинской Америки.</li>
+          <li>На испанском сегодня говорят уже 500 миллионов человек в мире, в 22 странах на 4 континентах — примерно пятая часть мира. По показателю ежегодного роста числа носителей испанский уже вышел на первое место в мире.</li>
+          <li>Если ваша компания планирует расширить деятельность в испаноговорящих странах, владение испанским станет значительным преимуществом. Люди доверяют тем, кого понимают, а доверие — залог долгосрочных взаимовыгодных деловых связей.</li>
+        </ul>
+      </div>
+      <div class="lang-col">
+        <h4>🇵🇹 Португальский</h4>
+        <ul>
+          <li>Португальский — родной язык для 220 миллионов человек, шестой по распространённости язык в мире.</li>
+          <li>Четвёртое место в мире по популярности: 28 миллионов людей уже знают португальский или учат его как второй язык.</li>
+          <li>Бразилия — 154 миллиона носителей португальского, седьмая по величине экономика в мире и первая в Латинской Америке, продолжает стремительно развиваться. Взаимный торговый оборот между Россией и Бразилией — более 8 млрд долларов в год.</li>
+          <li>За прошедшие десять лет спрос на изучение португальского в России вырос более чем в 2 раза.</li>
+          <li>Официальный язык 9 стран на четырёх континентах — Португалии, Бразилии, Анголы, Мозамбика, Кабо-Верде, Гвинеи-Бисау, Сан-Томе и Принсипи, Восточного Тимора и провинции Макао.</li>
+          <li>Если ваша компания планирует расширить деятельность в португалоговорящих странах, владение португальским станет значительным преимуществом. Люди доверяют тем, кого понимают, а доверие — залог долгосрочных взаимовыгодных деловых связей.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-title"><h2>7 причин, почему выбирают именно нас</h2></div>
+    <div class="block-card">
+      <ul class="check">
+        <li>Наш курс обучения испанскому и португальскому языкам построен на коммуникативной методике и нацелен на быстрое достижение сотрудниками необходимого для работы уровня владения языком.</li>
+        <li>У сотрудников есть возможность обучения как в аудиториях Языкового центра, так и непосредственно в офисе компании — мы экономим время ваших сотрудников.</li>
+        <li>Гибкий график обучения — сотрудники самостоятельно выбирают удобное для них время занятий.</li>
+        <li>Беспрецедентная продолжительность рабочего дня центра — сотрудники могут заниматься до начала рабочего дня, во время обеденного перерыва или после работы.</li>
+        <li>Занятие с преподавателем может быть отменено за 24 часа — так вы наиболее эффективно используете бюджет.</li>
+        <li>Сотрудники могут выбрать занятия с русскоговорящим преподавателем или с носителем языка — стоимость не изменится.</li>
+        <li>Мы проводим бесплатный пробный урок и бесплатное тестирование.</li>
+      </ul>
+    </div>
+
+    <div class="section-title"><h2>Кто наши преподаватели?</h2></div>
+    <div class="block-card">
+      <p>Обучение ведут преподаватели-носители языка, которые свободно владеют русским языком и имеют большой опыт преподавания русскоговорящим студентам. Также в нашем центре ведут курсы русскоязычные преподаватели. Все они имеют высшее лингвистическое или филологическое образование, уровень владения языком С2 и стаж работы не менее 5 лет.</p>
+    </div>
+
+    <div class="section-title"><h2>Какие программы мы предлагаем?</h2></div>
+
+    <div class="block-card">
+      <h3>Общий курс языка</h3>
+      <p>В нашем центре принято деление всей программы обучения на модули по 64 академических часа (1 ак/ч = 45 мин). Модули разработаны на основе Общеевропейской системы языковых уровней CEFR. Каждый европейский уровень представлен двумя модулями. Уровень А1 в группах, где студенты ранее не изучали романские языки, делится также на 2 модуля (А1.1 и А1.2). Если студенты ранее изучали какой-либо язык романской группы — освоение уровня А1 проходит в более быстром темпе.</p>
+      <div class="tbl-scroll">
+        <table class="tbl">
+          <tr><th>Модуль</th><th>Часы (ак/ч)</th><th>Уровень CEFR</th></tr>
+          <tr><td>А1</td><td>64</td><td rowspan="1">А1 — уровень выживания</td></tr>
+          <tr><td>А2.1</td><td>64</td><td rowspan="2">А2 — базовый уровень</td></tr>
+          <tr><td>А2.2</td><td>64</td></tr>
+          <tr><td>B1.1</td><td>64</td><td rowspan="2">B1 — средний уровень</td></tr>
+          <tr><td>B1.2</td><td>64</td></tr>
+          <tr><td>B2.1</td><td>64</td><td rowspan="2">B2 — продвинутый уровень</td></tr>
+          <tr><td>B2.2</td><td>64</td></tr>
+          <tr><td>С1.1</td><td>64</td><td rowspan="2">С1 — высокий уровень</td></tr>
+          <tr><td>С1.2</td><td>64</td></tr>
+          <tr><td>С2.1</td><td>64</td><td rowspan="2">С2 — совершенное владение на уровне носителя</td></tr>
+          <tr><td>С2.2</td><td>64</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="block-card">
+      <h3>Язык для делового общения</h3>
+      <p>Цель программы: практическое освоение лексического и грамматического материала, используемого в бизнес-сфере, а также развитие коммуникативных навыков делового человека.</p>
+      <ul>
+        <li>Курс ориентирован на развитие навыков профессиональной коммуникации на языке в различного рода ситуациях.</li>
+        <li>Изучение курса будет также способствовать успешному развитию карьеры обучаемых.</li>
+        <li>При обучении большое внимание уделяется изучению деловой лексики, отработке специфического словарного запаса, дискуссиям и обсуждениям, имитирующим реальные ситуации ведения бизнеса.</li>
+      </ul>
+    </div>
+
+    <div class="block-card">
+      <h3>Подготовка к международным экзаменам</h3>
+      <p>Мы проводим подготовку к международным экзаменам — по системам CAPLE (европейский вариант португальского языка) и Celpe-Bras (бразильский вариант португальского языка), либо DELE для испанского.</p>
+      <h4>Португальский</h4>
+      <div class="tbl-scroll">
+        <table class="tbl small">
+          <tr><th>A1</th><th>A2</th><th>B1</th><th>B2</th><th>C1</th><th>C2</th></tr>
+          <tr><td>ACESSO A1</td><td>CIPLE</td><td>DEPLE</td><td>DIPLE</td><td>DAPLE</td><td>DUPLE</td></tr>
+          <tr><td>—</td><td>—</td><td>Celpe-Bras (интермедиарио)</td><td>Celpe-Bras (интермедиарио супериор)</td><td>Celpe-Bras (аванcадо)</td><td>Celpe-Bras (аванcадо супериор)</td></tr>
+        </table>
+      </div>
+      <h4>Испанский</h4>
+      <div class="tbl-scroll">
+        <table class="tbl small">
+          <tr><th>A1</th><th>A2</th><th>B1</th><th>B2</th><th>C1</th><th>C2</th></tr>
+          <tr><td>Acceso</td><td>Plataforma</td><td>Umbral</td><td>Avanzado</td><td>Dominio Operativo Eficaz</td><td>Maestría</td></tr>
+          <tr><td>—</td><td>—</td><td>—</td><td>Certificado Básico de Español de los Negocios</td><td>Certificado Superior de Español de los Negocios</td><td>Diploma de Español de los Negocios</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="block-card">
+      <h3>Специализированный бизнес-курс</h3>
+      <p>Данный курс предназначен для специалистов различных деловых сфер, которым в процессе работы необходима профильная тематика:</p>
+      <ul>
+        <li>курс для работников гостиничного бизнеса</li>
+        <li>курс для работников ресторанного бизнеса</li>
+        <li>курс для инженеров</li>
+        <li>курс для менеджеров по продажам</li>
+        <li>курс для секретарей и референтов</li>
+        <li>курс для экономистов</li>
+        <li>курс для юристов</li>
+      </ul>
+      <p>В процессе обучения используются современные учебные пособия португальских, бразильских и российских издательств.</p>
+    </div>
+
+    <div class="block-card">
+      <h3>Курс «Телефонные переговоры»</h3>
+      <p>Основная цель курса — развить умения и навыки, необходимые для успешного ведения телефонных переговоров в различных ситуациях делового общения.</p>
+      <p>После прохождения курса сотрудники смогут:</p>
+      <ul class="check">
+        <li>вести формальные и неформальные диалоги;</li>
+        <li>соблюдать правила этикета при разговоре по телефону, звучать вежливо и дружелюбно;</li>
+        <li>связаться с нужным человеком по телефону и уточнить важную информацию;</li>
+        <li>забронировать номер в гостинице или столик в ресторане;</li>
+        <li>оставить голосовое сообщение;</li>
+        <li>назначить встречу;</li>
+        <li>запросить необходимую информацию.</li>
+      </ul>
+    </div>
+
+    <div class="section-title"><h2>Как мы работаем?</h2></div>
+    <div class="block-card">
+      <ol class="steps">
+        <li>Оставляете заявку или звоните нам</li>
+        <li>Проводим бесплатный урок</li>
+        <li>Заключаем договор</li>
+        <li>Приступаем к обучению</li>
+      </ol>
+    </div>
+
+    <div class="cta-box"><a href="../draft1.html#contacts" class="btn">Вы можете записаться на пробное занятие бесплатно!</a></div>
+  </div>
+</main>
+
+<footer class="pay-footer">
+  <div class="wrap">
+    <p>&copy; 2010&ndash;2026 Ensina-me. Языковой центр португальского и испанского. <a href="../draft1.html">Вернуться на сайт</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
