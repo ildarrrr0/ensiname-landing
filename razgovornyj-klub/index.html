@@ -62,6 +62,7 @@ h1,h2,h3{line-height:1.2;color:var(--text);font-weight:800;font-family:var(--fon
 
 @media(min-width:900px){ .t-hero h1{font-size:32px} }
 </style>
+<link rel="stylesheet" href="../assets/chat-widget.css">
 </head>
 <body>
 
@@ -92,7 +93,7 @@ h1,h2,h3{line-height:1.2;color:var(--text);font-weight:800;font-family:var(--fon
         <div><b>Группа:</b> 2–5 человек</div>
         <div><b>День, время и стоимость занятия:</b> <span class="tbd">уточняются у администратора при записи</span></div>
       </div>
-      <a href="../draft1.html#contacts" class="btn">Записаться на первое занятие</a>
+      <a href="#" onclick="openChat();return false" class="btn">Записаться на первое занятие</a>
     </div>
 
     <div class="club-card">
@@ -104,7 +105,7 @@ h1,h2,h3{line-height:1.2;color:var(--text);font-weight:800;font-family:var(--fon
         <div><b>Формат:</b> дистанционно через Zoom</div>
         <div><b>День, время и стоимость занятия:</b> <span class="tbd">уточняются у администратора при записи</span></div>
       </div>
-      <a href="../draft1.html#contacts" class="btn">Записаться на первое занятие</a>
+      <a href="#" onclick="openChat();return false" class="btn">Записаться на первое занятие</a>
     </div>
 
   </div>
@@ -116,5 +117,6 @@ h1,h2,h3{line-height:1.2;color:var(--text);font-weight:800;font-family:var(--fon
   </div>
 </footer>
 
+<script src="../assets/chat-widget.js"></script>
 </body>
 </html>

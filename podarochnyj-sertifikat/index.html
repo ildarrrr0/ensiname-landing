@@ -71,6 +71,7 @@ h1,h2,h3{line-height:1.2;color:var(--text);font-weight:800;font-family:var(--fon
 
 @media(min-width:900px){ .t-hero h1{font-size:32px} }
 </style>
+<link rel="stylesheet" href="../assets/chat-widget.css">
 </head>
 <body>
 
@@ -130,7 +131,7 @@ h1,h2,h3{line-height:1.2;color:var(--text);font-weight:800;font-family:var(--fon
     </div>
 
     <div class="cta-box">
-      <a href="../draft1.html#contacts" class="btn">Оставить заявку на оформление сертификата</a>
+      <a href="#" onclick="openChat();return false" class="btn">Оставить заявку на оформление сертификата</a>
     </div>
   </div>
 </main>
@@ -141,5 +142,6 @@ h1,h2,h3{line-height:1.2;color:var(--text);font-weight:800;font-family:var(--fon
   </div>
 </footer>
 
+<script src="../assets/chat-widget.js"></script>
 </body>
 </html>
