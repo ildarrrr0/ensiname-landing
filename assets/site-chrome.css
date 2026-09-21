@@ -38,6 +38,8 @@
 .footer-top>div{min-width:0}
 .footer-brand .brand-logo{height:42px;margin-bottom:14px;display:block}
 .footer-brand p{font-size:14px;color:var(--text-muted);max-width:340px}
+.footer-brand a.footer-dev{display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:var(--green);text-decoration:none}
+.footer-brand a.footer-dev:hover{text-decoration:underline}
 .social{display:flex;gap:8px;margin-top:18px;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;padding-bottom:4px}
 .social a{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--text);background:#fff;border:1px solid var(--border);padding:9px 12px;border-radius:var(--radius-sm);transition:.15s;text-decoration:none;flex-shrink:0;white-space:nowrap}
 .social a.tg:hover{background:#2aa2e0;border-color:#2aa2e0;color:#fff}
@@ -54,10 +56,6 @@
 .footer-bottom .legal a{font-size:12px;color:var(--text-muted);text-decoration:none}
 .footer-bottom .copy{font-size:12px;color:var(--text-muted)}
 
-.footer-dev{margin-top:2px;padding:14px 0 22px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;text-align:center}
-.footer-dev span{font-size:12px;color:var(--text-muted)}
-.footer-dev a{font-size:12px;font-weight:700;color:var(--green);text-decoration:none;border:1px solid var(--border);padding:6px 12px;border-radius:var(--radius-sm);transition:.15s}
-.footer-dev a:hover{background:var(--green);border-color:var(--green);color:#fff;text-decoration:none}
 
 @media(min-width:900px){
   .footer-top{grid-template-columns:1.4fr 1fr 1fr}

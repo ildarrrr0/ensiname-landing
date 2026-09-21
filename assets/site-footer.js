@@ -15,6 +15,7 @@
           '<div class="footer-brand">' +
             '<img class="brand-logo" src="' + root + 'assets/logo.png" alt="Ensina-me — языковой центр" loading="lazy">' +
             '<p>Языковой центр Ensina-me. Португальский (европейский и бразильский) и испанский с носителями языка. Очно на Новослободской и онлайн.</p>' +
+            '<a class="footer-dev" href="https://idm-ai.ru/cases/" target="_blank" rel="noopener">О разработчике сайта &rarr;</a>' +
             '<div class="social">' +
               '<a class="tg" href="https://t.me/ensiname" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>Telegram</a>' +
               '<a class="yt" href="https://www.youtube.com/channel/UClU_gAe1w84oNW5YKFG47iw" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.5 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>YouTube</a>' +
@@ -49,10 +50,6 @@
             '<a href="' + root + 'privacy.html">Политика конфиденциальности</a>' +
             '<a href="' + root + 'vacancies.html">Вакансии</a>' +
           '</div>' +
-        '</div>' +
-        '<div class="footer-dev">' +
-          '<span>О разработчике сайта</span>' +
-          '<a href="https://idm-ai.ru/cases/" target="_blank" rel="noopener">idm-ai.ru &rarr;</a>' +
         '</div>' +
       '</div>' +
     '</footer>'
