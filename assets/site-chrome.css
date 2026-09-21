@@ -37,14 +37,14 @@
 .footer-top{display:grid;grid-template-columns:1fr;gap:28px;padding-bottom:30px;border-bottom:1px solid var(--border)}
 .footer-brand .brand-logo{height:42px;margin-bottom:14px;display:block}
 .footer-brand p{font-size:14px;color:var(--text-muted);max-width:340px}
-.social{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
-.social a{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--text);background:#fff;border:1px solid var(--border);padding:10px 16px;border-radius:var(--radius-sm);transition:.15s;text-decoration:none}
+.social{display:flex;gap:8px;margin-top:18px;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+.social a{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--text);background:#fff;border:1px solid var(--border);padding:9px 12px;border-radius:var(--radius-sm);transition:.15s;text-decoration:none;flex-shrink:0;white-space:nowrap}
 .social a.tg:hover{background:#2aa2e0;border-color:#2aa2e0;color:#fff}
 .social a.yt:hover{background:#e0201b;border-color:#e0201b;color:#fff}
 .social a.max:hover{background:#0092ff;border-color:#0092ff;color:#fff}
 .social a.vk:hover{background:#0077ff;border-color:#0077ff;color:#fff}
 .social a.wa:hover{background:#25d366;border-color:#25d366;color:#fff}
-.social a svg{width:20px;height:20px;fill:currentColor}
+.social a svg{width:18px;height:18px;fill:currentColor;flex-shrink:0}
 .footer-col h4{color:var(--text);font-size:15px;margin-bottom:12px;font-family:var(--font-head)}
 .footer-col a{display:block;font-size:14px;color:var(--text-muted);padding:5px 0;text-decoration:none}
 .footer-col a:hover{color:var(--text)}
