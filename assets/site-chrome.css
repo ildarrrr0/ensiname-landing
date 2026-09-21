@@ -35,6 +35,7 @@
 .site-footer{position:relative;background:#ffffff;color:var(--text);padding:44px 0 0;margin-top:0}
 .site-footer .wrap{max-width:1160px;margin:0 auto;padding:0 18px}
 .footer-top{display:grid;grid-template-columns:1fr;gap:28px;padding-bottom:30px;border-bottom:1px solid var(--border)}
+.footer-top>div{min-width:0}
 .footer-brand .brand-logo{height:42px;margin-bottom:14px;display:block}
 .footer-brand p{font-size:14px;color:var(--text-muted);max-width:340px}
 .social{display:flex;gap:8px;margin-top:18px;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;padding-bottom:4px}
