@@ -50,6 +50,10 @@
             '<a href="' + root + 'vacancies.html">Вакансии</a>' +
           '</div>' +
         '</div>' +
+        '<div class="footer-dev">' +
+          '<span>О разработчике сайта</span>' +
+          '<a href="https://idm-ai.ru/cases/" target="_blank" rel="noopener">idm-ai.ru &rarr;</a>' +
+        '</div>' +
       '</div>' +
     '</footer>'
   );
