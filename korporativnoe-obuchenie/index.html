@@ -89,17 +89,12 @@ table.tbl.small{font-size:12px}
 @media(min-width:900px){ .t-hero h1{font-size:28px} }
 </style>
 <link rel="stylesheet" href="../assets/chat-widget.css">
+<link rel="stylesheet" href="../assets/site-chrome.css">
 </head>
 <body>
 
-<header class="pay-header">
-  <div class="wrap">
-    <a href="../draft1.html" aria-label="Ensina-me">
-      <img class="brand-logo" src="../assets/logo.png" alt="Ensina-me — языковой центр" loading="eager">
-    </a>
-    <a href="../draft1.html" class="back">&larr; На главную</a>
-  </div>
-</header>
+<!-- Шапка вставляется скриптом ../assets/site-header.js — общий компонент для всех страниц сайта. -->
+<script src="../assets/site-header.js" data-root="../" data-nav-home="../draft1.html"></script>
 
 <main>
   <div class="t-hero">
@@ -249,11 +244,8 @@ table.tbl.small{font-size:12px}
   </div>
 </main>
 
-<footer class="pay-footer">
-  <div class="wrap">
-    <p>&copy; 2010&ndash;2026 Ensina-me. Языковой центр португальского и испанского. <a href="../draft1.html">Вернуться на сайт</a></p>
-  </div>
-</footer>
+<!-- Футер вставляется скриптом ../assets/site-footer.js — общий компонент для всех страниц сайта. -->
+<script src="../assets/site-footer.js" data-root="../" data-nav-home="../draft1.html"></script>
 
 <script src="../assets/chat-widget.js"></script>
 </body>

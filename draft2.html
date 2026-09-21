@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/chat-widget.css">
+<link rel="stylesheet" href="assets/site-chrome.css">
 <style>
 /* ============================================================
    ENSINA-ME — редизайн-эволюция (Вариант A = body.vA)
@@ -83,22 +84,6 @@ h1,h2,h3{line-height:1.16;color:var(--text);font-weight:800;font-family:var(--fo
 .btn-oy{background:transparent;border-color:var(--yellow);color:var(--text)}
 .btn-oy:hover{background:var(--yellow);color:var(--cta-fg);border-color:var(--yellow)}
 
-/* ============================================================ ХЕДЕР */
-.site-header{position:sticky;top:0;z-index:60;background:var(--header-bg);border-bottom:1px solid var(--border)}
-.header-inner{display:flex;align-items:center;gap:18px;height:66px}
-.brand-logo{height:42px;width:auto;display:block}
-.brand-logo .sub{fill:var(--logo-sub,#2b2b2b)}
-.nav{display:flex;gap:22px;margin-left:auto}
-.nav a{font-size:15px;font-weight:700;color:var(--text);font-family:var(--font-head);padding:6px 0;position:relative;white-space:nowrap}
-.nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:3px;background:var(--yellow);transition:width .18s}
-.nav a:hover::after{width:100%}
-.header-cta{margin-left:6px}
-.header-cta .btn{padding:10px 18px;min-height:0}
-.burger{display:none;margin-left:auto;background:none;border:0;cursor:pointer;padding:10px;border-radius:8px}
-.burger span{display:block;width:26px;height:3px;border-radius:2px;background:var(--green);margin:5px 0;transition:.2s}
-/* Вариант B: центрированное меню */
-body.vB .header-inner{flex-wrap:wrap}
-body.vB .nav{margin:0 auto}
 
 /* ============================================================ СЕКЦИИ + ТРИКОЛОР-РАЗДЕЛИТЕЛЬ */
 section{padding:48px 0;position:relative}
@@ -292,26 +277,6 @@ a.card.article{display:block}
 .cp-input button{border:0;background:var(--cta-bg);color:var(--cta-fg);width:40px;border-radius:50%;font-size:18px;cursor:pointer;flex-shrink:0}
 
 /* ============================================================ ФУТЕР */
-.site-footer{background:#ffffff;color:var(--text);padding:44px 0 0}
-.footer-top{display:grid;grid-template-columns:1fr;gap:28px;padding-bottom:30px;border-bottom:1px solid var(--border)}
-.footer-brand .brand-logo{height:42px;margin-bottom:14px}
-.footer-brand .brand-logo .sub{fill:#2b2b2b}
-.footer-brand p{font-size:14px;color:var(--text-muted);max-width:340px}
-.social{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
-.social a{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--text);background:#fff;border:1px solid var(--border);padding:10px 16px;border-radius:var(--radius-sm);transition:.15s}
-.social a.tg:hover{background:#2aa2e0;border-color:#2aa2e0;color:#fff}
-.social a.yt:hover{background:#e0201b;border-color:#e0201b;color:#fff}
-.social a.max:hover{background:#0092ff;border-color:#0092ff;color:#fff}
-.social a.vk:hover{background:#0077ff;border-color:#0077ff;color:#fff}
-.social a.wa:hover{background:#25d366;border-color:#25d366;color:#fff}
-.social a svg{width:20px;height:20px;fill:currentColor}
-.footer-col h4{color:var(--text);font-size:15px;margin-bottom:12px;font-family:var(--font-head)}
-.footer-col a{display:block;font-size:14px;color:var(--text-muted);padding:5px 0}
-.footer-col a:hover{color:var(--text)}
-.footer-bottom{padding:18px 0;display:flex;flex-direction:column;gap:10px}
-.footer-bottom .legal{display:flex;gap:16px;flex-wrap:wrap}
-.footer-bottom .legal a{font-size:12px;color:var(--text-muted)}
-.footer-bottom .copy{font-size:12px;color:var(--text-muted)}
 
 /* ============================================================ ПОЯВЛЕНИЕ ПРИ СКРОЛЛЕ */
 html.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
@@ -379,38 +344,14 @@ html.js .reveal.in{opacity:1;transform:none}
   .cards-4{grid-template-columns:repeat(4,1fr)}
   .assistant{grid-template-columns:1fr 1fr;gap:44px}
   .cta-band{padding:44px 48px}
-  .footer-top{grid-template-columns:1.4fr 1fr 1fr}
-  .footer-bottom{flex-direction:row;justify-content:space-between}
-}
-@media(max-width:899px){
-  .nav,.header-cta{display:none}
-  .nav.open{display:flex;position:absolute;top:66px;left:0;right:0;flex-direction:column;background:#fff;border-bottom:1px solid var(--border);padding:12px 18px;gap:2px;box-shadow:var(--shadow)}
-  .nav.open a{padding:14px 4px;border-bottom:1px solid var(--border);font-size:16px}
-  .burger{display:block}
-  body.vB .nav.open{margin:0}
 }
 </style>
 </head>
 <body class="vB">
 
 <!-- ============================= ХЕДЕР ============================= -->
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a href="#" class="logo" aria-label="Ensina-me — языковой центр">
-      <img class="brand-logo" src="assets/logo.png" alt="Ensina-me — языковой центр" loading="eager">
-    </a>
-    <nav class="nav" id="nav">
-      <a href="o-centre.html">О центре</a>
-      <a href="#schedule">Расписание</a>
-      <a href="#teachers">Преподаватели</a>
-      <a href="#courses">Курсы</a>
-      <a href="#reviews">Отзывы</a>
-      <a href="#contacts">Контакты</a>
-    </nav>
-    <div class="header-cta"><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться на курс</a></div>
-    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
-  </div>
-</header>
+<!-- Шапка вставляется скриптом assets/site-header.js — общий компонент для всех страниц сайта. -->
+<script src="assets/site-header.js" data-root="" data-nav-home=""></script>
 
 <!-- ============================= HERO (белый) ============================= -->
 <section class="hero">
@@ -752,57 +693,14 @@ html.js .reveal.in{opacity:1;transform:none}
 </section>
 
 <!-- ============================= ФУТЕР ============================= -->
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img class="brand-logo" src="assets/logo.png" alt="Ensina-me — языковой центр" loading="lazy">
-        <p>Языковой центр Ensina-me. Португальский (европейский и бразильский) и испанский с носителями языка. Очно на Новослободской и онлайн.</p>
-        <div class="social">
-          <a class="tg" href="https://t.me/ensiname" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>Telegram</a>
-          <a class="yt" href="https://www.youtube.com/channel/UClU_gAe1w84oNW5YKFG47iw" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.5 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>YouTube</a>
-          <a class="max" href="https://max.ru/join/V7MAUSksEswL24x2_EuCzcFgmSzxM_NtwJ1zhRQRChY" target="_blank" rel="noopener" aria-label="Max"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.9 2 10.7c0 2.6 1.35 4.93 3.47 6.5-.11 1.13-.6 2.5-1.47 3.6 1.62-.19 3.24-.76 4.5-1.63A11.6 11.6 0 0 0 12 19.4c5.52 0 10-3.9 10-8.7S17.52 2 12 2z"/></svg>Max</a>
-          <a class="vk" href="https://vk.com/ensinameportuguese" target="_blank" rel="noopener" aria-label="VK"><svg viewBox="0 0 24 24"><path d="M13.16 17.4c-6.26 0-9.84-4.3-9.99-11.45h3.13c.1 5.27 2.42 7.5 4.26 7.96V5.95h2.95v4.53c1.8-.2 3.7-2.26 4.34-4.53h2.95a8.7 8.7 0 0 1-3.98 5.7A9 9 0 0 1 21 17.4h-3.26a5.6 5.6 0 0 0-3.63-3.99v3.99h-.35c-.2 0-.4 0-.6-.01z"/></svg>VK</a>
-          <a class="wa" href="https://api.whatsapp.com/send/?phone=%2B79031404451&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5.1-.1.2-.3.4-.4.1-.1.2-.3.2-.4.1-.2 0-.3 0-.4 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 4 3.5.6.2 1 .4 1.3.5.6.2 1.1.2 1.5.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3z"/></svg>WhatsApp</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Обучение</h4>
-        <a href="#schedule">Расписание</a>
-        <a href="#courses">Наборы в группы</a>
-        <a href="#courses">Индивидуальные занятия</a>
-        <a href="#courses">Подготовка к экзаменам</a>
-        <a href="pay.html">Оплата обучения</a>
-        <a href="skhema-proezda/">Схема проезда</a>
-      </div>
-      <div class="footer-col">
-        <h4>Центр</h4>
-        <a href="o-centre.html">О центре</a>
-        <a href="#teachers">Преподаватели</a>
-        <a href="#reviews">Отзывы</a>
-        <a href="#articles">Статьи</a>
-        <a href="#contacts">Контакты</a>
-        <a href="#level-test">Тест на уровень</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="copy">© 2010–2026 Ensina-me. Языковой центр португальского и испанского.</div>
-      <div class="legal">
-        <a href="#contacts">Реквизиты</a>
-        <a href="privacy.html">Политика конфиденциальности</a>
-        <a href="vacancies.html">Вакансии</a>
-      </div>
-    </div>
-  </div>
-</footer>
+<!-- Футер вставляется скриптом assets/site-footer.js — общий компонент для всех страниц сайта. -->
+<script src="assets/site-footer.js" data-root="" data-nav-home=""></script>
 
 <!-- Чат-виджет (кнопка + окно) внедряется скриптом assets/chat-widget.js — общий для всех страниц сайта. -->
 <script src="assets/chat-widget.js"></script>
 <script>
 document.documentElement.classList.add('js');
-/* Мобильное меню */
-document.getElementById('burger').addEventListener('click',function(){document.getElementById('nav').classList.toggle('open');});
-document.querySelectorAll('#nav a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('nav').classList.remove('open');});});
+/* Мобильное меню — обрабатывается в assets/site-header.js */
 /* FAQ */
 document.querySelectorAll('.faq-q').forEach(function(btn){
   btn.addEventListener('click',function(){
