@@ -28,7 +28,7 @@
             '<a href="' + nh + '#schedule">Расписание</a>' +
             '<a href="' + nh + '#courses">Наборы в группы</a>' +
             '<a href="' + nh + '#courses">Индивидуальные занятия</a>' +
-            '<a href="' + nh + '#courses">Подготовка к экзаменам</a>' +
+            '<a href="' + root + 'ekzameny/">Подготовка к экзаменам</a>' +
             '<a href="' + root + 'pay.html">Оплата обучения</a>' +
             '<a href="' + root + 'skhema-proezda/">Схема проезда</a>' +
           '</div>' +
