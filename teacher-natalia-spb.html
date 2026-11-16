@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Наталья — преподаватель Ensina-me. Гид-переводчик, Санкт-Петербург · с 2023 в Ensina-me.">
+<title>Наталья (Санкт-Петербург) — преподаватель — Ensina-me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1a8a38;--green-2:#14722e;--green-3:#0e3d22;
+  --red:#cc2027;--red-2:#a81a20;
+  --yellow:#ffd21e;--yellow-2:#f4c400;
+  --cta-bg:#ffd21e;--cta-bg-h:#f4c400;--cta-fg:#241f04;
+  --bg:#ffffff;--surface:#ffffff;
+  --text:#1f241d;--text-muted:#5c665c;--border:#e2e7e1;
+  --shadow:0 1px 2px rgba(20,50,30,.06),0 6px 18px rgba(20,50,30,.07);
+  --radius:10px;--radius-sm:6px;--maxw:760px;
+  --font:'PT Sans','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --font-head:'Montserrat','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--text);background:#f4f6f7;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--green);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+h1,h2{line-height:1.2;color:var(--text);font-weight:800;font-family:var(--font-head);overflow-wrap:break-word}
+
+.pay-header{background:#fff;border-bottom:1px solid var(--border);padding:18px 0}
+.pay-header .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;max-width:900px}
+.pay-header .brand-logo{height:38px;width:auto;display:block}
+.pay-header .back{font-size:14px;font-weight:700;color:var(--text-muted);margin-left:auto;text-decoration:none}
+.pay-header .back:hover{color:var(--text)}
+
+.t-hero{padding:40px 0 8px;text-align:center}
+.t-hero::before{content:"";display:block;height:5px;
+  background:linear-gradient(90deg,var(--red) 0 33.33%,var(--yellow) 33.33% 66.66%,var(--green) 66.66% 100%);
+  margin-bottom:34px}
+.t-photo{width:130px;height:130px;border-radius:50%;margin:0 auto 18px;overflow:hidden;border:4px solid #cdae7f;background:repeating-linear-gradient(45deg,#e6ebe6 0 14px,#dde3dd 14px 28px);display:flex;align-items:center;justify-content:center;color:#8a968a;font-size:12px;font-weight:600}
+.t-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.t-photo.ph-fallback::after{content:"фото недоступно"}
+.t-hero h1{font-size:26px;margin-bottom:6px}
+.t-hero .subtitle{font-size:14px;color:var(--text-muted);font-weight:700;font-family:var(--font-head)}
+.t-langs{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.t-langs span{font-size:18px;line-height:1}
+
+.art-body{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:30px 28px;margin:24px 0 30px;font-size:16px}
+.art-body p{margin-bottom:16px}
+.art-body p:last-child{margin-bottom:0}
+.art-body b{color:var(--green-3)}
+.art-body ul{margin:0 0 16px 22px}
+.art-body li{margin-bottom:6px}
+.art-body .tbd{color:var(--red);font-weight:700}
+
+.center-cta{text-align:center;margin-bottom:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-head);
+  font-size:16px;font-weight:700;padding:14px 24px;border:2px solid transparent;border-radius:var(--radius-sm);
+  cursor:pointer;transition:.15s ease;text-align:center;min-height:50px;text-decoration:none}
+.btn-cta{background:var(--cta-bg);color:var(--cta-fg);border-color:var(--cta-bg)}
+.btn-cta:hover{background:var(--cta-bg-h);border-color:var(--cta-bg-h);text-decoration:none}
+
+.back-list{display:block;text-align:center;font-weight:700;margin-bottom:40px}
+
+.pay-footer{background:#fff;border-top:1px solid var(--border);padding:24px 0;text-align:center;margin-top:20px}
+.pay-footer p{font-size:13px;color:var(--text-muted)}
+.pay-footer a{color:var(--green);font-weight:700}
+
+@media(min-width:900px){ .t-hero h1{font-size:32px} }
+@media(max-width:480px){ .art-body{padding:22px 18px} }
+</style>
+<link rel="stylesheet" href="assets/chat-widget.css">
+<link rel="stylesheet" href="assets/site-chrome.css">
+</head>
+<body>
+
+<!-- Шапка вставляется скриптом assets/site-header.js — общий компонент для всех страниц сайта. -->
+<script src="assets/site-header.js" data-root="" data-nav-home="draft1.html"></script>
+
+<main>
+  <div class="wrap">
+    <div class="t-hero">
+      <div class="t-photo"><img src="assets/teachers/Natalia-spb.jpg" alt="Наталья" loading="eager" onerror="this.closest('.t-photo').classList.add('ph-fallback');this.remove()"></div>
+      <h1>Наталья</h1>
+      <div class="subtitle">гид-переводчик, Санкт-Петербург · с 2023 в Ensina-me</div>
+      <div class="t-langs"><span>🇵🇹</span><span>🇧🇷</span></div>
+    </div>
+    <div class="art-body">
+      <p>Olá! Меня зовут Наталья. Мой путь в португальский язык начался с фундаментального образования: я окончила Уральский государственный педагогический университет по специальности «Учитель английского и немецкого языков», но любовь к романской группе привела меня к португальскому. Дополнительно я получила квалификацию «Гид-переводчик» по испанскому языку и стажировалась в Испании, где подтвердила высокий уровень языка. Португальский же изучала углублённо в Европейском центре обучения и трудоустройства, прошла курс до уровня С1.</p>
+      <p>В течение многих лет я работаю гидом-переводчиком в Санкт-Петербурге и пригородах, сопровождая группы и индивидуальных туристов на английском, испанском и португальском языках. Эта работа дала мне бесценный опыт живого общения с носителями из разных стран – Португалии, Бразилии, стран Латинской Америки и Африки. Благодаря этому я свободно владею как европейским, так и бразильским вариантами португальского, понимаю их фонетические, лексические и культурные нюансы.</p>
+      <p>С 2007 года я также занимаюсь репетиторством и преподаванием на курсах, работаю со школьниками и взрослыми. А с 2023 г. рада быть частью команды Ensina-me, специализируюсь на индивидуальных занятиях для студентов с разным уровнем португальского - от нулевого до С1. Кроме того, имею большой опыт письменных и устных переводов – от документов до деловых переговоров.</p>
+      <p>На своих занятиях я использую коммуникативный подход, особое внимание уделяю грамматике, разговорной речи и аудированию. Люблю включать в уроки фрагменты фильмов, музыку разных жанров и исполнителей – это помогает почувствовать живой язык и погрузиться в культуру. Я быстро нахожу подход к разным ученикам и всегда адаптирую программу под цели и уровень каждого.</p>
+      <p>По образованию я педагог, поэтому для меня важно не просто научить правилам, но и создать комфортную, поддерживающую атмосферу, где ученики не боятся ошибаться и с удовольствием говорят на португальском. Буду рада помочь вам открыть для себя этот прекрасный язык – будь то для путешествий, работы или души.</p>
+      <p>До встречи на уроках! Até logo!</p>
+    </div>
+    <div class="center-cta"><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться к преподавателю Наталье</a></div>
+    <a class="back-list" href="draft1.html#teachers">&larr; Все преподаватели</a>
+  </div>
+</main>
+
+<!-- Футер вставляется скриптом assets/site-footer.js — общий компонент для всех страниц сайта. -->
+<script src="assets/site-footer.js" data-root="" data-nav-home="draft1.html"></script>
+
+<script src="assets/chat-widget.js"></script>
+</body>
+</html>

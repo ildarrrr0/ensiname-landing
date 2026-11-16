@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Наталья — преподаватель Ensina-me. 10 лет в Португалии · гид-переводчик.">
+<title>Наталья (Лиссабон) — преподаватель — Ensina-me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1a8a38;--green-2:#14722e;--green-3:#0e3d22;
+  --red:#cc2027;--red-2:#a81a20;
+  --yellow:#ffd21e;--yellow-2:#f4c400;
+  --cta-bg:#ffd21e;--cta-bg-h:#f4c400;--cta-fg:#241f04;
+  --bg:#ffffff;--surface:#ffffff;
+  --text:#1f241d;--text-muted:#5c665c;--border:#e2e7e1;
+  --shadow:0 1px 2px rgba(20,50,30,.06),0 6px 18px rgba(20,50,30,.07);
+  --radius:10px;--radius-sm:6px;--maxw:760px;
+  --font:'PT Sans','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --font-head:'Montserrat','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--text);background:#f4f6f7;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--green);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+h1,h2{line-height:1.2;color:var(--text);font-weight:800;font-family:var(--font-head);overflow-wrap:break-word}
+
+.pay-header{background:#fff;border-bottom:1px solid var(--border);padding:18px 0}
+.pay-header .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;max-width:900px}
+.pay-header .brand-logo{height:38px;width:auto;display:block}
+.pay-header .back{font-size:14px;font-weight:700;color:var(--text-muted);margin-left:auto;text-decoration:none}
+.pay-header .back:hover{color:var(--text)}
+
+.t-hero{padding:40px 0 8px;text-align:center}
+.t-hero::before{content:"";display:block;height:5px;
+  background:linear-gradient(90deg,var(--red) 0 33.33%,var(--yellow) 33.33% 66.66%,var(--green) 66.66% 100%);
+  margin-bottom:34px}
+.t-photo{width:130px;height:130px;border-radius:50%;margin:0 auto 18px;overflow:hidden;border:4px solid #cdae7f;background:repeating-linear-gradient(45deg,#e6ebe6 0 14px,#dde3dd 14px 28px);display:flex;align-items:center;justify-content:center;color:#8a968a;font-size:12px;font-weight:600}
+.t-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.t-photo.ph-fallback::after{content:"фото недоступно"}
+.t-hero h1{font-size:26px;margin-bottom:6px}
+.t-hero .subtitle{font-size:14px;color:var(--text-muted);font-weight:700;font-family:var(--font-head)}
+.t-langs{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.t-langs span{font-size:18px;line-height:1}
+
+.art-body{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:30px 28px;margin:24px 0 30px;font-size:16px}
+.art-body p{margin-bottom:16px}
+.art-body p:last-child{margin-bottom:0}
+.art-body b{color:var(--green-3)}
+.art-body ul{margin:0 0 16px 22px}
+.art-body li{margin-bottom:6px}
+.art-body .tbd{color:var(--red);font-weight:700}
+
+.center-cta{text-align:center;margin-bottom:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-head);
+  font-size:16px;font-weight:700;padding:14px 24px;border:2px solid transparent;border-radius:var(--radius-sm);
+  cursor:pointer;transition:.15s ease;text-align:center;min-height:50px;text-decoration:none}
+.btn-cta{background:var(--cta-bg);color:var(--cta-fg);border-color:var(--cta-bg)}
+.btn-cta:hover{background:var(--cta-bg-h);border-color:var(--cta-bg-h);text-decoration:none}
+
+.back-list{display:block;text-align:center;font-weight:700;margin-bottom:40px}
+
+.pay-footer{background:#fff;border-top:1px solid var(--border);padding:24px 0;text-align:center;margin-top:20px}
+.pay-footer p{font-size:13px;color:var(--text-muted)}
+.pay-footer a{color:var(--green);font-weight:700}
+
+@media(min-width:900px){ .t-hero h1{font-size:32px} }
+@media(max-width:480px){ .art-body{padding:22px 18px} }
+</style>
+<link rel="stylesheet" href="assets/chat-widget.css">
+<link rel="stylesheet" href="assets/site-chrome.css">
+</head>
+<body>
+
+<!-- Шапка вставляется скриптом assets/site-header.js — общий компонент для всех страниц сайта. -->
+<script src="assets/site-header.js" data-root="" data-nav-home="draft1.html"></script>
+
+<main>
+  <div class="wrap">
+    <div class="t-hero">
+      <div class="t-photo"><img src="assets/teachers/Natalia-lissabon.jpg" alt="Наталья" loading="eager" onerror="this.closest('.t-photo').classList.add('ph-fallback');this.remove()"></div>
+      <h1>Наталья</h1>
+      <div class="subtitle">10 лет в Португалии · гид-переводчик</div>
+      <div class="t-langs"><span>🇵🇹</span></div>
+    </div>
+    <div class="art-body">
+      <p>Olá, amigos! Меня зовут Наталья.</p>
+      <p>Если вы хотите выучить португальский не по учебникам, а так, как на нём говорят в Лиссабоне — от кофе в маленькой пастеларии до деловых переговоров в нотариальной конторе, — то нам точно есть о чём поговорить.</p>
+      <p><b>Почему я?</b></p>
+      <p>Потому что я не просто преподаватель. Почти 10 лет я прожила и работала в Португалии, и португальский стал для меня не иностранным языком, а языком повседневности. Я говорю на нём свободно — читаю, пишу, перевожу синхронно и веду переговоры. И это не просто строчка в резюме, а мой реальный многолетний опыт.</p>
+      <p><b>Мой путь в Португалии:</b></p>
+      <p>В Лиссабоне я работала личным ассистентом в нотариальной конторе у доктора Елены Лопеш Шавьер — это был бесценный опыт погружения в португальскую юридическую и деловую среду. Я вела документооборот, готовила залы для конференций, общалась с клиентами, планировала рабочий день адвоката. Я знаю, как звучит португальский в официальных бумагах и в живом общении с клиентами.</p>
+      <p>Также я была администратором магазина "Parfois" — работала с поставщиками, отчётами, платежами и, конечно, с людьми. Это научило меня деловому португальскому — языку переговоров, отчётов и ежедневного общения с коллегами и клиентами.</p>
+      <p><b>А ещё я — ваш гид по Португалии:</b></p>
+      <p>Параллельно я более 4 лет работала гидом-переводчиком и контент-менеджером сайта annaportugal.ru. Я организовывала туры по Португалии, сопровождала гостей, в том числе людей с ограниченными возможностями, пожилых и детей. Я помогала планировать поездки, проводила трансферы, рассказывала об истории и культуре страны. Я знаю Португалию не как турист, а как человек, который жил там и любит её со всеми её деталями.</p>
+      <p><b>Международный опыт:</b></p>
+      <p>В 2018 году на Чемпионате мира по футболу в Москве я работала гидом-переводчиком — сопровождала иностранные делегации, переводила синхронно и письменно с английского, испанского и португальского. Это была отличная проверка на прочность и умение быстро переключаться между языками.</p>
+      <p>А ещё моя специализация — переводческий анализ диалогов операторов и клиентов: я работала над качеством языка и продукта в международной компании. Это научило меня слышать тонкие нюансы речи и понимать, как слова влияют на восприятие.</p>
+      <p><b>Мой подход:</b></p>
+      <p>У меня за плечами психологическое образование (я окончила бакалавриат по конфликтологии), и это помогает мне чувствовать студентов, их страхи и барьеры. На моих занятиях мы не зубрим правила — мы говорим. Мы смотрим португальские фильмы, обсуждаем реальные ситуации, учимся понимать речь на слух и избавляться от страха ошибиться. Я объясняю грамматику без боли — через живые примеры и практику.</p>
+      <p>Я веду занятия для любого уровня — от А1 до продвинутого. Если вы планируете переезд, деловые контакты с португальцами или просто хотите влюбиться в язык и культуру — я помогу вам сделать этот шаг легко и с удовольствием.</p>
+      <p>Até já! До встречи на моих уроках! 🇵🇹✨</p>
+    </div>
+    <div class="center-cta"><a href="#" onclick="openChat();return false" class="btn btn-cta">Записаться к преподавателю Наталье</a></div>
+    <a class="back-list" href="draft1.html#teachers">&larr; Все преподаватели</a>
+  </div>
+</main>
+
+<!-- Футер вставляется скриптом assets/site-footer.js — общий компонент для всех страниц сайта. -->
+<script src="assets/site-footer.js" data-root="" data-nav-home="draft1.html"></script>
+
+<script src="assets/chat-widget.js"></script>
+</body>
+</html>
